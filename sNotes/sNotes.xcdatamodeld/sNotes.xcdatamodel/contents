@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CardDM" representedClassName=".CardDM" syncable="YES">
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="cards" inverseEntity="ProfileDM"/>
+    </entity>
+    <entity name="FolderDM" representedClassName=".FolderDM" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Transformable"/>
+        <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateLastChange" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isAnchore" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isDefaultFolder" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteDM" inverseName="folder" inverseEntity="NoteDM"/>
+    </entity>
+    <entity name="NoteDM" representedClassName=".NoteDM" syncable="YES">
+        <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateLastChange" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isAnchor" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="tittle" optional="YES" attributeType="String"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FolderDM" inverseName="notes" inverseEntity="FolderDM"/>
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="notes" inverseEntity="ProfileDM"/>
+    </entity>
+    <entity name="PasswordDM" representedClassName=".PasswordDM" syncable="YES">
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="passwords" inverseEntity="ProfileDM"/>
+    </entity>
+    <entity name="ProfileDM" representedClassName=".ProfileDM" syncable="YES">
+        <attribute name="photoProfile" optional="YES" attributeType="Binary"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <attribute name="userSurname" optional="YES" attributeType="String"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardDM" inverseName="profile" inverseEntity="CardDM"/>
+        <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NoteDM" inverseName="profile" inverseEntity="NoteDM"/>
+        <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
+    </entity>
+    <elements>
+        <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="133"/>
+        <element name="NoteDM" positionX="-45" positionY="18" width="128" height="163"/>
+        <element name="FolderDM" positionX="-189" positionY="117" width="128" height="163"/>
+        <element name="CardDM" positionX="-180" positionY="162" width="128" height="28"/>
+        <element name="PasswordDM" positionX="-171" positionY="171" width="128" height="28"/>
+    </elements>
 </model>
