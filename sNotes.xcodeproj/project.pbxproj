@@ -13,6 +13,8 @@
 		180137AE265D3258007FF09F /* FolderDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137A8265D3258007FF09F /* FolderDM+CoreDataClass.swift */; };
 		180137B0265D3258007FF09F /* NoteDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137AA265D3258007FF09F /* NoteDM+CoreDataClass.swift */; };
 		180137B1265D3258007FF09F /* NoteDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137AB265D3258007FF09F /* NoteDM+CoreDataProperties.swift */; };
+		180137B4265D3F3D007FF09F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137B3265D3F3D007FF09F /* UIColor.swift */; };
+		180137B6265D4071007FF09F /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137B5265D4071007FF09F /* NibLoadableView.swift */; };
 		180137C0265D490F007FF09F /* FolderDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137BF265D490F007FF09F /* FolderDM+CoreDataProperties.swift */; };
 		1857565F265955C1000B54C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1857565E265955C1000B54C7 /* AppDelegate.swift */; };
 		18575663265955C1000B54C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18575662265955C1000B54C7 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		180137A8265D3258007FF09F /* FolderDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderDM+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		180137AA265D3258007FF09F /* NoteDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteDM+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		180137AB265D3258007FF09F /* NoteDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteDM+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		180137B3265D3F3D007FF09F /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		180137B5265D4071007FF09F /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		180137BF265D490F007FF09F /* FolderDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderDM+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		1857565B265955C1000B54C7 /* sNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1857565E265955C1000B54C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		180137B2265D3F1F007FF09F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				180137B3265D3F3D007FF09F /* UIColor.swift */,
+				180137B5265D4071007FF09F /* NibLoadableView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		18575652265955C0000B54C7 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +108,7 @@
 				18013794265C1432007FF09F /* Model */,
 				1857565E265955C1000B54C7 /* AppDelegate.swift */,
 				18575662265955C1000B54C7 /* ViewController.swift */,
+				180137B2265D3F1F007FF09F /* Extension */,
 				18575664265955C1000B54C7 /* Main.storyboard */,
 				1857566A265955C3000B54C7 /* Assets.xcassets */,
 				1857566C265955C3000B54C7 /* LaunchScreen.storyboard */,
@@ -176,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180137AE265D3258007FF09F /* FolderDM+CoreDataClass.swift in Sources */,
+				180137B4265D3F3D007FF09F /* UIColor.swift in Sources */,
 				18575663265955C1000B54C7 /* ViewController.swift in Sources */,
 				180137C0265D490F007FF09F /* FolderDM+CoreDataProperties.swift in Sources */,
 				18013797265D2365007FF09F /* PersistenceManager.swift in Sources */,
@@ -183,6 +198,7 @@
 				180137AD265D3258007FF09F /* ProfileDM+CoreDataProperties.swift in Sources */,
 				180137B1265D3258007FF09F /* NoteDM+CoreDataProperties.swift in Sources */,
 				180137AC265D3258007FF09F /* ProfileDM+CoreDataClass.swift in Sources */,
+				180137B6265D4071007FF09F /* NibLoadableView.swift in Sources */,
 				18575669265955C1000B54C7 /* sNotes.xcdatamodeld in Sources */,
 				180137B0265D3258007FF09F /* NoteDM+CoreDataClass.swift in Sources */,
 			);
