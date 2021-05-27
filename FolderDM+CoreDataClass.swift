@@ -25,25 +25,35 @@ extension FolderDM {
     static func setDefaultFolder() {
 
         let folder = getDefaultFolder()
-        if folder.count == 0 {
+        if folder == nil {
             let persistenceManager = PersistenceManager.shared
             
             let folderDM = FolderDM(context: persistenceManager.context)
             folderDM.name = "Все заметки"
-            folderDM.color = UIColor.gray as NSObject
+//            folderDM.color = UIColor.customGrayForArray() as NSObject
             folderDM.isDefaultFolder = true
+            folderDM.dateCreate = Date()
+            folderDM.dateLastChange = Date()
+            folderDM.dateLastOpen = Date()
             
             persistenceManager.saveContext()
         }
     }
     
-    static func setFolder() {
+    static func addDefaultFolder() -> FolderDM {
         let persistenceManager = PersistenceManager.shared
 
         let folderDM = FolderDM(context: persistenceManager.context)
-        folderDM.name = "Test Folder"
+        folderDM.name = "Новая папка"
+//        folderDM.color = UIColor.customGrayForArray() as NSObject
+        folderDM.isDefaultFolder = false
+        folderDM.dateCreate = Date()
+        folderDM.dateLastChange = Date()
+        folderDM.dateLastOpen = Date()
+
+//        persistenceManager.saveContext()
         
-        persistenceManager.saveContext()
+        return folderDM
     }
     
     static func getFolders(sortDescriptor: SortByDate = .dateLastOpen) -> [FolderDM] {
@@ -51,7 +61,7 @@ extension FolderDM {
         let fetchRequest: NSFetchRequest<FolderDM> = FolderDM.fetchRequest()
         
         fetchRequest.predicate = nil
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -60,7 +70,7 @@ extension FolderDM {
         return result
     }
     
-    static func getDefaultFolder() -> [FolderDM] {
+    static func getDefaultFolder() -> FolderDM? {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<FolderDM> = FolderDM.fetchRequest()
         
@@ -68,10 +78,14 @@ extension FolderDM {
         fetchRequest.sortDescriptors = nil
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
-            return []
+            return nil
         }
         
-        return result
+        if result.count == 0 {
+            return nil
+            
+        }
+        return result[0]
     }
     
     static func getAnchoreFolders(sortDescriptor: SortByDate = .dateLastOpen) -> [FolderDM] {
@@ -79,7 +93,7 @@ extension FolderDM {
         let fetchRequest: NSFetchRequest<FolderDM> = FolderDM.fetchRequest()
         
         fetchRequest.predicate = NSPredicate(format: "isAnchor = true")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -94,7 +108,7 @@ extension FolderDM {
         let fetchRequest: NSFetchRequest<FolderDM> = FolderDM.fetchRequest()
         
         fetchRequest.predicate = nil
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
         
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -120,4 +134,15 @@ extension FolderDM {
         }
         self.name = name
     }
+    
+    func changeLastDateOpen(date: Date = Date()) {
+        self.dateLastOpen = date
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changeLastDateChange(date: Date = Date()) {
+        self.dateLastChange = date
+        PersistenceManager.shared.saveContext()
+    }
+    
 }

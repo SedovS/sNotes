@@ -96,15 +96,16 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
-                <outletCollection property="gestureRecognizers" destination="XA3-5o-TDd" appends="YES" id="Db6-oe-XvY"/>
+                <outletCollection property="gestureRecognizers" destination="BfF-9R-Z6B" appends="YES" id="uis-83-vQr"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="145.98214285714286"/>
         </view>
-        <swipeGestureRecognizer direction="right" id="XA3-5o-TDd">
+        <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="BfF-9R-Z6B">
+            <rectEdge key="edges" left="YES"/>
             <connections>
-                <action selector="swipedLeft:" destination="-1" id="BzE-gq-QZI"/>
+                <action selector="swipedLeft:" destination="-1" id="FZy-fo-2Ia"/>
             </connections>
-        </swipeGestureRecognizer>
+        </screenEdgePanGestureRecognizer>
     </objects>
     <resources>
         <image name="icGrayFolder" width="29" height="29"/>

@@ -70,6 +70,7 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="IN1-Be-4LO" firstAttribute="top" secondItem="8I2-Jh-qTq" secondAttribute="bottom" id="22T-hA-UtT"/>
                 <constraint firstAttribute="bottom" secondItem="IN1-Be-4LO" secondAttribute="bottom" id="3lL-jk-HOc"/>
@@ -86,7 +87,16 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="yPD-ok-5jJ" secondAttribute="trailing" constant="20" id="wZ3-TN-UcD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="H2d-22-0V7" appends="YES" id="bsJ-CS-s4t"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
+        <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="H2d-22-0V7">
+            <rectEdge key="edges" left="YES"/>
+            <connections>
+                <action selector="swipedLeft:" destination="-1" id="1GX-CE-aIT"/>
+            </connections>
+        </screenEdgePanGestureRecognizer>
     </objects>
 </document>

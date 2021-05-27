@@ -39,11 +39,12 @@ extension NoteDM {
         noteDM.dateLastOpen = Date()
         
         noteDM.isAnchor = false
-        noteDM.tittle = "Новая заметка"
+        noteDM.tittle = ""
         noteDM.text = "Текст заметки"
+        noteDM.profile = ProfileDM.getProfile()
+        noteDM.folder = FolderDM.getDefaultFolder()
         
-        
-        persistenceManager.saveContext()
+//        persistenceManager.saveContext()
         return noteDM
     }
     
@@ -52,7 +53,7 @@ extension NoteDM {
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         
         fetchRequest.predicate = nil
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
         
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -66,7 +67,7 @@ extension NoteDM {
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         
         fetchRequest.predicate = NSPredicate(format: "isAnchor = true")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -79,7 +80,7 @@ extension NoteDM {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         fetchRequest.predicate = nil
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -92,7 +93,7 @@ extension NoteDM {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "ANY folder = %@", folder)
-            fetchRequest.sortDescriptors =  [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
+            fetchRequest.sortDescriptors =  [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
         
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []

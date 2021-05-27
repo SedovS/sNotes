@@ -20,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let splash = UIStoryboard.init(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
 //        window?.rootViewController = splash
 
+        ProfileDM.setDefaultProfile()
+        FolderDM.setDefaultFolder() 
+        
         let vc = NotesVC()
         window?.rootViewController = vc //splash
         

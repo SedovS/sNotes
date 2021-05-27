@@ -19,6 +19,7 @@ class FolderVC: UIViewController {
     @IBOutlet weak var nameFolder: UITextField!
     
     var folder: FolderDM?
+    var isCrateFolder = false
     let arrayNameImage = ["icAddCheckList", "icAddImage", "icAddAudio", "icPin"]
     let arrayNameColor: [UIColor] = [.customGrayForArray(), .customRedForArray(), .customOrangeForArray(), .customPurpleForArray(), .customGreenForArray(), .customBlueForArray()]
     var isChangeColor = false
@@ -31,23 +32,32 @@ class FolderVC: UIViewController {
     }()
 
     
+    @IBAction func swipedLeft(_ sender: UIScreenEdgePanGestureRecognizer) {
+        let vc = NotesVC()
+        UIApplication.shared.keyWindow?.rootViewController = vc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if folder == nil {
-//            return
-        } else {
-//            imageFolder.image = image(color: folder?.color as! UIColor)
+            return
+        }
+        
+        if isCrateFolder {
+            nameFolder.becomeFirstResponder()
         }
         
         nameFolder.text = folder?.name
-        nameFolder.textColor = folder?.color as? UIColor
+        let colorFolder = folder?.color as? UIColor ?? .customGrayForArray()
+        nameFolder.textColor = colorFolder
+        imageFolder.image = CustomImage.image(color: colorFolder)
         
         if nameFolder.text == nil ||  nameFolder.text == "" {
-            nameFolder.placeholder = "Введите название папки"
-            nameFolder.textColor = .customGreenForArray()
-            imageFolder.image = CustomImage.image(color: .customGrayForArray())
+            nameFolder.placeholder = "Заметка"
         }
+        
+         folder?.changeLastDateOpen()
         
         tabBarView.delegate = self
         nameFolder.delegate = self
@@ -97,18 +107,6 @@ class FolderVC: UIViewController {
             section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 16, bottom: 0, trailing: 16)
             section.interGroupSpacing = 20
             
-            
-            let headerFooterSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(40)
-            )
-            let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
-                layoutSize: headerFooterSize,
-                elementKind: UICollectionView.elementKindSectionHeader,
-                alignment: .top
-            )
-            section.boundarySupplementaryItems = [sectionHeader]
-            
             let layout = UICollectionViewCompositionalLayout(section: section)
             collectionView.collectionViewLayout = layout
         }
@@ -128,7 +126,8 @@ extension FolderVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        self.folder?.changeName(newName: textField.text)
+        folder?.changeName(newName: textField.text)
+        folder?.changeLastDateChange()
         return false
     }
 
@@ -142,13 +141,16 @@ extension FolderVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-        cell.initCell(title: arrayNotes[indexPath.row].tittle ?? "", text: arrayNotes[indexPath.row].tittle ?? "")
+        cell.initCell(title: arrayNotes[indexPath.row].tittle ?? "", text: arrayNotes[indexPath.row].text ?? "")
         cell.shadow()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //MARK:- add logic present note
+        let vc = NoteVC()
+        vc.note = arrayNotes[indexPath.row]
+        UIApplication.shared.keyWindow?.rootViewController = vc
+        
     }
     
 }
@@ -177,7 +179,7 @@ extension FolderVC: UITableViewDataSource {
             return cell
         }
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath as IndexPath) as ColorCell
-        cell.setColor(color: folder?.color as? UIColor ?? .green)
+        cell.setColor(color: folder?.color as? UIColor ?? .customGrayForArray())
         return cell
     }
     
@@ -198,20 +200,21 @@ extension FolderVC: UITableViewDelegate {
             if arrayNameImage.count > indexPath.row {
                 
                 switch arrayNameImage[indexPath.row] {
-                case "icAddCheckList": break
+                case "icAddCheckList":
+                    let vc = NoteVC()
+                    vc.note = NoteDM.addDefaultNote()
+                    vc.note?.changeFolder(newFolder: folder!)
+                    UIApplication.shared.keyWindow?.rootViewController = vc
+
                 case "icAddImage": break
                 case "icAddAudio": break
 
-                case "icPic":
+                case "icPin":
                     folder?.addToAnchor()
                 default:
-                    return
+                    break
                 }
-                
-
-                let vc = NotesVC()
-                UIApplication.shared.keyWindow?.rootViewController = vc
-                
+                tableView.isHidden = true
             } else {
                 isChangeColor = true
                 tableView.reloadData()

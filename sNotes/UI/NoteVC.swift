@@ -17,14 +17,16 @@ class NoteVC: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
-    @IBAction func swipedLeft(_ sender: UISwipeGestureRecognizer) {
+    
+    @IBAction func swipedLeft(_ sender: UIScreenEdgePanGestureRecognizer) {
         let vc = NotesVC()
         UIApplication.shared.keyWindow?.rootViewController = vc
     }
     
-    var folder: FolderDM?
+//    var folder: FolderDM?
     var note: NoteDM?
-    
+    var isCrateNote = false
+
     fileprivate lazy var arrayFolders: [FolderDM] = {
         return FolderDM.getFolders()
     }()
@@ -37,11 +39,18 @@ class NoteVC: UIViewController {
         super.viewDidLoad()
         
         note?.changeLastDateOpen()
-        
-        nameFolderButton.titleLabel?.text = note?.folder?.name ?? "no name folder"
-        nameFolderButton.imageView?.image = CustomImage.image(color: .customGrayForArray())
+        nameFolderButton.setTitle(note?.folder?.name ?? "no name folder", for: .normal)
+        let color = note?.folder?.color as? UIColor ?? .customGrayForArray()
+        nameFolderButton.imageView?.image = CustomImage.image(color: color)
         tittleNote.text = note?.tittle
         textView.text = note?.text
+        if tittleNote.text == nil ||  tittleNote.text == "" {
+            tittleNote.placeholder = "Введите название папки"
+        }
+        
+        if isCrateNote {
+            tittleNote.becomeFirstResponder()
+        }
         
         tabBarView.delegate = self
 
@@ -140,8 +149,9 @@ extension NoteVC: UITableViewDelegate {
             note?.addToAnchor()
             note?.changeLastDateChange()
         default:
-            return
+            break
         }
+        tableView.isHidden = true
     }
 }
 
@@ -164,11 +174,10 @@ extension NoteVC: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.isHidden = true
-        
-        //
-//        note?.changeFolder(newFolder: arrayFolders[row])
-//        nameFolderButton.titleLabel?.text = note?.folder?.name ?? "no name folder"
-//        nameFolderButton.imageView?.image = CustomImage.image(color: .customGrayForArray())
+        note?.changeFolder(newFolder: arrayFolders[row])
+        note?.folder?.changeLastDateChange()
+        nameFolderButton.setTitle(note?.folder?.name ?? "no name folder", for: .normal)
+        nameFolderButton.imageView?.image = CustomImage.image(color: note?.folder?.color as? UIColor ?? .customGrayForArray())
         
     }
     

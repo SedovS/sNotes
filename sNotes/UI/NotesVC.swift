@@ -28,10 +28,10 @@ class NotesVC: UIViewController {
     }()
     
     fileprivate lazy var arrayFolders: [FolderDM] = {
-        return FolderDM.getFolders()
+        return FolderDM.getFolders(sortDescriptor: .dateLastChange)
     }()
     
-    let arrayNameImage = ["icAddNote", "icAddCheckList", "icAddImage", "icAddAudio" , "icAddFolder"]
+    let arrayNameImage = ["icAddNote", "icAddCheckList", "icAddImage", "icAddAudio", "icAddFolder"]
 
 
     override func viewDidLoad() {
@@ -190,7 +190,7 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
             let index = indexPath.row
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as! FolderCell
-            cell.initCell(title: arrayFolders[index].name, color: arrayFolders[index].color as! UIColor)
+            cell.initCell(title: arrayFolders[index].name, color: arrayFolders[index].color as? UIColor ?? .customGrayForArray())
             return cell
             
         default:
@@ -213,8 +213,10 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
 //            vc.modalPresentationStyle = .fullScreen
 //            self.present(vc, animated: true)
             UIApplication.shared.keyWindow?.rootViewController = vc
-        case 4: break
-//            titleText = "Папки"
+        case 4:
+            let vc = FolderVC()
+            vc.folder = arrayFolders[indexPath.row]
+            UIApplication.shared.keyWindow?.rootViewController = vc
         default: break
 //            titleText = ""
         }
@@ -248,20 +250,23 @@ extension NotesVC: UITableViewDelegate {
         case "icAddNote":
             let vc = NoteVC()
             vc.note = NoteDM.addDefaultNote()
+            vc.isCrateNote = true
             UIApplication.shared.keyWindow?.rootViewController = vc
 
-        case "icAddCheckList": return
-        case "icAddImage": return
-        case "icAddAudio": return
+        case "icAddCheckList": break
+        case "icAddImage": break
+        case "icAddAudio": break
 
         case "icAddFolder":
             let vc = FolderVC()
+            vc.folder = FolderDM.addDefaultFolder()
+            vc.isCrateFolder = true
             UIApplication.shared.keyWindow?.rootViewController = vc
 
         default:
-            return
+            break
         }
-
+        tableView.isHidden = true
     }
 }
 

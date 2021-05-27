@@ -29,7 +29,21 @@ extension ProfileDM {
         persistenceManager.saveContext()
     }
     
-    static func getProfile() -> [ProfileDM] {
+    static func setDefaultProfile() {
+        
+        if getProfile() != nil {
+            return
+        }
+        
+        let persistenceManager = PersistenceManager.shared
+        let profileDM = ProfileDM(context: persistenceManager.context)
+        profileDM.userName = "Sergey"
+        profileDM.userSurname = "S"
+        profileDM.photoProfile = UIImage(named: "defaultPhotoProfile")!.pngData()
+        persistenceManager.saveContext()
+    }
+    
+    static func getProfile() -> ProfileDM? {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<ProfileDM> = ProfileDM.fetchRequest()
 
@@ -37,10 +51,13 @@ extension ProfileDM {
         fetchRequest.sortDescriptors = nil
         
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
-            return []
+            return nil
         }
         
-        return result
+        if result.count == 0 {
+            return nil
+        }
+        return result[0]
     }
     
     static func getPhotoProfile() -> UIImage {
