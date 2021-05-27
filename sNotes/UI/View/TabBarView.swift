@@ -18,6 +18,14 @@ class TabBarView: UIView, NibLoadableView {
     
     @IBOutlet weak var notesButton: UIButton!
     @IBAction func pressNotesButton(_ sender: UIButton) {
+        let vc = NotesVC()
+        window?.rootViewController = vc
+    }
+    
+    @IBOutlet weak var lockerButton: UIButton!
+    @IBAction func pressLockerButton(_ sender: UIButton) {
+        let vc = LockerVC()
+        window?.rootViewController = vc
     }
     
     @IBOutlet weak var addButton: UIButton!
@@ -50,5 +58,13 @@ class TabBarView: UIView, NibLoadableView {
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         contentView.shadow(cornerRadius: 25)
         
+    }
+    
+    func notesSelected() {
+        notesButton.imageView?.image = UIImage(named: "icNoteSelected")
+    }
+    
+    func lockerSelected() {
+        lockerButton.imageView?.image = UIImage(named: "icLockerSelected")
     }
 }

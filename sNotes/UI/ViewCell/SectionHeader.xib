@@ -10,11 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionHeader" id="U6b-Vx-4bR" customClass="SectionHeader" customModule="sNotes" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exd-jr-DkS">
-                    <rect key="frame" x="142.5" y="10" width="35.5" height="30"/>
+                    <rect key="frame" x="142.5" y="6.5" width="35.5" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -22,8 +22,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="Exd-jr-DkS" firstAttribute="centerX" secondItem="VXr-Tz-HHm" secondAttribute="centerX" id="0SW-CW-pKI"/>
-                <constraint firstItem="Exd-jr-DkS" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="DOM-pI-VMJ"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="Exd-jr-DkS" secondAttribute="bottom" constant="10" id="YXi-F3-rzG"/>
+                <constraint firstItem="Exd-jr-DkS" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="XLR-TH-bbq"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>

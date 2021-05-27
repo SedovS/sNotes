@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="addButton" destination="qXW-v8-utO" id="c9S-Iy-P4Y"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="ESu-BT-oDt"/>
+                <outlet property="lockerButton" destination="MYe-2X-Iou" id="2yC-uv-wXX"/>
                 <outlet property="notesButton" destination="ovW-W6-4A4" id="7kk-C2-yCg"/>
             </connections>
         </placeholder>
@@ -22,6 +23,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYe-2X-Iou">
                     <rect key="frame" x="103.5" y="20" width="103.5" height="30"/>
                     <state key="normal" image="icLocker"/>
+                    <connections>
+                        <action selector="pressLockerButton:" destination="-1" eventType="touchUpInside" id="2lA-bC-qpE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCr-HN-o6s">
                     <rect key="frame" x="207" y="20.5" width="103.5" height="29"/>

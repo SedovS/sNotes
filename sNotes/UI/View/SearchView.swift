@@ -19,7 +19,7 @@ class SearchView: UIView, NibLoadableView {
     @IBOutlet weak var textField: UITextField!
     
     weak var delegate: SearchViewDelegate?
-    
+    var isNotesView = true
     @IBAction func pressProfileButton(_ sender: UIButton) {
         
     }
@@ -49,7 +49,7 @@ class SearchView: UIView, NibLoadableView {
         profileButton.imageView?.image = ProfileDM.getPhotoProfile()
         
         textField.delegate = self
-        textField.placeholder = true ? "Найди свою заметку" : "Найди среди данных"
+        textField.placeholder = isNotesView ? "Найди свою заметку" : "Найди среди данных"
         
         //for ios 13+ textFieldDidChangeSelection
         if #available(iOS 13.0, *) {

@@ -57,7 +57,7 @@ class FolderVC: UIViewController {
             nameFolder.placeholder = "Заметка"
         }
         
-         folder?.changeLastDateOpen()
+        folder?.changeLastDateOpen()
         
         tabBarView.delegate = self
         nameFolder.delegate = self

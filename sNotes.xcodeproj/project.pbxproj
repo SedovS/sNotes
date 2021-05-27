@@ -46,6 +46,14 @@
 		18BA4523265FB57E00C3143F /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA4521265FB57E00C3143F /* NoteVC.swift */; };
 		18BA4524265FB57E00C3143F /* NoteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA4522265FB57E00C3143F /* NoteVC.xib */; };
 		18BA4526265FC2D700C3143F /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA4525265FC2D700C3143F /* CustomImage.swift */; };
+		18BA452926600AE400C3143F /* LockerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA452726600AE400C3143F /* LockerVC.swift */; };
+		18BA452A26600AE400C3143F /* LockerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA452826600AE400C3143F /* LockerVC.xib */; };
+		18BA453126600FD300C3143F /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA452F26600FD300C3143F /* CardCell.swift */; };
+		18BA453226600FD300C3143F /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA453026600FD300C3143F /* CardCell.xib */; };
+		18BA4535266013D800C3143F /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA4533266013D800C3143F /* PasswordCell.swift */; };
+		18BA4536266013D800C3143F /* PasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA4534266013D800C3143F /* PasswordCell.xib */; };
+		18BA45392660171600C3143F /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA45372660171600C3143F /* AddCard.swift */; };
+		18BA453A2660171600C3143F /* AddCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA45382660171600C3143F /* AddCard.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +98,14 @@
 		18BA4521265FB57E00C3143F /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
 		18BA4522265FB57E00C3143F /* NoteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteVC.xib; sourceTree = "<group>"; };
 		18BA4525265FC2D700C3143F /* CustomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		18BA452726600AE400C3143F /* LockerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockerVC.swift; sourceTree = "<group>"; };
+		18BA452826600AE400C3143F /* LockerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LockerVC.xib; sourceTree = "<group>"; };
+		18BA452F26600FD300C3143F /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		18BA453026600FD300C3143F /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		18BA4533266013D800C3143F /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
+		18BA4534266013D800C3143F /* PasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordCell.xib; sourceTree = "<group>"; };
+		18BA45372660171600C3143F /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
+		18BA45382660171600C3143F /* AddCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +165,8 @@
 				18A0F466265ECDE200F3BCEF /* FolderVC.xib */,
 				18BA4521265FB57E00C3143F /* NoteVC.swift */,
 				18BA4522265FB57E00C3143F /* NoteVC.xib */,
+				18BA452726600AE400C3143F /* LockerVC.swift */,
+				18BA452826600AE400C3143F /* LockerVC.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -173,6 +191,12 @@
 				184565B9265D937B00F56B70 /* FolderCell.xib */,
 				180137CC265D7F35007FF09F /* SectionHeader.swift */,
 				180137CD265D7F35007FF09F /* SectionHeader.xib */,
+				18BA452F26600FD300C3143F /* CardCell.swift */,
+				18BA453026600FD300C3143F /* CardCell.xib */,
+				18BA45372660171600C3143F /* AddCard.swift */,
+				18BA45382660171600C3143F /* AddCard.xib */,
+				18BA4533266013D800C3143F /* PasswordCell.swift */,
+				18BA4534266013D800C3143F /* PasswordCell.xib */,
 				18A0F45E265EB98E00F3BCEF /* For Table View */,
 			);
 			path = ViewCell;
@@ -280,12 +304,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BA453A2660171600C3143F /* AddCard.xib in Resources */,
 				180137CB265D77DC007FF09F /* NoteCell.xib in Resources */,
 				18BA4524265FB57E00C3143F /* NoteVC.xib in Resources */,
 				1857566E265955C3000B54C7 /* LaunchScreen.storyboard in Resources */,
+				18BA452A26600AE400C3143F /* LockerVC.xib in Resources */,
+				18BA4536266013D800C3143F /* PasswordCell.xib in Resources */,
 				18A0F462265EB9B700F3BCEF /* IconCell.xib in Resources */,
 				180137CF265D7F35007FF09F /* SectionHeader.xib in Resources */,
 				1857566B265955C3000B54C7 /* Assets.xcassets in Resources */,
+				18BA453226600FD300C3143F /* CardCell.xib in Resources */,
 				18A0F457265E97FD00F3BCEF /* TabBarView.xib in Resources */,
 				18A0F45B265EA2AD00F3BCEF /* SearchView.xib in Resources */,
 				184565BB265D937B00F56B70 /* FolderCell.xib in Resources */,
@@ -312,6 +340,8 @@
 				18A0F459265E980C00F3BCEF /* TabBarView.swift in Sources */,
 				18013797265D2365007FF09F /* PersistenceManager.swift in Sources */,
 				18A0F464265EBBA200F3BCEF /* UITableView.swift in Sources */,
+				18BA452926600AE400C3143F /* LockerVC.swift in Sources */,
+				18BA45392660171600C3143F /* AddCard.swift in Sources */,
 				1857565F265955C1000B54C7 /* AppDelegate.swift in Sources */,
 				18A0F461265EB9B700F3BCEF /* IconCell.swift in Sources */,
 				180137AD265D3258007FF09F /* ProfileDM+CoreDataProperties.swift in Sources */,
@@ -325,10 +355,12 @@
 				18393FD3265ED60C00AA7D7C /* ColorCell.swift in Sources */,
 				18575669265955C1000B54C7 /* sNotes.xcdatamodeld in Sources */,
 				180137CE265D7F35007FF09F /* SectionHeader.swift in Sources */,
+				18BA4535266013D800C3143F /* PasswordCell.swift in Sources */,
 				180137D1265D8205007FF09F /* UIView.swift in Sources */,
 				180137CA265D77DC007FF09F /* NoteCell.swift in Sources */,
 				180137C5265D72A7007FF09F /* NotesVC.swift in Sources */,
 				180137B0265D3258007FF09F /* NoteDM+CoreDataClass.swift in Sources */,
+				18BA453126600FD300C3143F /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

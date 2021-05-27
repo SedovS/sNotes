@@ -39,6 +39,7 @@ class NotesVC: UIViewController {
 
         searchView.delegate = self
         tabBarView.delegate = self
+        tabBarView.notesSelected()
 
         //collection view
         collectionView.delegate = self
@@ -89,7 +90,7 @@ class NotesVC: UIViewController {
             
             let headerFooterSize = NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(40)
+                heightDimension: .absolute(30)
             )
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                 layoutSize: headerFooterSize,
