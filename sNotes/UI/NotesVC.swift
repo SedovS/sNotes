@@ -200,7 +200,26 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //MARK:- add logic present
+
+        switch indexPath.section {
+        case 0,1:
+            return
+        case 2: break
+            
+        case 3:
+            let vc = NoteVC()
+            vc.note = arrayRecentlyNotes[indexPath.row]
+//            let navigationController = UINavigationController(rootViewController: vc)
+//            vc.modalPresentationStyle = .fullScreen
+//            self.present(vc, animated: true)
+            UIApplication.shared.keyWindow?.rootViewController = vc
+        case 4: break
+//            titleText = "Папки"
+        default: break
+//            titleText = ""
+        }
+        
+        
     }
 
 }
@@ -228,6 +247,7 @@ extension NotesVC: UITableViewDelegate {
         switch arrayNameImage[indexPath.row] {
         case "icAddNote":
             let vc = NoteVC()
+            vc.note = NoteDM.addDefaultNote()
             UIApplication.shared.keyWindow?.rootViewController = vc
 
         case "icAddCheckList": return

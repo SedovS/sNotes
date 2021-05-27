@@ -13,9 +13,14 @@ class NoteVC: UIViewController {
     @IBOutlet weak var nameFolderButton: UIButton!
     
     @IBOutlet weak var tabBarView: TabBarView!
-    @IBOutlet weak var titileNote: UITextField!
+    @IBOutlet weak var tittleNote: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textView: UITextView!
+    @IBAction func swipedLeft(_ sender: UISwipeGestureRecognizer) {
+        let vc = NotesVC()
+        UIApplication.shared.keyWindow?.rootViewController = vc
+    }
     
     var folder: FolderDM?
     var note: NoteDM?
@@ -31,14 +36,18 @@ class NoteVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        note?.changeLastDateOpen()
         
         nameFolderButton.titleLabel?.text = note?.folder?.name ?? "no name folder"
         nameFolderButton.imageView?.image = CustomImage.image(color: .customGrayForArray())
-        
+        tittleNote.text = note?.tittle
+        textView.text = note?.text
         
         tabBarView.delegate = self
 
-        
+        tittleNote.delegate = self
+        textView.delegate = self
+                
         //pickerView
         pickerView.isHidden = true
         pickerView.dataSource = self
@@ -53,9 +62,6 @@ class NoteVC: UIViewController {
         tableView.cornerRadius = 21
         tableView.isScrollEnabled = false
         
-        
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,14 +71,15 @@ class NoteVC: UIViewController {
 
 
     @IBAction func pressNameFolderButton(_ sender: UIButton) {
-        pickerView.isHidden = false
+        if arrayFolders.count > 1 {
+            pickerView.isHidden = false
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         tableView.isHidden = true
     }
-
     
 }
 
@@ -82,6 +89,26 @@ extension NoteVC: TabBarViewDelegate {
         tableView.isHidden = false
     }
 }
+
+//MARK:- UITextFieldDelegate
+extension NoteVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        note?.changeTittle(newTittle: textField.text ?? "")
+        note?.changeLastDateChange()
+        return false
+    }
+
+}
+
+extension NoteVC: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        note?.changeLastDateChange()
+        note?.changeText(newText: textView.text)
+    }
+}
+
 
 
 //MARK:- UITableViewDataSource
@@ -109,8 +136,9 @@ extension NoteVC: UITableViewDelegate {
         case "icAddImage": break
         case "icAddAudio": break
 
-        case "icPic":
+        case "icPin":
             note?.addToAnchor()
+            note?.changeLastDateChange()
         default:
             return
         }

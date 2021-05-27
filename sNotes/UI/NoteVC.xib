@@ -13,7 +13,8 @@
                 <outlet property="pickerView" destination="kwZ-XA-G26" id="379-93-G8G"/>
                 <outlet property="tabBarView" destination="k9F-3x-CPC" id="PLn-d3-wfO"/>
                 <outlet property="tableView" destination="bpO-yZ-idu" id="sb4-xE-vMM"/>
-                <outlet property="titileNote" destination="EQc-Od-o60" id="0mv-Qs-XP7"/>
+                <outlet property="textView" destination="mZI-kN-qXI" id="55T-Up-tgY"/>
+                <outlet property="tittleNote" destination="EQc-Od-o60" id="0mv-Qs-XP7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,7 +27,7 @@
                     <rect key="frame" x="0.0" y="64" width="414" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7t-cs-dmx">
-                            <rect key="frame" x="16" y="-9" width="382" height="58"/>
+                            <rect key="frame" x="16" y="5.5" width="382" height="29"/>
                             <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <state key="normal" title="Название папки" image="icGrayFolder">
                                 <color key="titleColor" red="0.1865990162" green="0.2369944453" blue="0.26066055890000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,11 +44,18 @@
                         <constraint firstAttribute="height" constant="40" id="pHM-U0-3Al"/>
                     </constraints>
                 </view>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Название заметки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EQc-Od-o60">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Название заметки" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="EQc-Od-o60">
                     <rect key="frame" x="16" y="124" width="382" height="37.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                 </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZI-kN-qXI">
+                    <rect key="frame" x="16" y="181.5" width="382" height="660.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9F-3x-CPC" customClass="TabBarView" customModule="sNotes" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="792" width="414" height="104"/>
                 </view>
@@ -64,26 +72,39 @@
                 </pickerView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="kwZ-XA-G26" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="21m-N2-Xim"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kwZ-XA-G26" secondAttribute="bottom" id="9VB-uo-QiU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="k9F-3x-CPC" secondAttribute="top" constant="70" id="CLa-Bt-kch"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mZI-kN-qXI" secondAttribute="trailing" constant="16" id="Ehj-kv-eBW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="EQc-Od-o60" secondAttribute="trailing" constant="16" id="Fl5-iP-dUr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bpO-yZ-idu" secondAttribute="trailing" constant="20" id="HTp-Hs-yR1"/>
                 <constraint firstItem="bpO-yZ-idu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-9" id="HnJ-QV-tTI"/>
                 <constraint firstAttribute="bottom" secondItem="k9F-3x-CPC" secondAttribute="bottom" id="L2S-4X-1E4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="mZI-kN-qXI" secondAttribute="bottom" constant="20" id="PIo-Ws-4VX"/>
                 <constraint firstItem="k9F-3x-CPC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RCH-YT-9Cm"/>
                 <constraint firstItem="GBH-cW-lBl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S4X-uc-BLD"/>
+                <constraint firstItem="mZI-kN-qXI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="W4H-cM-BTd"/>
                 <constraint firstItem="EQc-Od-o60" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="bID-cY-aMM"/>
                 <constraint firstItem="GBH-cW-lBl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="cPR-6s-AXf"/>
                 <constraint firstItem="k9F-3x-CPC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kQV-4s-9NS"/>
+                <constraint firstItem="mZI-kN-qXI" firstAttribute="top" secondItem="EQc-Od-o60" secondAttribute="bottom" constant="20" id="kRq-rv-Ani"/>
                 <constraint firstItem="EQc-Od-o60" firstAttribute="top" secondItem="GBH-cW-lBl" secondAttribute="bottom" constant="20" id="kiy-WS-Qkt"/>
                 <constraint firstItem="kwZ-XA-G26" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="rhR-mX-4T9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GBH-cW-lBl" secondAttribute="trailing" id="zw8-jh-YAg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="141" y="146"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="XA3-5o-TDd" appends="YES" id="Db6-oe-XvY"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="145.98214285714286"/>
         </view>
+        <swipeGestureRecognizer direction="right" id="XA3-5o-TDd">
+            <connections>
+                <action selector="swipedLeft:" destination="-1" id="BzE-gq-QZI"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
     <resources>
         <image name="icGrayFolder" width="29" height="29"/>

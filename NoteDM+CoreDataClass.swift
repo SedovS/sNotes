@@ -21,12 +21,30 @@ extension NoteDM {
         case dateLastOpen
         case dateLastChange
     }
+        
     static func setNote() {
         let persistenceManager = PersistenceManager.shared
 
         let noteDM = NoteDM(context: persistenceManager.context)
 
         persistenceManager.saveContext()
+    }
+    
+    static func addDefaultNote() -> NoteDM {
+        let persistenceManager = PersistenceManager.shared
+
+        let noteDM = NoteDM(context: persistenceManager.context)
+        noteDM.dateCreate = Date()
+        noteDM.dateLastChange = Date()
+        noteDM.dateLastOpen = Date()
+        
+        noteDM.isAnchor = false
+        noteDM.tittle = "Новая заметка"
+        noteDM.text = "Текст заметки"
+        
+        
+        persistenceManager.saveContext()
+        return noteDM
     }
     
     static func getNotes(sortDescriptor: SortByDate = .dateLastOpen) -> [NoteDM] {
@@ -85,11 +103,32 @@ extension NoteDM {
     
     func changeFolder(newFolder: FolderDM) {
         self.folder = newFolder
+        PersistenceManager.shared.saveContext()
     }
     
     func addToAnchor() {
         self.isAnchor = true
+        PersistenceManager.shared.saveContext()
     }
 
+    func changeTittle(newTittle: String) {
+        self.tittle = newTittle
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changeText(newText: String) {
+        self.text = newText
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changeLastDateOpen(date: Date = Date()) {
+        self.dateLastOpen = date
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changeLastDateChange(date: Date = Date()) {
+        self.dateLastChange = date
+        PersistenceManager.shared.saveContext()
+    }
     
 }
