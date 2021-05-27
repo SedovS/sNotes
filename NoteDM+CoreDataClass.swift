@@ -47,7 +47,7 @@ extension NoteDM {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         
-        fetchRequest.predicate = NSPredicate(format: "isAnchore = true")
+        fetchRequest.predicate = NSPredicate(format: "isAnchor = true")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
@@ -86,5 +86,10 @@ extension NoteDM {
     func changeFolder(newFolder: FolderDM) {
         self.folder = newFolder
     }
+    
+    func addToAnchor() {
+        self.isAnchor = true
+    }
+
     
 }

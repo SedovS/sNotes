@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="folderCell" id="gTV-IL-0wX" customClass="FolderCell" customModule="sNotes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="165" height="144"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="165" height="144"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redFolder" translatesAutoresizingMaskIntoConstraints="NO" id="xGR-Os-tE3">
+                        <rect key="frame" x="0.0" y="0.0" width="165" height="144"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="xGR-Os-tE3" secondAttribute="height" multiplier="165:144" priority="999" id="N5D-UI-idP"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCx-RS-567">
+                        <rect key="frame" x="10" y="25" width="145" height="94"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="xGR-Os-tE3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a8S-Pd-GAz"/>
+                <constraint firstItem="xGR-Os-tE3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dYM-VY-ZGv"/>
+                <constraint firstItem="BCx-RS-567" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="e1L-7x-NjZ"/>
+                <constraint firstAttribute="trailing" secondItem="BCx-RS-567" secondAttribute="trailing" constant="10" id="ilg-Yu-ag0"/>
+                <constraint firstAttribute="trailing" secondItem="xGR-Os-tE3" secondAttribute="trailing" id="mjg-Nk-oo9"/>
+                <constraint firstItem="BCx-RS-567" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="r7s-K2-iO0"/>
+                <constraint firstAttribute="bottom" secondItem="xGR-Os-tE3" secondAttribute="bottom" id="t58-q7-7s9"/>
+                <constraint firstAttribute="bottom" secondItem="BCx-RS-567" secondAttribute="bottom" constant="25" id="xuN-fA-c6O"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="image" destination="xGR-Os-tE3" id="DGD-kx-0Oa"/>
+                <outlet property="title" destination="BCx-RS-567" id="YEW-Bw-6xa"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="117"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="redFolder" width="165" height="144"/>
+    </resources>
+</document>

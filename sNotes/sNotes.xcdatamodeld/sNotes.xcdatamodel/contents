@@ -4,11 +4,11 @@
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="cards" inverseEntity="ProfileDM"/>
     </entity>
     <entity name="FolderDM" representedClassName=".FolderDM" syncable="YES">
-        <attribute name="color" optional="YES" attributeType="Transformable"/>
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
         <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastChange" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="isAnchore" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isAnchor" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="isDefaultFolder" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NoteDM" inverseName="folder" inverseEntity="NoteDM"/>
@@ -35,10 +35,10 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="133"/>
-        <element name="NoteDM" positionX="-45" positionY="18" width="128" height="163"/>
-        <element name="FolderDM" positionX="-189" positionY="117" width="128" height="163"/>
         <element name="CardDM" positionX="-180" positionY="162" width="128" height="28"/>
+        <element name="FolderDM" positionX="-189" positionY="117" width="128" height="163"/>
+        <element name="NoteDM" positionX="-45" positionY="18" width="128" height="163"/>
         <element name="PasswordDM" positionX="-171" positionY="171" width="128" height="28"/>
+        <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="133"/>
     </elements>
 </model>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotesVC" customModule="sNotes" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="KTu-EH-kTz" id="ORS-bi-UMQ"/>
+                <outlet property="searchView" destination="O0d-pI-IyU" id="Thr-vc-jV3"/>
+                <outlet property="tabBarView" destination="hmd-u6-tlJ" id="v9e-sd-cVW"/>
+                <outlet property="tableView" destination="twe-zU-i1C" id="KFx-0j-f7H"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KTu-EH-kTz">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="826"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Wy-tZ-lES">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="50" height="50"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmd-u6-tlJ" customClass="TabBarView" customModule="sNotes" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0d-pI-IyU" customClass="SearchView" customModule="sNotes" customModuleProvider="target">
+                    <rect key="frame" x="16" y="10" width="382" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="cLM-tL-2cs"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="twe-zU-i1C">
+                    <rect key="frame" x="342" y="787" width="52" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="AIK-er-Y1m"/>
+                        <constraint firstAttribute="height" constant="100" id="sbX-nQ-kEA"/>
+                    </constraints>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hmd-u6-tlJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2ri-LH-4xv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O0d-pI-IyU" secondAttribute="trailing" constant="16" id="7mb-0z-fQY"/>
+                <constraint firstItem="KTu-EH-kTz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9K2-sK-J8I"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="twe-zU-i1C" secondAttribute="trailing" constant="20" id="AVk-vT-wcM"/>
+                <constraint firstItem="KTu-EH-kTz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jky-pb-VAb"/>
+                <constraint firstItem="O0d-pI-IyU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="KEG-YD-eHD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hmd-u6-tlJ" secondAttribute="trailing" id="VBj-On-B0n"/>
+                <constraint firstItem="hmd-u6-tlJ" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="crr-Cm-Niv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KTu-EH-kTz" secondAttribute="trailing" id="fca-g4-XA1"/>
+                <constraint firstItem="hmd-u6-tlJ" firstAttribute="top" secondItem="KTu-EH-kTz" secondAttribute="bottom" id="glx-xM-yqv"/>
+                <constraint firstItem="hmd-u6-tlJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-70" id="go4-tM-nTO"/>
+                <constraint firstItem="O0d-pI-IyU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sO9-dd-PjB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="twe-zU-i1C" secondAttribute="bottom" constant="9" id="vIW-lQ-3tU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
+        </view>
+    </objects>
+</document>

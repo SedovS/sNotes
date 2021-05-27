@@ -78,7 +78,7 @@ extension FolderDM {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<FolderDM> = FolderDM.fetchRequest()
         
-        fetchRequest.predicate = NSPredicate(format: "isAnchore = true")
+        fetchRequest.predicate = NSPredicate(format: "isAnchor = true")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: true)]
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
@@ -106,4 +106,18 @@ extension FolderDM {
         return nameArray
     }
     
+    func changeFolderColor(color: UIColor) {
+        self.color = color
+    }
+    
+    func addToAnchor() {
+        self.isAnchor = true
+    }
+    
+    func changeName(newName: String?) {
+        guard let name = newName else {
+            return
+        }
+        self.name = name
+    }
 }

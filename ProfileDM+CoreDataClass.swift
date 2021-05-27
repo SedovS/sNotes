@@ -55,10 +55,14 @@ extension ProfileDM {
             
         }
         
+        let defaultPhotoProfile = UIImage(named: "defaultPhotoProfile")!
+        if result.count == 0 {
+            return defaultPhotoProfile
+        }
         guard let data = result[0].photoProfile else {
-            return #imageLiteral(resourceName: "IMG_0084.jpg")
+            return defaultPhotoProfile
         }
         
-        return UIImage(data: data) ?? #imageLiteral(resourceName: "IMG_0084.jpg")
+        return UIImage(data: data) ?? defaultPhotoProfile
     }
 }
