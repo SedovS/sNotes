@@ -45,7 +45,7 @@ class NoteVC: UIViewController {
         tittleNote.text = note?.tittle
         textView.text = note?.text
         if tittleNote.text == nil ||  tittleNote.text == "" {
-            tittleNote.placeholder = "Введите название папки"
+            tittleNote.placeholder = "Введите название"
         }
         
         if isCrateNote {
@@ -129,6 +129,10 @@ extension NoteVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath as IndexPath) as IconCell
+        if arrayNameImage[indexPath.row] == "icPin" && note?.isAnchor ?? false {
+                cell.icon.image = UIImage(named: "icUnPin")
+                return cell
+        }
         cell.icon.image = UIImage(named: arrayNameImage[indexPath.row])
         return cell
     }
@@ -146,12 +150,13 @@ extension NoteVC: UITableViewDelegate {
         case "icAddAudio": break
 
         case "icPin":
-            note?.addToAnchor()
+            note?.changeAnchor()
             note?.changeLastDateChange()
         default:
             break
         }
         tableView.isHidden = true
+        tableView.reloadData()
     }
 }
 

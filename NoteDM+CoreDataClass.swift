@@ -107,8 +107,8 @@ extension NoteDM {
         PersistenceManager.shared.saveContext()
     }
     
-    func addToAnchor() {
-        self.isAnchor = true
+    func changeAnchor() {
+        self.isAnchor = !self.isAnchor
         PersistenceManager.shared.saveContext()
     }
 

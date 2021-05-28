@@ -44,7 +44,7 @@ extension FolderDM {
         let persistenceManager = PersistenceManager.shared
 
         let folderDM = FolderDM(context: persistenceManager.context)
-        folderDM.name = "Новая папка"
+        folderDM.name = ""
 //        folderDM.color = UIColor.customGrayForArray() as NSObject
         folderDM.isDefaultFolder = false
         folderDM.dateCreate = Date()
@@ -122,10 +122,12 @@ extension FolderDM {
     
     func changeFolderColor(color: UIColor) {
         self.color = color
+        PersistenceManager.shared.saveContext()
     }
     
-    func addToAnchor() {
-        self.isAnchor = true
+    func changeAnchor() {
+        self.isAnchor = !self.isAnchor
+        PersistenceManager.shared.saveContext()
     }
     
     func changeName(newName: String?) {

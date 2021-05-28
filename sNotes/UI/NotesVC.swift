@@ -172,9 +172,13 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         switch indexPath.section {
         case 2:
-            let index = indexPath.row
+            var index = indexPath.row
             if index >= arrayAnchoreNotes.count {
-                
+                index -=  arrayAnchoreNotes.count
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "folderCell", for: indexPath) as! FolderCell
+                cell.initCell(title: arrayFolders[index].name, color: arrayFolders[index].color as? UIColor ?? .customGrayForArray())
+                return cell
+
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
                 cell.initCell(title: arrayAnchoreNotes[index].tittle ?? "", text: arrayAnchoreNotes[index].text ?? "")
@@ -197,7 +201,6 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
         default:
             return UICollectionViewCell()
         }
-        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

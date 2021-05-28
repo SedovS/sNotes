@@ -54,7 +54,7 @@ class FolderVC: UIViewController {
         imageFolder.image = CustomImage.image(color: colorFolder)
         
         if nameFolder.text == nil ||  nameFolder.text == "" {
-            nameFolder.placeholder = "Заметка"
+            nameFolder.placeholder = "Введите название папки"
         }
         
         folder?.changeLastDateOpen()
@@ -174,8 +174,13 @@ extension FolderVC: UITableViewDataSource {
         
         if indexPath.row < arrayNameImage.count {
             let cell = tableView.dequeueReusableCell(forIndexPath: indexPath as IndexPath) as IconCell
+
+            if arrayNameImage[indexPath.row] == "icPin" && folder?.isAnchor ?? false {
+                    cell.icon.image = UIImage(named: "icUnPin")
+                    return cell
+            }
+
             cell.icon.image = UIImage(named: arrayNameImage[indexPath.row])
-            
             return cell
         }
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath as IndexPath) as ColorCell
@@ -210,11 +215,13 @@ extension FolderVC: UITableViewDelegate {
                 case "icAddAudio": break
 
                 case "icPin":
-                    folder?.addToAnchor()
+                    folder?.changeAnchor()
+                    folder?.changeLastDateChange()
                 default:
                     break
                 }
                 tableView.isHidden = true
+                tableView.reloadData()
             } else {
                 isChangeColor = true
                 tableView.reloadData()
