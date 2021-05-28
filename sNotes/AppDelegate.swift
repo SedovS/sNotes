@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let splash = UIStoryboard.init(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
-//        window?.rootViewController = splash
+        let splash = UIStoryboard.init(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        window?.rootViewController = splash
 
         ProfileDM.setDefaultProfile()
         FolderDM.setDefaultFolder() 
         
         let vc = NotesVC()
-        window?.rootViewController = vc //splash
+        window?.rootViewController = vc
         
         return true
     }
