@@ -19,6 +19,8 @@ extension ProfileDM {
     @NSManaged public var userName: String?
     @NSManaged public var userSurname: String?
     @NSManaged public var photoProfile: Data?
+    @NSManaged public var isAuthenticationWithBiometrics: Bool
+    @NSManaged public var timeBlockSingin: Date?
     @NSManaged public var notes: NSSet?
     @NSManaged public var cards: NSSet?
     @NSManaged public var passwords: NSSet?

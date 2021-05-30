@@ -82,4 +82,32 @@ extension ProfileDM {
         
         return UIImage(data: data) ?? defaultPhotoProfile
     }
+    
+    static func getIsAuthenticationWithBiometrics() -> Bool {
+        let persistenceManager = PersistenceManager.shared
+        let fetchRequest: NSFetchRequest<ProfileDM> = ProfileDM.fetchRequest()
+
+        fetchRequest.predicate = nil
+        fetchRequest.sortDescriptors = nil
+        
+        guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
+            return false
+        }
+        
+        if result.count == 0 {
+            return false
+        }
+        return result[0].isAuthenticationWithBiometrics
+    }
+
+    
+    func changeAuthenticationWithBiometrics() {
+        self.isAuthenticationWithBiometrics = !self.isAuthenticationWithBiometrics
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changeTimeBlockSingin(date: Date?) {
+        self.timeBlockSingin = date
+        PersistenceManager.shared.saveContext()
+    }
 }

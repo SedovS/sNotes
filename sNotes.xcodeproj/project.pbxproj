@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18013797265D2365007FF09F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18013796265D2365007FF09F /* PersistenceManager.swift */; };
+		18013799265D24DC007FF09F /* WorkWithKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18013798265D24DC007FF09F /* WorkWithKeychain.swift */; };
 		180137AC265D3258007FF09F /* ProfileDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137A6265D3258007FF09F /* ProfileDM+CoreDataClass.swift */; };
 		180137AD265D3258007FF09F /* ProfileDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137A7265D3258007FF09F /* ProfileDM+CoreDataProperties.swift */; };
 		180137AE265D3258007FF09F /* FolderDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137A8265D3258007FF09F /* FolderDM+CoreDataClass.swift */; };
@@ -33,6 +34,8 @@
 		18575669265955C1000B54C7 /* sNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18575667265955C1000B54C7 /* sNotes.xcdatamodeld */; };
 		1857566B265955C3000B54C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1857566A265955C3000B54C7 /* Assets.xcassets */; };
 		1857566E265955C3000B54C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1857566C265955C3000B54C7 /* LaunchScreen.storyboard */; };
+		18639A3D2662836400CFCF83 /* SetPassCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */; };
+		18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */; };
 		186F8D02265F7A1E005C0C28 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F8D01265F7A1E005C0C28 /* CustomColor.swift */; };
 		18A0F457265E97FD00F3BCEF /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0F456265E97FD00F3BCEF /* TabBarView.xib */; };
 		18A0F459265E980C00F3BCEF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0F458265E980C00F3BCEF /* TabBarView.swift */; };
@@ -54,10 +57,14 @@
 		18BA4536266013D800C3143F /* PasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA4534266013D800C3143F /* PasswordCell.xib */; };
 		18BA45392660171600C3143F /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BA45372660171600C3143F /* AddCard.swift */; };
 		18BA453A2660171600C3143F /* AddCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BA45382660171600C3143F /* AddCard.xib */; };
+		18CC4C9F26640C36006EE631 /* CheckBlockSingnin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */; };
+		18CC4CA126640C6B006EE631 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CA026640C6B006EE631 /* Date.swift */; };
+		18CC4CA526640CAB006EE631 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CA426640CAB006EE631 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18013796265D2365007FF09F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		18013798265D24DC007FF09F /* WorkWithKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkWithKeychain.swift; sourceTree = "<group>"; };
 		180137A6265D3258007FF09F /* ProfileDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileDM+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		180137A7265D3258007FF09F /* ProfileDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileDM+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		180137A8265D3258007FF09F /* FolderDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FolderDM+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -85,6 +92,8 @@
 		1857566A265955C3000B54C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1857566D265955C3000B54C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1857566F265955C3000B54C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPassCodeVC.swift; sourceTree = "<group>"; };
+		18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPassCodeVC.xib; sourceTree = "<group>"; };
 		186F8D01265F7A1E005C0C28 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		18A0F456265E97FD00F3BCEF /* TabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		18A0F458265E980C00F3BCEF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -106,6 +115,9 @@
 		18BA4534266013D800C3143F /* PasswordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordCell.xib; sourceTree = "<group>"; };
 		18BA45372660171600C3143F /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
 		18BA45382660171600C3143F /* AddCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCard.xib; sourceTree = "<group>"; };
+		18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBlockSingnin.swift; sourceTree = "<group>"; };
+		18CC4CA026640C6B006EE631 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		18CC4CA426640CAB006EE631 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,8 +135,10 @@
 			isa = PBXGroup;
 			children = (
 				18013795265C143F007FF09F /* CoreData */,
+				18013798265D24DC007FF09F /* WorkWithKeychain.swift */,
 				186F8D01265F7A1E005C0C28 /* CustomColor.swift */,
 				18BA4525265FC2D700C3143F /* CustomImage.swift */,
+				18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +164,8 @@
 				18A0F463265EBBA200F3BCEF /* UITableView.swift */,
 				180137B5265D4071007FF09F /* NibLoadableView.swift */,
 				180137D0265D8205007FF09F /* UIView.swift */,
+				18CC4CA026640C6B006EE631 /* Date.swift */,
+				18CC4CA426640CAB006EE631 /* UIAlertController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -167,6 +183,7 @@
 				18BA4522265FB57E00C3143F /* NoteVC.xib */,
 				18BA452726600AE400C3143F /* LockerVC.swift */,
 				18BA452826600AE400C3143F /* LockerVC.xib */,
+				18639A322662720800CFCF83 /* Passcode */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -233,6 +250,15 @@
 				18575667265955C1000B54C7 /* sNotes.xcdatamodeld */,
 			);
 			path = sNotes;
+			sourceTree = "<group>";
+		};
+		18639A322662720800CFCF83 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */,
+				18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */,
+			);
+			path = Passcode;
 			sourceTree = "<group>";
 		};
 		18A0F45E265EB98E00F3BCEF /* For Table View */ = {
@@ -305,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BA453A2660171600C3143F /* AddCard.xib in Resources */,
+				18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */,
 				180137CB265D77DC007FF09F /* NoteCell.xib in Resources */,
 				18BA4524265FB57E00C3143F /* NoteVC.xib in Resources */,
 				1857566E265955C3000B54C7 /* LaunchScreen.storyboard in Resources */,
@@ -336,6 +363,7 @@
 				180137B4265D3F3D007FF09F /* UIColor.swift in Sources */,
 				186F8D02265F7A1E005C0C28 /* CustomColor.swift in Sources */,
 				18575663265955C1000B54C7 /* ViewController.swift in Sources */,
+				18639A3D2662836400CFCF83 /* SetPassCodeVC.swift in Sources */,
 				180137C0265D490F007FF09F /* FolderDM+CoreDataProperties.swift in Sources */,
 				18A0F459265E980C00F3BCEF /* TabBarView.swift in Sources */,
 				18013797265D2365007FF09F /* PersistenceManager.swift in Sources */,
@@ -344,13 +372,17 @@
 				18BA45392660171600C3143F /* AddCard.swift in Sources */,
 				1857565F265955C1000B54C7 /* AppDelegate.swift in Sources */,
 				18A0F461265EB9B700F3BCEF /* IconCell.swift in Sources */,
+				18013799265D24DC007FF09F /* WorkWithKeychain.swift in Sources */,
 				180137AD265D3258007FF09F /* ProfileDM+CoreDataProperties.swift in Sources */,
 				18A0F467265ECDE200F3BCEF /* FolderVC.swift in Sources */,
 				18BA4523265FB57E00C3143F /* NoteVC.swift in Sources */,
+				18CC4C9F26640C36006EE631 /* CheckBlockSingnin.swift in Sources */,
 				180137B1265D3258007FF09F /* NoteDM+CoreDataProperties.swift in Sources */,
 				180137AC265D3258007FF09F /* ProfileDM+CoreDataClass.swift in Sources */,
 				18BA4526265FC2D700C3143F /* CustomImage.swift in Sources */,
 				180137B6265D4071007FF09F /* NibLoadableView.swift in Sources */,
+				18CC4CA126640C6B006EE631 /* Date.swift in Sources */,
+				18CC4CA526640CAB006EE631 /* UIAlertController.swift in Sources */,
 				184565BA265D937B00F56B70 /* FolderCell.swift in Sources */,
 				18393FD3265ED60C00AA7D7C /* ColorCell.swift in Sources */,
 				18575669265955C1000B54C7 /* sNotes.xcdatamodeld in Sources */,

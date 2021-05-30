@@ -17,6 +17,10 @@ extension UIColor {
         return UIColor(hexString: "#1839E4")
     }
     
+    static func customBlueForPassCode() -> UIColor {
+        return UIColor(hexString: "#1839E4")
+    }
+    
     //MARK:- Custom color for Array
     static func customGrayForArray() -> UIColor  {
         return UIColor(hexString: "#828282")

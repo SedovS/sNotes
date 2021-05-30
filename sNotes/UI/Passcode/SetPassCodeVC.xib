@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetPassCodeVC" customModule="sNotes" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutButton" destination="DFj-sy-xOY" id="YYt-3L-Tbm"/>
+                <outlet property="faceTouchIDButton" destination="NiY-Pf-LXc" id="bpZ-pc-OKu"/>
+                <outlet property="forgotPassCodeButton" destination="6rI-I9-o9a" id="YAK-xd-Zbn"/>
+                <outlet property="hintLabel" destination="iTN-bo-JDI" id="vrc-pP-dcY"/>
+                <outlet property="nameLabel" destination="iAd-zz-O0c" id="zL0-4w-FrU"/>
+                <outlet property="passCodeKeyboardView" destination="GfM-TY-Nb4" id="2J9-0l-oYY"/>
+                <outlet property="passCodeSymbolsView" destination="dEL-qU-lmo" id="Zdo-yL-p2s"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="passCodeSymbols" destination="agk-bt-jJL" collectionClass="NSMutableArray" id="6kY-2W-ozJ"/>
+                <outletCollection property="passCodeSymbols" destination="owA-qr-MQD" collectionClass="NSMutableArray" id="yER-IP-axU"/>
+                <outletCollection property="passCodeSymbols" destination="di1-Db-2BU" collectionClass="NSMutableArray" id="Ceu-gc-YIO"/>
+                <outletCollection property="passCodeSymbols" destination="60M-Mp-z3o" collectionClass="NSMutableArray" id="Oap-hI-cmt"/>
+                <outletCollection property="passCodeSymbols" destination="zVk-v9-wfX" collectionClass="NSMutableArray" id="RYZ-Bb-cux"/>
+                <outletCollection property="passCodeSymbols" destination="EAM-Fy-U5z" collectionClass="NSMutableArray" id="bBS-KS-Dle"/>
+                <outletCollection property="passCodeKeyboards" destination="su5-N3-eSd" collectionClass="NSMutableArray" id="rFa-7n-SSa"/>
+                <outletCollection property="passCodeKeyboards" destination="q0F-In-cpx" collectionClass="NSMutableArray" id="u9L-dz-gkB"/>
+                <outletCollection property="passCodeKeyboards" destination="XH1-06-0wB" collectionClass="NSMutableArray" id="Wh3-ih-cTN"/>
+                <outletCollection property="passCodeKeyboards" destination="75v-3c-TyF" collectionClass="NSMutableArray" id="5Nt-2b-4lB"/>
+                <outletCollection property="passCodeKeyboards" destination="GZ4-1o-A2D" collectionClass="NSMutableArray" id="h6o-PC-w87"/>
+                <outletCollection property="passCodeKeyboards" destination="6IC-vQ-WYU" collectionClass="NSMutableArray" id="wE9-75-adu"/>
+                <outletCollection property="passCodeKeyboards" destination="oNt-kS-gpf" collectionClass="NSMutableArray" id="76M-oY-yeN"/>
+                <outletCollection property="passCodeKeyboards" destination="3Hq-Dg-phK" collectionClass="NSMutableArray" id="yWd-bK-z9Q"/>
+                <outletCollection property="passCodeKeyboards" destination="cJ9-Y7-99M" collectionClass="NSMutableArray" id="BIi-Jg-Rwi"/>
+                <outletCollection property="passCodeKeyboards" destination="uix-Sv-27r" collectionClass="NSMutableArray" id="eGi-dW-w0v"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfM-TY-Nb4">
+                    <rect key="frame" x="22.5" y="173.5" width="275" height="321"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hq-Dg-phK">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="P48-Rs-pCt"/>
+                                <constraint firstAttribute="height" constant="75" id="kfy-dv-wZg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="1">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="wzK-zU-Jdp"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJ9-Y7-99M">
+                            <rect key="frame" x="100" y="0.0" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="3yd-Zd-r03"/>
+                                <constraint firstAttribute="height" constant="75" id="odV-TO-nK0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="2">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="X5M-Nc-8UB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uix-Sv-27r">
+                            <rect key="frame" x="200" y="0.0" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="8V4-Tt-egE"/>
+                                <constraint firstAttribute="width" constant="75" id="IVm-zs-yBn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="3">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="VvL-0b-Clq"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZ4-1o-A2D">
+                            <rect key="frame" x="0.0" y="82" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="3fh-KI-mN1"/>
+                                <constraint firstAttribute="width" constant="75" id="7Wu-Cc-YN6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="4">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="0ib-qt-p4O"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IC-vQ-WYU">
+                            <rect key="frame" x="100" y="82" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="Jl7-n1-qai"/>
+                                <constraint firstAttribute="height" constant="75" id="MPG-Ug-9DT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="5">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="HOS-21-gNc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNt-kS-gpf">
+                            <rect key="frame" x="200" y="82" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="06Q-fl-caO"/>
+                                <constraint firstAttribute="width" constant="75" id="91m-z6-waR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="6">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="paS-oK-UzR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="su5-N3-eSd">
+                            <rect key="frame" x="0.0" y="164" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="571-q8-oGw"/>
+                                <constraint firstAttribute="height" constant="75" id="7nM-xI-qKb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="7">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="Yss-mS-VCJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XH1-06-0wB">
+                            <rect key="frame" x="100" y="164" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="7jo-6S-Zgp"/>
+                                <constraint firstAttribute="width" constant="75" id="apq-cV-F0L"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="8">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="DWH-gG-iUw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75v-3c-TyF">
+                            <rect key="frame" x="200" y="164" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="Kdq-fc-cKg"/>
+                                <constraint firstAttribute="width" constant="75" id="SVK-sO-7a9"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="9">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="WuM-6J-rIm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKe-qI-Tki">
+                            <rect key="frame" x="200" y="246" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="aID-uC-eqx"/>
+                                <constraint firstAttribute="height" constant="75" id="mEV-ga-Ydf"/>
+                            </constraints>
+                            <state key="normal" image="icDeletePassCode"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressDeleteButton:" destination="-1" eventType="touchUpInside" id="Q1L-fT-uff"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0F-In-cpx">
+                            <rect key="frame" x="100" y="246" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="75" id="SNj-Za-OfC"/>
+                                <constraint firstAttribute="height" constant="75" id="gcy-Aq-d9e"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
+                            <state key="normal" title="0">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressButtonOnKeyboard:" destination="-1" eventType="touchUpInside" id="Ofi-m8-ggr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiY-Pf-LXc">
+                            <rect key="frame" x="0.0" y="246" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="G2f-Qf-4yA"/>
+                                <constraint firstAttribute="width" constant="75" id="PLr-Bf-Pe1"/>
+                            </constraints>
+                            <state key="normal" image="faceid" catalog="system"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="pressFaseTouchID:" destination="-1" eventType="touchUpInside" id="R3j-bi-RWE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="oNt-kS-gpf" firstAttribute="leading" secondItem="6IC-vQ-WYU" secondAttribute="trailing" constant="25" id="0fG-r6-ZCI"/>
+                        <constraint firstItem="uix-Sv-27r" firstAttribute="top" secondItem="GfM-TY-Nb4" secondAttribute="top" id="1Qr-Ob-2uk"/>
+                        <constraint firstItem="q0F-In-cpx" firstAttribute="leading" secondItem="NiY-Pf-LXc" secondAttribute="trailing" constant="25" id="1qY-f4-7FP"/>
+                        <constraint firstItem="GZ4-1o-A2D" firstAttribute="top" secondItem="3Hq-Dg-phK" secondAttribute="bottom" constant="7" id="4DL-bd-cBm"/>
+                        <constraint firstItem="6IC-vQ-WYU" firstAttribute="top" secondItem="cJ9-Y7-99M" secondAttribute="bottom" constant="7" id="5NC-N0-58f"/>
+                        <constraint firstItem="su5-N3-eSd" firstAttribute="top" secondItem="GZ4-1o-A2D" secondAttribute="bottom" constant="7" id="5vH-7i-rdW"/>
+                        <constraint firstItem="q0F-In-cpx" firstAttribute="top" secondItem="XH1-06-0wB" secondAttribute="bottom" constant="7" id="7sv-CV-TQu"/>
+                        <constraint firstAttribute="bottom" secondItem="q0F-In-cpx" secondAttribute="bottom" id="EaG-e8-03r"/>
+                        <constraint firstItem="oNt-kS-gpf" firstAttribute="top" secondItem="uix-Sv-27r" secondAttribute="bottom" constant="7" id="IBp-Rp-hmE"/>
+                        <constraint firstItem="uix-Sv-27r" firstAttribute="leading" secondItem="cJ9-Y7-99M" secondAttribute="trailing" constant="25" id="IdC-gj-t8x"/>
+                        <constraint firstItem="yKe-qI-Tki" firstAttribute="leading" secondItem="q0F-In-cpx" secondAttribute="trailing" constant="25" id="J8D-ty-2JA"/>
+                        <constraint firstItem="6IC-vQ-WYU" firstAttribute="leading" secondItem="GZ4-1o-A2D" secondAttribute="trailing" constant="25" id="MP3-TS-9hd"/>
+                        <constraint firstItem="su5-N3-eSd" firstAttribute="leading" secondItem="GfM-TY-Nb4" secondAttribute="leading" id="MTl-zg-Wa2"/>
+                        <constraint firstItem="NiY-Pf-LXc" firstAttribute="leading" secondItem="GfM-TY-Nb4" secondAttribute="leading" id="MlR-dC-5WN"/>
+                        <constraint firstItem="3Hq-Dg-phK" firstAttribute="leading" secondItem="GfM-TY-Nb4" secondAttribute="leading" id="Nkg-Qp-qQq"/>
+                        <constraint firstAttribute="trailing" secondItem="75v-3c-TyF" secondAttribute="trailing" id="SB2-iW-QAF"/>
+                        <constraint firstItem="3Hq-Dg-phK" firstAttribute="top" secondItem="GfM-TY-Nb4" secondAttribute="top" id="T3t-QB-4iM"/>
+                        <constraint firstItem="cJ9-Y7-99M" firstAttribute="top" secondItem="GfM-TY-Nb4" secondAttribute="top" id="Z5d-sS-DKH"/>
+                        <constraint firstItem="yKe-qI-Tki" firstAttribute="top" secondItem="75v-3c-TyF" secondAttribute="bottom" constant="7" id="buD-9R-tnp"/>
+                        <constraint firstItem="NiY-Pf-LXc" firstAttribute="top" secondItem="su5-N3-eSd" secondAttribute="bottom" constant="7" id="cjN-7r-RlO"/>
+                        <constraint firstItem="GZ4-1o-A2D" firstAttribute="leading" secondItem="GfM-TY-Nb4" secondAttribute="leading" id="gja-y0-ys2"/>
+                        <constraint firstItem="XH1-06-0wB" firstAttribute="leading" secondItem="su5-N3-eSd" secondAttribute="trailing" constant="25" id="k2U-kg-6SK"/>
+                        <constraint firstItem="75v-3c-TyF" firstAttribute="top" secondItem="oNt-kS-gpf" secondAttribute="bottom" constant="7" id="oav-oh-1Ik"/>
+                        <constraint firstAttribute="trailing" secondItem="yKe-qI-Tki" secondAttribute="trailing" id="qAG-36-Sao"/>
+                        <constraint firstItem="75v-3c-TyF" firstAttribute="leading" secondItem="XH1-06-0wB" secondAttribute="trailing" constant="25" id="qTg-bw-Dhg"/>
+                        <constraint firstItem="cJ9-Y7-99M" firstAttribute="leading" secondItem="3Hq-Dg-phK" secondAttribute="trailing" constant="25" id="ulB-qf-80D"/>
+                        <constraint firstAttribute="trailing" secondItem="oNt-kS-gpf" secondAttribute="trailing" id="wjS-Rz-ElM"/>
+                        <constraint firstAttribute="trailing" secondItem="uix-Sv-27r" secondAttribute="trailing" id="yFL-Ch-j1K"/>
+                        <constraint firstItem="XH1-06-0wB" firstAttribute="top" secondItem="6IC-vQ-WYU" secondAttribute="bottom" constant="7" id="zRW-NF-Icg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEL-qU-lmo">
+                    <rect key="frame" x="65" y="108.5" width="190" height="20"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agk-bt-jJL">
+                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="ZXr-LK-0v1"/>
+                                <constraint firstAttribute="width" constant="20" id="f0a-Zm-cx5"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owA-qr-MQD">
+                            <rect key="frame" x="34" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Cdm-KB-8Wf"/>
+                                <constraint firstAttribute="width" constant="20" id="ZUA-ei-oq7"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="di1-Db-2BU">
+                            <rect key="frame" x="68" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="BL1-wn-kgu"/>
+                                <constraint firstAttribute="height" constant="20" id="NfE-pb-o6z"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60M-Mp-z3o">
+                            <rect key="frame" x="102" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="CFc-Og-dRt"/>
+                                <constraint firstAttribute="width" constant="20" id="eZc-Ze-UUB"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVk-v9-wfX">
+                            <rect key="frame" x="136" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Vr3-3e-2hv"/>
+                                <constraint firstAttribute="width" constant="20" id="egb-qb-k2f"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAM-Fy-U5z">
+                            <rect key="frame" x="170" y="0.0" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="cjf-kg-XxX"/>
+                                <constraint firstAttribute="width" constant="20" id="tey-0b-etc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="agk-bt-jJL" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="top" id="0EU-68-fay"/>
+                        <constraint firstItem="EAM-Fy-U5z" firstAttribute="leading" secondItem="zVk-v9-wfX" secondAttribute="trailing" constant="14" id="2ey-as-CIz"/>
+                        <constraint firstItem="di1-Db-2BU" firstAttribute="leading" secondItem="owA-qr-MQD" secondAttribute="trailing" constant="14" id="6wZ-jn-WFE"/>
+                        <constraint firstItem="agk-bt-jJL" firstAttribute="leading" secondItem="dEL-qU-lmo" secondAttribute="leading" id="7ef-XD-y2z"/>
+                        <constraint firstItem="zVk-v9-wfX" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="top" id="87a-B5-6Rj"/>
+                        <constraint firstAttribute="bottom" secondItem="agk-bt-jJL" secondAttribute="bottom" id="8Zu-nU-ddk"/>
+                        <constraint firstItem="owA-qr-MQD" firstAttribute="leading" secondItem="agk-bt-jJL" secondAttribute="trailing" constant="14" id="QDg-RU-5fz"/>
+                        <constraint firstItem="zVk-v9-wfX" firstAttribute="leading" secondItem="60M-Mp-z3o" secondAttribute="trailing" constant="14" id="R8o-ot-SuP"/>
+                        <constraint firstItem="di1-Db-2BU" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="top" id="UqU-Mk-7O1"/>
+                        <constraint firstAttribute="trailing" secondItem="EAM-Fy-U5z" secondAttribute="trailing" id="VwL-jH-bos"/>
+                        <constraint firstItem="EAM-Fy-U5z" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="top" id="duE-Db-5XW"/>
+                        <constraint firstItem="60M-Mp-z3o" firstAttribute="leading" secondItem="di1-Db-2BU" secondAttribute="trailing" constant="14" id="ijj-ak-QIU"/>
+                        <constraint firstItem="60M-Mp-z3o" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="top" id="tCV-P4-dfA"/>
+                        <constraint firstItem="owA-qr-MQD" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="top" id="wNS-LU-O2l"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Задайте код доступа" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAd-zz-O0c">
+                    <rect key="frame" x="71.5" y="26" width="177" height="21"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                    <color key="textColor" red="0.027449999999999999" green="0.023529999999999999" blue="0.023529999999999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Он будет использоваться для входа в приложение" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTN-bo-JDI">
+                    <rect key="frame" x="30" y="57" width="260" height="31.5"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                    <color key="textColor" red="0.69019607843137254" green="0.66666666666666663" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rI-I9-o9a">
+                    <rect key="frame" x="37.5" y="519.5" width="45" height="30"/>
+                    <state key="normal" title="Забыл">
+                        <color key="titleColor" red="0.69019607839999997" green="0.66666666669999997" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressForgotPassword:" destination="-1" eventType="touchUpInside" id="XKs-Ez-FX1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFj-sy-xOY">
+                    <rect key="frame" x="237.5" y="519.5" width="45" height="30"/>
+                    <state key="normal" title="Зачем">
+                        <color key="titleColor" red="0.69019607839999997" green="0.66666666669999997" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="pressAboutButton:" destination="-1" eventType="touchUpInside" id="9Ex-gl-3oX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iTN-bo-JDI" firstAttribute="top" secondItem="iAd-zz-O0c" secondAttribute="bottom" constant="10" id="6Kq-aa-MFu"/>
+                <constraint firstItem="GfM-TY-Nb4" firstAttribute="top" secondItem="dEL-qU-lmo" secondAttribute="bottom" constant="45" id="Byg-rh-0a0"/>
+                <constraint firstItem="iAd-zz-O0c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cut-ny-Bv2"/>
+                <constraint firstItem="iTN-bo-JDI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="H5c-1F-BIS"/>
+                <constraint firstItem="GfM-TY-Nb4" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="50" id="RhD-2A-SUC"/>
+                <constraint firstItem="6rI-I9-o9a" firstAttribute="top" secondItem="GfM-TY-Nb4" secondAttribute="bottom" constant="25" id="cla-uv-lnX"/>
+                <constraint firstItem="DFj-sy-xOY" firstAttribute="centerX" secondItem="yKe-qI-Tki" secondAttribute="centerX" id="dbq-Gb-s0s"/>
+                <constraint firstItem="dEL-qU-lmo" firstAttribute="top" secondItem="iTN-bo-JDI" secondAttribute="bottom" constant="20" id="gnS-eT-3RI"/>
+                <constraint firstItem="dEL-qU-lmo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="mxL-Ur-ORt"/>
+                <constraint firstItem="GfM-TY-Nb4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qBH-1Z-tQB"/>
+                <constraint firstItem="6rI-I9-o9a" firstAttribute="centerX" secondItem="NiY-Pf-LXc" secondAttribute="centerX" id="qpt-tj-XGT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iTN-bo-JDI" secondAttribute="trailing" constant="30" id="tCQ-Wx-hH5"/>
+                <constraint firstItem="DFj-sy-xOY" firstAttribute="top" secondItem="GfM-TY-Nb4" secondAttribute="bottom" constant="25" id="viX-Ed-QUA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="360" y="281.25"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="faceid" catalog="system" width="64" height="56"/>
+        <image name="icDeletePassCode" width="25" height="19"/>
+    </resources>
+</document>

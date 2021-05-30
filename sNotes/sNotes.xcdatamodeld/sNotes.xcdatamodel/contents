@@ -27,7 +27,9 @@
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="passwords" inverseEntity="ProfileDM"/>
     </entity>
     <entity name="ProfileDM" representedClassName=".ProfileDM" syncable="YES">
+        <attribute name="isAuthenticationWithBiometrics" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
         <attribute name="photoProfile" optional="YES" attributeType="Binary"/>
+        <attribute name="timeBlockSingin" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="userName" optional="YES" attributeType="String"/>
         <attribute name="userSurname" optional="YES" attributeType="String"/>
         <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardDM" inverseName="profile" inverseEntity="CardDM"/>
@@ -35,10 +37,10 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="CardDM" positionX="-180" positionY="162" width="128" height="28"/>
-        <element name="FolderDM" positionX="-189" positionY="117" width="128" height="163"/>
-        <element name="NoteDM" positionX="-45" positionY="18" width="128" height="163"/>
-        <element name="PasswordDM" positionX="-171" positionY="171" width="128" height="28"/>
-        <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="133"/>
+        <element name="CardDM" positionX="-464.96875" positionY="287.66015625" width="128" height="28"/>
+        <element name="FolderDM" positionX="-98.15234375" positionY="260.62890625" width="128" height="163"/>
+        <element name="NoteDM" positionX="-187.29296875" positionY="-146.4609375" width="128" height="163"/>
+        <element name="PasswordDM" positionX="-286.33984375" positionY="289.33203125" width="128" height="28"/>
+        <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="163"/>
     </elements>
 </model>
