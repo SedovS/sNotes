@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardDM" representedClassName=".CardDM" syncable="YES">
+        <attribute name="cardOwner" attributeType="String"/>
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="String"/>
+        <attribute name="dateAddCard" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="last4Number" attributeType="String"/>
+        <attribute name="nameBank" optional="YES" attributeType="String"/>
+        <attribute name="paymentSystem" optional="YES" attributeType="String"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="cards" inverseEntity="ProfileDM"/>
     </entity>
     <entity name="FolderDM" representedClassName=".FolderDM" syncable="YES">
@@ -24,6 +32,11 @@
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="notes" inverseEntity="ProfileDM"/>
     </entity>
     <entity name="PasswordDM" representedClassName=".PasswordDM" syncable="YES">
+        <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionPassword" optional="YES" attributeType="String"/>
+        <attribute name="email" attributeType="String"/>
+        <attribute name="website" attributeType="String"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="passwords" inverseEntity="ProfileDM"/>
     </entity>
     <entity name="ProfileDM" representedClassName=".ProfileDM" syncable="YES">
@@ -37,10 +50,10 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="CardDM" positionX="-464.96875" positionY="287.66015625" width="128" height="28"/>
+        <element name="CardDM" positionX="-464.96875" positionY="287.66015625" width="128" height="178"/>
         <element name="FolderDM" positionX="-98.15234375" positionY="260.62890625" width="128" height="163"/>
         <element name="NoteDM" positionX="-187.29296875" positionY="-146.4609375" width="128" height="163"/>
-        <element name="PasswordDM" positionX="-286.33984375" positionY="289.33203125" width="128" height="28"/>
+        <element name="PasswordDM" positionX="-286.33984375" positionY="289.33203125" width="128" height="133"/>
         <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="163"/>
     </elements>
 </model>

@@ -27,11 +27,11 @@ class CardCell: UICollectionViewCell {
     }
 
     
-    func initCell(name: String, number: String, comment: String) {
-        nameLabel.text = name
-        numberLabel.text = "**** **** **** " + number
-        commentLabel.text = comment
-
+    func initCell(card: CardDM) {
+        nameLabel.text = card.nameBank ?? " "
+        numberLabel.text = "**** **** **** " + card.last4Number
+        commentLabel.text = card.comment
+        cardView.backgroundColor = .black
     }
     
 }

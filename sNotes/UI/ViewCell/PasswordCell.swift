@@ -19,6 +19,7 @@ class PasswordCell: UICollectionViewCell {
         descriptions.text = ""
         contentView.backgroundColor = .white
         contentView.shadow()
+//        contentView.cornerRadius = 10
         // Initialization code
     }
 

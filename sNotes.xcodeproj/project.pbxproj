@@ -37,6 +37,11 @@
 		18639A3D2662836400CFCF83 /* SetPassCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */; };
 		18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */; };
 		186F8D02265F7A1E005C0C28 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F8D01265F7A1E005C0C28 /* CustomColor.swift */; };
+		18A0D08426652D7D0086AACB /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08226652D7D0086AACB /* PasswordVC.swift */; };
+		18A0D08526652D7D0086AACB /* PasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0D08326652D7D0086AACB /* PasswordVC.xib */; };
+		18A0D08726653BB90086AACB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08626653BB90086AACB /* String.swift */; };
+		18A0D08A26653CA60086AACB /* PasswordDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08826653CA60086AACB /* PasswordDM+CoreDataClass.swift */; };
+		18A0D08B26653CA60086AACB /* PasswordDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08926653CA60086AACB /* PasswordDM+CoreDataProperties.swift */; };
 		18A0F457265E97FD00F3BCEF /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0F456265E97FD00F3BCEF /* TabBarView.xib */; };
 		18A0F459265E980C00F3BCEF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0F458265E980C00F3BCEF /* TabBarView.swift */; };
 		18A0F45B265EA2AD00F3BCEF /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0F45A265EA2AD00F3BCEF /* SearchView.xib */; };
@@ -60,6 +65,10 @@
 		18CC4C9F26640C36006EE631 /* CheckBlockSingnin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */; };
 		18CC4CA126640C6B006EE631 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CA026640C6B006EE631 /* Date.swift */; };
 		18CC4CA526640CAB006EE631 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CA426640CAB006EE631 /* UIAlertController.swift */; };
+		18CC4CA926641D8E006EE631 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CA726641D8E006EE631 /* CardVC.swift */; };
+		18CC4CAA26641D8E006EE631 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CC4CA826641D8E006EE631 /* CardVC.xib */; };
+		18CC4CB126642772006EE631 /* CardDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CAF26642772006EE631 /* CardDM+CoreDataClass.swift */; };
+		18CC4CB226642772006EE631 /* CardDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CB026642772006EE631 /* CardDM+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +104,11 @@
 		18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPassCodeVC.swift; sourceTree = "<group>"; };
 		18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPassCodeVC.xib; sourceTree = "<group>"; };
 		186F8D01265F7A1E005C0C28 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		18A0D08226652D7D0086AACB /* PasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVC.swift; sourceTree = "<group>"; };
+		18A0D08326652D7D0086AACB /* PasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordVC.xib; sourceTree = "<group>"; };
+		18A0D08626653BB90086AACB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		18A0D08826653CA60086AACB /* PasswordDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordDM+CoreDataClass.swift"; sourceTree = "<group>"; };
+		18A0D08926653CA60086AACB /* PasswordDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		18A0F456265E97FD00F3BCEF /* TabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		18A0F458265E980C00F3BCEF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		18A0F45A265EA2AD00F3BCEF /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
@@ -118,6 +132,10 @@
 		18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBlockSingnin.swift; sourceTree = "<group>"; };
 		18CC4CA026640C6B006EE631 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		18CC4CA426640CAB006EE631 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		18CC4CA726641D8E006EE631 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
+		18CC4CA826641D8E006EE631 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
+		18CC4CAF26642772006EE631 /* CardDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDM+CoreDataClass.swift"; sourceTree = "<group>"; };
+		18CC4CB026642772006EE631 /* CardDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +164,10 @@
 		18013795265C143F007FF09F /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				18A0D08826653CA60086AACB /* PasswordDM+CoreDataClass.swift */,
+				18A0D08926653CA60086AACB /* PasswordDM+CoreDataProperties.swift */,
+				18CC4CAF26642772006EE631 /* CardDM+CoreDataClass.swift */,
+				18CC4CB026642772006EE631 /* CardDM+CoreDataProperties.swift */,
 				180137A6265D3258007FF09F /* ProfileDM+CoreDataClass.swift */,
 				180137A7265D3258007FF09F /* ProfileDM+CoreDataProperties.swift */,
 				180137A8265D3258007FF09F /* FolderDM+CoreDataClass.swift */,
@@ -166,6 +188,7 @@
 				180137D0265D8205007FF09F /* UIView.swift */,
 				18CC4CA026640C6B006EE631 /* Date.swift */,
 				18CC4CA426640CAB006EE631 /* UIAlertController.swift */,
+				18A0D08626653BB90086AACB /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -183,6 +206,7 @@
 				18BA4522265FB57E00C3143F /* NoteVC.xib */,
 				18BA452726600AE400C3143F /* LockerVC.swift */,
 				18BA452826600AE400C3143F /* LockerVC.xib */,
+				18CC4CA626641D6F006EE631 /* Locker */,
 				18639A322662720800CFCF83 /* Passcode */,
 			);
 			path = UI;
@@ -272,6 +296,17 @@
 			path = "For Table View";
 			sourceTree = "<group>";
 		};
+		18CC4CA626641D6F006EE631 /* Locker */ = {
+			isa = PBXGroup;
+			children = (
+				18CC4CA726641D8E006EE631 /* CardVC.swift */,
+				18CC4CA826641D8E006EE631 /* CardVC.xib */,
+				18A0D08226652D7D0086AACB /* PasswordVC.swift */,
+				18A0D08326652D7D0086AACB /* PasswordVC.xib */,
+			);
+			path = Locker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,12 +368,14 @@
 				18BA453A2660171600C3143F /* AddCard.xib in Resources */,
 				18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */,
 				180137CB265D77DC007FF09F /* NoteCell.xib in Resources */,
+				18A0D08526652D7D0086AACB /* PasswordVC.xib in Resources */,
 				18BA4524265FB57E00C3143F /* NoteVC.xib in Resources */,
 				1857566E265955C3000B54C7 /* LaunchScreen.storyboard in Resources */,
 				18BA452A26600AE400C3143F /* LockerVC.xib in Resources */,
 				18BA4536266013D800C3143F /* PasswordCell.xib in Resources */,
 				18A0F462265EB9B700F3BCEF /* IconCell.xib in Resources */,
 				180137CF265D7F35007FF09F /* SectionHeader.xib in Resources */,
+				18CC4CAA26641D8E006EE631 /* CardVC.xib in Resources */,
 				1857566B265955C3000B54C7 /* Assets.xcassets in Resources */,
 				18BA453226600FD300C3143F /* CardCell.xib in Resources */,
 				18A0F457265E97FD00F3BCEF /* TabBarView.xib in Resources */,
@@ -364,9 +401,12 @@
 				186F8D02265F7A1E005C0C28 /* CustomColor.swift in Sources */,
 				18575663265955C1000B54C7 /* ViewController.swift in Sources */,
 				18639A3D2662836400CFCF83 /* SetPassCodeVC.swift in Sources */,
+				18CC4CB226642772006EE631 /* CardDM+CoreDataProperties.swift in Sources */,
 				180137C0265D490F007FF09F /* FolderDM+CoreDataProperties.swift in Sources */,
 				18A0F459265E980C00F3BCEF /* TabBarView.swift in Sources */,
 				18013797265D2365007FF09F /* PersistenceManager.swift in Sources */,
+				18CC4CB126642772006EE631 /* CardDM+CoreDataClass.swift in Sources */,
+				18A0D08B26653CA60086AACB /* PasswordDM+CoreDataProperties.swift in Sources */,
 				18A0F464265EBBA200F3BCEF /* UITableView.swift in Sources */,
 				18BA452926600AE400C3143F /* LockerVC.swift in Sources */,
 				18BA45392660171600C3143F /* AddCard.swift in Sources */,
@@ -375,13 +415,17 @@
 				18013799265D24DC007FF09F /* WorkWithKeychain.swift in Sources */,
 				180137AD265D3258007FF09F /* ProfileDM+CoreDataProperties.swift in Sources */,
 				18A0F467265ECDE200F3BCEF /* FolderVC.swift in Sources */,
+				18A0D08426652D7D0086AACB /* PasswordVC.swift in Sources */,
 				18BA4523265FB57E00C3143F /* NoteVC.swift in Sources */,
+				18CC4CA926641D8E006EE631 /* CardVC.swift in Sources */,
+				18A0D08726653BB90086AACB /* String.swift in Sources */,
 				18CC4C9F26640C36006EE631 /* CheckBlockSingnin.swift in Sources */,
 				180137B1265D3258007FF09F /* NoteDM+CoreDataProperties.swift in Sources */,
 				180137AC265D3258007FF09F /* ProfileDM+CoreDataClass.swift in Sources */,
 				18BA4526265FC2D700C3143F /* CustomImage.swift in Sources */,
 				180137B6265D4071007FF09F /* NibLoadableView.swift in Sources */,
 				18CC4CA126640C6B006EE631 /* Date.swift in Sources */,
+				18A0D08A26653CA60086AACB /* PasswordDM+CoreDataClass.swift in Sources */,
 				18CC4CA526640CAB006EE631 /* UIAlertController.swift in Sources */,
 				184565BA265D937B00F56B70 /* FolderCell.swift in Sources */,
 				18393FD3265ED60C00AA7D7C /* ColorCell.swift in Sources */,

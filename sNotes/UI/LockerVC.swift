@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LockerVC: UIViewController {
 
@@ -18,7 +19,14 @@ class LockerVC: UIViewController {
     
     
     let arrayNameImage = ["icAddCard", "icAddPassword"]
+    fileprivate lazy var arrayCards: [CardDM] = {
+        return CardDM.getCards()
+    }()
     
+    fileprivate lazy var arrayPassword: [PasswordDM] = {
+        return PasswordDM.getPassword()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +35,8 @@ class LockerVC: UIViewController {
         
         tabBarView.delegate = self
         tabBarView.lockerSelected()
+        
+        presentationController?.delegate = self
         
         //table view
         tableView.delegate = self
@@ -127,9 +137,9 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
         case 0,1:
             return 0
         case 2:
-            return 1//arrayAnchoreNotes.count + arrayAnchoreFolders.count
+            return arrayCards.count == 0 ? 1 : arrayCards.count
         case 3:
-            return 1//arrayRecentlyNotes.count
+            return arrayPassword.count == 0 ? 1 : arrayPassword.count
         default:
             return  0
         }
@@ -160,22 +170,23 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
         
         switch indexPath.section {
         case 2:
-            if true {
+            if arrayCards.count == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCard", for: indexPath) as! AddCard
                 cell.initCellCard()
                 return cell
             }
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! CardCell
-//            cell.initCell(name: <#T##String#>, number: <#T##String#>, comment: <#T##String#>)
+            cell.initCell(card: arrayCards[indexPath.row])
             return cell
         case 3:
-            if true {
+            if arrayPassword.count == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addCard", for: indexPath) as! AddCard
                 cell.initCellPassword()
                 return cell
             }
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "passwordCell", for: indexPath) as! PasswordCell
-//            cell.initCell(name: <#T##String#>, description: <#T##String#>)
+            let password = arrayPassword[indexPath.row]
+            cell.initCell(name: password.website, description: password.email)
             return cell
         default:
             break
@@ -188,14 +199,25 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
         switch indexPath.section {
         case 0,1:
             return
-        case 2: break
-            
+        case 2:
+            let vc = CardVC()
+            if arrayCards.count == 0 {
+                vc.isAddCard = true
+            } else {
+                vc.card = arrayCards[indexPath.row]
+            }
+            show(vc, sender: nil)
         case 3:
-            break
-        case 4:
-            break
+            let vc = PasswordVC()
+            if arrayPassword.count == 0 {
+                vc.isAddPassword = true
+            } else {
+                vc.passwordDM = arrayPassword[indexPath.row]
+            }
+            show(vc, sender: nil)
+
         default: break
-//            titleText = ""
+
         }
         
     }
@@ -225,11 +247,35 @@ extension LockerVC: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch arrayNameImage[indexPath.row] {
-        case "icAddCard": break
-        case "icAddPassword": break
+        case "icAddCard":
+            let vc = CardVC()
+            vc.isAddCard = true
+            show(vc, sender: nil)
+//            UIApplication.shared.keyWindow?.rootViewController = vc
+
+        case "icAddPassword":
+            let vc = PasswordVC()
+            vc.isAddPassword = true
+            show(vc, sender: nil)
         default:
             break
         }
         tableView.isHidden = true
     }
 }
+
+////MARK:- UIAdaptivePresentationControllerDelegate
+//extension LockerVC: UIAdaptivePresentationControllerDelegate {
+//    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+////        returnPreviewScreen(status: false)
+//        self.dismiss(animated: true, completion: nil)
+//    }
+//}
+//
+//extension LockerVC: NSFetchedResultsControllerDelegate {
+//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+////        tableView.beginUpdates()
+//        collectionView.reloadData()
+//    }
+//}
+
