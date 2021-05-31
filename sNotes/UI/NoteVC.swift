@@ -38,7 +38,7 @@ class NoteVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        note?.changeLastDateOpen()
+        note?.changLDateLastOpen()
         nameFolderButton.setTitle(note?.folder?.name ?? "no name folder", for: .normal)
         let color = note?.folder?.color as? UIColor ?? .customGrayForArray()
         nameFolderButton.imageView?.image = CustomImage.image(color: color)
@@ -105,7 +105,7 @@ extension NoteVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         note?.changeTittle(newTittle: textField.text ?? "")
-        note?.changeLastDateChange()
+        note?.changeDeteLastChange()
         return false
     }
 
@@ -113,7 +113,7 @@ extension NoteVC: UITextFieldDelegate {
 
 extension NoteVC: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
-        note?.changeLastDateChange()
+        note?.changeDeteLastChange()
         note?.changeText(newText: textView.text)
     }
 }
@@ -151,7 +151,7 @@ extension NoteVC: UITableViewDelegate {
 
         case "icPin":
             note?.changeAnchor()
-            note?.changeLastDateChange()
+            note?.changeDeteLastChange()
         default:
             break
         }
@@ -180,7 +180,7 @@ extension NoteVC: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerView.isHidden = true
         note?.changeFolder(newFolder: arrayFolders[row])
-        note?.folder?.changeLastDateChange()
+        note?.folder?.changeDateLastChange()
         nameFolderButton.setTitle(note?.folder?.name ?? "no name folder", for: .normal)
         nameFolderButton.imageView?.image = CustomImage.image(color: note?.folder?.color as? UIColor ?? .customGrayForArray())
         

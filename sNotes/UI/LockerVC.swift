@@ -35,9 +35,7 @@ class LockerVC: UIViewController {
         
         tabBarView.delegate = self
         tabBarView.lockerSelected()
-        
-        presentationController?.delegate = self
-        
+                
         //table view
         tableView.delegate = self
         tableView.dataSource = self

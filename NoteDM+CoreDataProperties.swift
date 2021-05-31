@@ -20,6 +20,8 @@ extension NoteDM {
     @NSManaged public var dateCreate: Date
     @NSManaged public var dateLastChange: Date
     @NSManaged public var dateLastOpen: Date
+    @NSManaged public var dateReminder: Date?
+
     @NSManaged public var isAnchor: Bool
     @NSManaged public var tittle: String?
     @NSManaged public var text: String?

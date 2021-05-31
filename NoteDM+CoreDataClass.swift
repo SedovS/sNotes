@@ -81,6 +81,7 @@ extension NoteDM {
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         fetchRequest.predicate = nil
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
+        fetchRequest.fetchLimit = 4
 
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
@@ -122,12 +123,12 @@ extension NoteDM {
         PersistenceManager.shared.saveContext()
     }
     
-    func changeLastDateOpen(date: Date = Date()) {
+    func changLDateLastOpen(date: Date = Date()) {
         self.dateLastOpen = date
         PersistenceManager.shared.saveContext()
     }
     
-    func changeLastDateChange(date: Date = Date()) {
+    func changeDeteLastChange(date: Date = Date()) {
         self.dateLastChange = date
         PersistenceManager.shared.saveContext()
     }

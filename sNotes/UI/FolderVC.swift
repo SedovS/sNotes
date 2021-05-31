@@ -57,7 +57,7 @@ class FolderVC: UIViewController {
             nameFolder.placeholder = "Введите название папки"
         }
         
-        folder?.changeLastDateOpen()
+        folder?.changeDateLastOpen()
         
         tabBarView.delegate = self
         nameFolder.delegate = self
@@ -127,7 +127,7 @@ extension FolderVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         folder?.changeName(newName: textField.text)
-        folder?.changeLastDateChange()
+        folder?.changeDateLastChange()
         return false
     }
 
@@ -216,7 +216,7 @@ extension FolderVC: UITableViewDelegate {
 
                 case "icPin":
                     folder?.changeAnchor()
-                    folder?.changeLastDateChange()
+                    folder?.changeDateLastChange()
                 default:
                     break
                 }

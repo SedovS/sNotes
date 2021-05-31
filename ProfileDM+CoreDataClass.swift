@@ -39,6 +39,7 @@ extension ProfileDM {
         let profileDM = ProfileDM(context: persistenceManager.context)
         profileDM.userName = "Sergey"
         profileDM.userSurname = "S"
+        profileDM.dateCreate = Date()
         profileDM.photoProfile = UIImage(named: "defaultPhotoProfile")!.pngData()
         persistenceManager.saveContext()
     }

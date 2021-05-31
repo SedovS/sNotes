@@ -137,12 +137,12 @@ extension FolderDM {
         self.name = name
     }
     
-    func changeLastDateOpen(date: Date = Date()) {
+    func changeDateLastOpen(date: Date = Date()) {
         self.dateLastOpen = date
         PersistenceManager.shared.saveContext()
     }
     
-    func changeLastDateChange(date: Date = Date()) {
+    func changeDateLastChange(date: Date = Date()) {
         self.dateLastChange = date
         PersistenceManager.shared.saveContext()
     }
