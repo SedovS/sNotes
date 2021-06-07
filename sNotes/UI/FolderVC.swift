@@ -20,7 +20,7 @@ class FolderVC: UIViewController {
     
     var folder: FolderDM?
     var isCrateFolder = false
-    let arrayNameImage = ["icAddCheckList", "icAddImage", "icAddAudio", "icPin"]
+    let arrayNameImage = ["icAddNote", "icAddCheckList", "icAddImage", "icAddAudio", "icPin"]
     let arrayNameColor: [UIColor] = [.customGrayForArray(), .customRedForArray(), .customOrangeForArray(), .customPurpleForArray(), .customGreenForArray(), .customBlueForArray()]
     var isChangeColor = false
     
@@ -205,12 +205,12 @@ extension FolderVC: UITableViewDelegate {
             if arrayNameImage.count > indexPath.row {
                 
                 switch arrayNameImage[indexPath.row] {
-                case "icAddCheckList":
+                case "icAddNote":
                     let vc = NoteVC()
                     vc.note = NoteDM.addDefaultNote()
                     vc.note?.changeFolder(newFolder: folder!)
                     UIApplication.shared.keyWindow?.rootViewController = vc
-
+                case "icAddCheckList": break
                 case "icAddImage": break
                 case "icAddAudio": break
 

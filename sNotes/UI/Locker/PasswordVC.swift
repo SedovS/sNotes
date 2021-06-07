@@ -48,10 +48,10 @@ class PasswordVC: UIViewController {
             password.delegate = self
             descriptionPassword.delegate = self
         } else {
-            website.isUserInteractionEnabled = true
-            email.isUserInteractionEnabled = true
-            password.isUserInteractionEnabled = true
-            descriptionPassword.isUserInteractionEnabled = true
+            website.isUserInteractionEnabled = false
+            email.isUserInteractionEnabled = false
+            password.isUserInteractionEnabled = false
+            descriptionPassword.isUserInteractionEnabled = false
             
             website.text = passwordDM?.website
             email.text = passwordDM?.email

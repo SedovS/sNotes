@@ -30,7 +30,7 @@ extension FolderDM {
             
             let folderDM = FolderDM(context: persistenceManager.context)
             folderDM.name = "Все заметки"
-//            folderDM.color = UIColor.customGrayForArray() as NSObject
+            folderDM.color = UIColor.customGrayForArray() as NSObject
             folderDM.isDefaultFolder = true
             folderDM.dateCreate = Date()
             folderDM.dateLastChange = Date()
@@ -45,7 +45,7 @@ extension FolderDM {
 
         let folderDM = FolderDM(context: persistenceManager.context)
         folderDM.name = ""
-//        folderDM.color = UIColor.customGrayForArray() as NSObject
+        folderDM.color = UIColor.customGrayForArray() as NSObject
         folderDM.isDefaultFolder = false
         folderDM.dateCreate = Date()
         folderDM.dateLastChange = Date()
@@ -121,7 +121,7 @@ extension FolderDM {
     }
     
     func changeFolderColor(color: UIColor) {
-        self.color = color
+        self.color = color as NSObject
         PersistenceManager.shared.saveContext()
     }
     

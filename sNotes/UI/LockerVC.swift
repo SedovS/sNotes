@@ -26,6 +26,16 @@ class LockerVC: UIViewController {
     fileprivate lazy var arrayPassword: [PasswordDM] = {
         return PasswordDM.getPassword()
     }()
+    
+    fileprivate lazy var frc: NSFetchedResultsController<PasswordDM> = {
+        let context = PersistenceManager.shared.context
+        let fetchRequest : NSFetchRequest<PasswordDM> = PasswordDM.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateLastOpen", ascending: false)]
+        let tmpFrc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        tmpFrc.delegate = self
+        try? tmpFrc.performFetch()
+        return tmpFrc
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +147,7 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
         case 2:
             return arrayCards.count == 0 ? 1 : arrayCards.count
         case 3:
-            return arrayPassword.count == 0 ? 1 : arrayPassword.count
+            return frc.fetchedObjects?.count == 0 ? 1 : frc.fetchedObjects!.count//arrayPassword.count == 0 ? 1 : arrayPassword.count
         default:
             return  0
         }
@@ -182,8 +192,9 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 cell.initCellPassword()
                 return cell
             }
+            let object = frc.object(at: IndexPath(item: indexPath.row, section: 0))
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "passwordCell", for: indexPath) as! PasswordCell
-            let password = arrayPassword[indexPath.row]
+            let password = object
             cell.initCell(name: password.website, description: password.email)
             return cell
         default:
@@ -210,7 +221,8 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
             if arrayPassword.count == 0 {
                 vc.isAddPassword = true
             } else {
-                vc.passwordDM = arrayPassword[indexPath.row]
+                vc.passwordDM = frc.object(at: IndexPath(item: indexPath.row, section: 0))
+
             }
             show(vc, sender: nil)
 
@@ -270,10 +282,9 @@ extension LockerVC: UITableViewDelegate {
 //    }
 //}
 //
-//extension LockerVC: NSFetchedResultsControllerDelegate {
-//    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-////        tableView.beginUpdates()
-//        collectionView.reloadData()
-//    }
-//}
+extension LockerVC: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        collectionView.reloadData()
+    }
+}
 

@@ -70,5 +70,7 @@ class PersistenceManager {
             delete(entityName: "ProfileDM")
             delete(entityName: "FolderDM")
             delete(entityName: "NoteDM")
+            delete(entityName: "CardDM")
+            delete(entityName: "PasswordDM")
         }
 }

@@ -42,15 +42,18 @@ class SetPassCodeVC: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet var passCodeKeyboards: [UIButton]!
     
-    var passcodeStack = String()//[Int]()
-    var enteredPasscode = String()//[Int]()
-    var isRepeatingEnterPasscode = false
-    var isEnterPassCode = true
-    var timeBlock = CheckBlockSingnin()
+    private var passcodeStack = String()
+    private var enteredPasscode = String()
+    private var isRepeatingEnterPasscode = false
+    private var isEnterPassCode = true
+    private var timeBlock = CheckBlockSingnin()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        isEnterPassCode = WorkWithKeychain.isPasscode()
+        
         for el in passCodeSymbols {
             setColorForPassCodeSymbol(view: el, color: .clear)
         }

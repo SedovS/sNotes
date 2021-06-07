@@ -94,8 +94,21 @@ extension NoteDM {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "ANY folder = %@", folder)
-            fetchRequest.sortDescriptors =  [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
+        fetchRequest.sortDescriptors =  [NSSortDescriptor(key: "\(sortDescriptor)", ascending: false)]
         
+        guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
+            return []
+        }
+        
+        return result
+    }
+    
+    static func getNotesForReminder() -> [NoteDM] {
+        let persistenceManager = PersistenceManager.shared
+        let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
+        fetchRequest.predicate = nil
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateReminder", ascending: true)]
+//        fetchRequest.gro
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
             return []
         }

@@ -17,7 +17,7 @@ public class CardDM: NSManagedObject {
 
 extension CardDM {
     
-    static func addCard(last4Number: String, date: String, cardOwner: String) {
+    static func addCard(last4Number: String, date: String, cardOwner: String, firstNumber: String) {
         let persistenceManager = PersistenceManager.shared
         let cardDM = CardDM(context: persistenceManager.context)
 
@@ -25,7 +25,7 @@ extension CardDM {
         cardDM.last4Number = last4Number
         cardDM.date = date
         cardDM.cardOwner = cardOwner.uppercased()
-//       cardDM.paymentSystem: String?
+        cardDM.paymentSystem = PaymentSystem().namePS(firstNumberCard: firstNumber)
 //        cardDM.nameBank: String?
         cardDM.dateAddCard = Date()
         cardDM.dateLastOpen = Date()

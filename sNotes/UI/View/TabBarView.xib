@@ -13,6 +13,7 @@
                 <outlet property="contentView" destination="iN0-l3-epB" id="ESu-BT-oDt"/>
                 <outlet property="lockerButton" destination="MYe-2X-Iou" id="2yC-uv-wXX"/>
                 <outlet property="notesButton" destination="ovW-W6-4A4" id="7kk-C2-yCg"/>
+                <outlet property="reminderButton" destination="lCr-HN-o6s" id="T0C-ON-Cmt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,6 +31,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCr-HN-o6s">
                     <rect key="frame" x="207" y="20.5" width="103.5" height="29"/>
                     <state key="normal" image="icRemider"/>
+                    <connections>
+                        <action selector="pressReminderButton:" destination="-1" eventType="touchUpInside" id="s1t-Ba-vzB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXW-v8-utO">
                     <rect key="frame" x="310.5" y="9" width="103.5" height="52"/>
@@ -46,7 +50,6 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MYe-2X-Iou" firstAttribute="leading" secondItem="ovW-W6-4A4" secondAttribute="trailing" id="1fS-sa-XsL"/>
                 <constraint firstItem="ovW-W6-4A4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="5CH-7i-sSD"/>

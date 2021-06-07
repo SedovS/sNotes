@@ -51,10 +51,10 @@ class CardVC: UIViewController {
             numberCard.delegate = self
             cardOwner.delegate = self
         } else {
-            numberCard.isUserInteractionEnabled = true
-            dateCard.isUserInteractionEnabled = true
-            cvcCard.isUserInteractionEnabled = true
-            cardOwner.isUserInteractionEnabled = true
+            numberCard.isUserInteractionEnabled = false
+            dateCard.isUserInteractionEnabled = false
+            cvcCard.isUserInteractionEnabled = false
+            cardOwner.isUserInteractionEnabled = false
             hideCardInfo()
             card?.changeDateLastOpen()
         }
@@ -99,7 +99,7 @@ class CardVC: UIViewController {
                 redBorderTextField(field: cardOwner)
                 return
         }
-        CardDM.addCard(last4Number: String(number.suffix(4)), date: date, cardOwner: name)
+        CardDM.addCard(last4Number: String(number.suffix(4)), date: date, cardOwner: name, firstNumber: number[0...0])
         dismiss(animated: true, completion: nil)
         
     }

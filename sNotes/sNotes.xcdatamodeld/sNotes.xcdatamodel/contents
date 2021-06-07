@@ -5,6 +5,7 @@
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="date" attributeType="String"/>
         <attribute name="dateAddCard" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dateExpiration" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="last4Number" attributeType="String"/>
         <attribute name="nameBank" optional="YES" attributeType="String"/>
@@ -12,7 +13,7 @@
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="cards" inverseEntity="ProfileDM"/>
     </entity>
     <entity name="FolderDM" representedClassName=".FolderDM" syncable="YES">
-        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
+        <attribute name="color" optional="YES" attributeType="Transformable" valueTransformerName=""/>
         <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastChange" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
@@ -52,7 +53,7 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="CardDM" positionX="-464.96875" positionY="287.66015625" width="128" height="178"/>
+        <element name="CardDM" positionX="-464.96875" positionY="287.66015625" width="128" height="193"/>
         <element name="FolderDM" positionX="-98.15234375" positionY="260.62890625" width="128" height="163"/>
         <element name="NoteDM" positionX="-187.29296875" positionY="-146.4609375" width="128" height="178"/>
         <element name="PasswordDM" positionX="-286.33984375" positionY="289.33203125" width="128" height="133"/>

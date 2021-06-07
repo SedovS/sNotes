@@ -20,17 +20,17 @@ class FolderCell: UICollectionViewCell {
     func initCell(title: String, color: UIColor) {
         var image = UIImage()
         switch color {
-        case .gray:
+        case .customGrayForArray():
             image = #imageLiteral(resourceName: "grayFolder")
-        case .green:
+        case .customGreenForArray():
             image = #imageLiteral(resourceName: "greenFolder")
-        case .blue:
+        case .customBlueForArray():
              image = #imageLiteral(resourceName: "blueFolder")
-        case .orange:
+        case .customOrangeForArray():
              image = #imageLiteral(resourceName: "orangeFolder")
-        case .purple:
+        case .customPurpleForArray():
              image = #imageLiteral(resourceName: "purpleFolder")
-        case .red:
+        case .customRedForArray():
              image = #imageLiteral(resourceName: "redFolder")
         default:
             image = #imageLiteral(resourceName: "grayFolder")

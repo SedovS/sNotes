@@ -42,6 +42,10 @@
 		18A0D08726653BB90086AACB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08626653BB90086AACB /* String.swift */; };
 		18A0D08A26653CA60086AACB /* PasswordDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08826653CA60086AACB /* PasswordDM+CoreDataClass.swift */; };
 		18A0D08B26653CA60086AACB /* PasswordDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08926653CA60086AACB /* PasswordDM+CoreDataProperties.swift */; };
+		18A0D08E26655DE50086AACB /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08C26655DE50086AACB /* ReminderVC.swift */; };
+		18A0D08F26655DE50086AACB /* ReminderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0D08D26655DE50086AACB /* ReminderVC.xib */; };
+		18A0D09226655FC70086AACB /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D09026655FC70086AACB /* ReminderCell.swift */; };
+		18A0D09326655FC70086AACB /* ReminderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0D09126655FC70086AACB /* ReminderCell.xib */; };
 		18A0F457265E97FD00F3BCEF /* TabBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0F456265E97FD00F3BCEF /* TabBarView.xib */; };
 		18A0F459265E980C00F3BCEF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0F458265E980C00F3BCEF /* TabBarView.swift */; };
 		18A0F45B265EA2AD00F3BCEF /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0F45A265EA2AD00F3BCEF /* SearchView.xib */; };
@@ -69,6 +73,8 @@
 		18CC4CAA26641D8E006EE631 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CC4CA826641D8E006EE631 /* CardVC.xib */; };
 		18CC4CB126642772006EE631 /* CardDM+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CAF26642772006EE631 /* CardDM+CoreDataClass.swift */; };
 		18CC4CB226642772006EE631 /* CardDM+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CC4CB026642772006EE631 /* CardDM+CoreDataProperties.swift */; };
+		18FC77A5266E675D00B0566C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC77A4266E675D00B0566C /* Day.swift */; };
+		18FC77A7266E6FF100B0566C /* PaymentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC77A6266E6FF100B0566C /* PaymentSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +115,10 @@
 		18A0D08626653BB90086AACB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		18A0D08826653CA60086AACB /* PasswordDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordDM+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18A0D08926653CA60086AACB /* PasswordDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PasswordDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		18A0D08C26655DE50086AACB /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
+		18A0D08D26655DE50086AACB /* ReminderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderVC.xib; sourceTree = "<group>"; };
+		18A0D09026655FC70086AACB /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
+		18A0D09126655FC70086AACB /* ReminderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderCell.xib; sourceTree = "<group>"; };
 		18A0F456265E97FD00F3BCEF /* TabBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarView.xib; sourceTree = "<group>"; };
 		18A0F458265E980C00F3BCEF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		18A0F45A265EA2AD00F3BCEF /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
@@ -136,6 +146,8 @@
 		18CC4CA826641D8E006EE631 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
 		18CC4CAF26642772006EE631 /* CardDM+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDM+CoreDataClass.swift"; sourceTree = "<group>"; };
 		18CC4CB026642772006EE631 /* CardDM+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardDM+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		18FC77A4266E675D00B0566C /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		18FC77A6266E6FF100B0566C /* PaymentSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +169,8 @@
 				186F8D01265F7A1E005C0C28 /* CustomColor.swift */,
 				18BA4525265FC2D700C3143F /* CustomImage.swift */,
 				18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */,
+				18FC77A4266E675D00B0566C /* Day.swift */,
+				18FC77A6266E6FF100B0566C /* PaymentSystem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +220,8 @@
 				18BA4522265FB57E00C3143F /* NoteVC.xib */,
 				18BA452726600AE400C3143F /* LockerVC.swift */,
 				18BA452826600AE400C3143F /* LockerVC.xib */,
+				18A0D08C26655DE50086AACB /* ReminderVC.swift */,
+				18A0D08D26655DE50086AACB /* ReminderVC.xib */,
 				18CC4CA626641D6F006EE631 /* Locker */,
 				18639A322662720800CFCF83 /* Passcode */,
 			);
@@ -292,6 +308,8 @@
 				18A0F460265EB9B700F3BCEF /* IconCell.xib */,
 				18393FD1265ED60C00AA7D7C /* ColorCell.swift */,
 				18393FD2265ED60C00AA7D7C /* ColorCell.xib */,
+				18A0D09026655FC70086AACB /* ReminderCell.swift */,
+				18A0D09126655FC70086AACB /* ReminderCell.xib */,
 			);
 			path = "For Table View";
 			sourceTree = "<group>";
@@ -374,12 +392,14 @@
 				18BA452A26600AE400C3143F /* LockerVC.xib in Resources */,
 				18BA4536266013D800C3143F /* PasswordCell.xib in Resources */,
 				18A0F462265EB9B700F3BCEF /* IconCell.xib in Resources */,
+				18A0D09326655FC70086AACB /* ReminderCell.xib in Resources */,
 				180137CF265D7F35007FF09F /* SectionHeader.xib in Resources */,
 				18CC4CAA26641D8E006EE631 /* CardVC.xib in Resources */,
 				1857566B265955C3000B54C7 /* Assets.xcassets in Resources */,
 				18BA453226600FD300C3143F /* CardCell.xib in Resources */,
 				18A0F457265E97FD00F3BCEF /* TabBarView.xib in Resources */,
 				18A0F45B265EA2AD00F3BCEF /* SearchView.xib in Resources */,
+				18A0D08F26655DE50086AACB /* ReminderVC.xib in Resources */,
 				184565BB265D937B00F56B70 /* FolderCell.xib in Resources */,
 				180137C6265D72A7007FF09F /* NotesVC.xib in Resources */,
 				18393FD4265ED60C00AA7D7C /* ColorCell.xib in Resources */,
@@ -398,6 +418,7 @@
 				18A0F45D265EA2B900F3BCEF /* SearchView.swift in Sources */,
 				180137AE265D3258007FF09F /* FolderDM+CoreDataClass.swift in Sources */,
 				180137B4265D3F3D007FF09F /* UIColor.swift in Sources */,
+				18A0D09226655FC70086AACB /* ReminderCell.swift in Sources */,
 				186F8D02265F7A1E005C0C28 /* CustomColor.swift in Sources */,
 				18575663265955C1000B54C7 /* ViewController.swift in Sources */,
 				18639A3D2662836400CFCF83 /* SetPassCodeVC.swift in Sources */,
@@ -417,6 +438,7 @@
 				18A0F467265ECDE200F3BCEF /* FolderVC.swift in Sources */,
 				18A0D08426652D7D0086AACB /* PasswordVC.swift in Sources */,
 				18BA4523265FB57E00C3143F /* NoteVC.swift in Sources */,
+				18FC77A5266E675D00B0566C /* Day.swift in Sources */,
 				18CC4CA926641D8E006EE631 /* CardVC.swift in Sources */,
 				18A0D08726653BB90086AACB /* String.swift in Sources */,
 				18CC4C9F26640C36006EE631 /* CheckBlockSingnin.swift in Sources */,
@@ -424,6 +446,7 @@
 				180137AC265D3258007FF09F /* ProfileDM+CoreDataClass.swift in Sources */,
 				18BA4526265FC2D700C3143F /* CustomImage.swift in Sources */,
 				180137B6265D4071007FF09F /* NibLoadableView.swift in Sources */,
+				18A0D08E26655DE50086AACB /* ReminderVC.swift in Sources */,
 				18CC4CA126640C6B006EE631 /* Date.swift in Sources */,
 				18A0D08A26653CA60086AACB /* PasswordDM+CoreDataClass.swift in Sources */,
 				18CC4CA526640CAB006EE631 /* UIAlertController.swift in Sources */,
@@ -431,6 +454,7 @@
 				18393FD3265ED60C00AA7D7C /* ColorCell.swift in Sources */,
 				18575669265955C1000B54C7 /* sNotes.xcdatamodeld in Sources */,
 				180137CE265D7F35007FF09F /* SectionHeader.swift in Sources */,
+				18FC77A7266E6FF100B0566C /* PaymentSystem.swift in Sources */,
 				18BA4535266013D800C3143F /* PasswordCell.swift in Sources */,
 				180137D1265D8205007FF09F /* UIView.swift in Sources */,
 				180137CA265D77DC007FF09F /* NoteCell.swift in Sources */,

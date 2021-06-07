@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FolderDM.setDefaultFolder()
         
         let vc = SetPassCodeVC()
-        vc.isEnterPassCode = WorkWithKeychain.isPasscode()
         window?.rootViewController = vc
     }
     

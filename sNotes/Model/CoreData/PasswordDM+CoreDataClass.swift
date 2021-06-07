@@ -28,6 +28,7 @@ extension PasswordDM {
         passwordDM.dateCreate = Date()
         passwordDM.dateLastOpen = Date()
 
+        passwordDM.profile = ProfileDM.getProfile()
         persistenceManager.saveContext()
     }
     

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReminderVC" customModule="sNotes" customModuleProvider="target">
+            <connections>
+                <outlet property="reminderTableView" destination="xe9-OT-5PZ" id="Ejj-dU-xVu"/>
+                <outlet property="tabBarView" destination="AeK-T1-NRJ" id="yyd-5b-35o"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-OT-5PZ">
+                    <rect key="frame" x="16" y="88" width="382" height="704"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeK-T1-NRJ" customClass="TabBarView" customModule="sNotes" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="792" width="414" height="104"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AeK-T1-NRJ" firstAttribute="top" secondItem="xe9-OT-5PZ" secondAttribute="bottom" id="2xm-qL-Ffa"/>
+                <constraint firstItem="xe9-OT-5PZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7pi-7T-OBo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xe9-OT-5PZ" secondAttribute="trailing" constant="16" id="UM4-JH-592"/>
+                <constraint firstItem="AeK-T1-NRJ" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="aPV-QZ-Bu8"/>
+                <constraint firstItem="xe9-OT-5PZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="oOk-vz-tGm"/>
+                <constraint firstItem="AeK-T1-NRJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="u5s-YK-j4h"/>
+                <constraint firstItem="AeK-T1-NRJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-70" id="uy2-8d-Acu"/>
+                <constraint firstItem="AeK-T1-NRJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xJh-ef-Yh0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="124.55357142857142"/>
+        </view>
+    </objects>
+</document>

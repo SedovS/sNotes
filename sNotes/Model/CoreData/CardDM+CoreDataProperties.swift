@@ -24,6 +24,7 @@ extension CardDM {
     @NSManaged public var nameBank: String?
     @NSManaged public var dateAddCard: Date
     @NSManaged public var dateLastOpen: Date
+    @NSManaged public var dateExpiration: Date?
     @NSManaged public var comment: String?
     @NSManaged public var profile: ProfileDM?
 

@@ -28,6 +28,13 @@ class TabBarView: UIView, NibLoadableView {
         window?.rootViewController = vc
     }
     
+    @IBOutlet weak var reminderButton: UIButton!
+    @IBAction func pressReminderButton(_ sender: Any) {
+        let vc = ReminderVC()
+        window?.rootViewController = vc
+    }
+    
+    
     @IBOutlet weak var addButton: UIButton!
     @IBAction func pressAddButton(_ sender: UIButton) {
         delegate?.pressAddButton()
@@ -66,5 +73,9 @@ class TabBarView: UIView, NibLoadableView {
     
     func lockerSelected() {
         lockerButton.imageView?.image = UIImage(named: "icLockerSelected")
+    }
+    
+    func reminderSelected() {
+        reminderButton.imageView?.image = UIImage(named: "icReminderSelected")
     }
 }
