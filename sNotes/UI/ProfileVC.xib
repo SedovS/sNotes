@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="sNotes" customModuleProvider="target">
+            <connections>
+                <outlet property="biometricsLabel" destination="zAz-eM-8w0" id="oh5-db-imQ"/>
+                <outlet property="biometricsSwitch" destination="s0d-58-gTG" id="kBo-rE-aGI"/>
+                <outlet property="logOutButton" destination="lEg-j0-Cbe" id="53y-OZ-g29"/>
+                <outlet property="nameProfileTextField" destination="pr0-8F-PZt" id="CM8-kl-HiD"/>
+                <outlet property="photoProfile" destination="UPQ-1m-XGc" id="KJQ-Ba-byL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXW-co-Ka7">
+                    <rect key="frame" x="16" y="74" width="382" height="70"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UPQ-1m-XGc">
+                            <rect key="frame" x="0.0" y="17.5" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="IG6-Ta-TkI"/>
+                                <constraint firstAttribute="width" constant="35" id="c9C-5D-N97"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pr0-8F-PZt">
+                            <rect key="frame" x="47" y="14" width="335" height="42"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="pr0-8F-PZt" secondAttribute="trailing" id="Apo-Fu-P30"/>
+                        <constraint firstAttribute="height" constant="70" id="DQ2-Rz-5Yg"/>
+                        <constraint firstItem="UPQ-1m-XGc" firstAttribute="leading" secondItem="RXW-co-Ka7" secondAttribute="leading" id="H6q-3l-oBc"/>
+                        <constraint firstItem="pr0-8F-PZt" firstAttribute="leading" secondItem="UPQ-1m-XGc" secondAttribute="trailing" constant="12" id="JCc-Gp-pqp"/>
+                        <constraint firstItem="UPQ-1m-XGc" firstAttribute="centerY" secondItem="RXW-co-Ka7" secondAttribute="centerY" id="jga-E6-qfQ"/>
+                        <constraint firstItem="pr0-8F-PZt" firstAttribute="centerY" secondItem="RXW-co-Ka7" secondAttribute="centerY" id="tr6-Zy-wof"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htS-TY-Os3">
+                    <rect key="frame" x="16" y="184" width="382" height="41.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Биометрия" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAz-eM-8w0">
+                            <rect key="frame" x="0.0" y="10" width="319" height="21.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0d-58-gTG">
+                            <rect key="frame" x="335" y="5.5" width="49" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="47" id="pK0-wN-kXF"/>
+                            </constraints>
+                            <color key="onTintColor" red="0.094117647060000004" green="0.22352941179999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="pressBiometricsSwitch:" destination="-1" eventType="valueChanged" id="4SH-MZ-Kxb"/>
+                            </connections>
+                        </switch>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="s0d-58-gTG" firstAttribute="leading" secondItem="zAz-eM-8w0" secondAttribute="trailing" constant="16" id="4oJ-pF-V6Y"/>
+                        <constraint firstItem="s0d-58-gTG" firstAttribute="centerY" secondItem="htS-TY-Os3" secondAttribute="centerY" id="SVL-11-fG7"/>
+                        <constraint firstAttribute="bottom" secondItem="zAz-eM-8w0" secondAttribute="bottom" constant="10" id="T8i-KL-QTj"/>
+                        <constraint firstAttribute="trailing" secondItem="s0d-58-gTG" secondAttribute="trailing" id="aVn-Ev-SSV"/>
+                        <constraint firstItem="zAz-eM-8w0" firstAttribute="centerY" secondItem="htS-TY-Os3" secondAttribute="centerY" id="dPF-jr-Upe"/>
+                        <constraint firstItem="zAz-eM-8w0" firstAttribute="top" secondItem="htS-TY-Os3" secondAttribute="top" constant="10" id="rlG-Bv-8ub"/>
+                        <constraint firstItem="zAz-eM-8w0" firstAttribute="leading" secondItem="htS-TY-Os3" secondAttribute="leading" id="ttk-w1-Rlz"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-j0-Cbe">
+                    <rect key="frame" x="16" y="802" width="382" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="YzC-p7-F4G"/>
+                    </constraints>
+                    <color key="tintColor" red="0.094117647060000004" green="0.22352941179999999" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="pressLogOutButton:" destination="-1" eventType="touchUpInside" id="xhw-aF-fkR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RXW-co-Ka7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="AOf-nT-Bz0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RXW-co-Ka7" secondAttribute="trailing" constant="16" id="ENY-yn-H9R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="htS-TY-Os3" secondAttribute="trailing" constant="16" id="RRd-LX-iZn"/>
+                <constraint firstItem="htS-TY-Os3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="YWJ-cV-izC"/>
+                <constraint firstItem="htS-TY-Os3" firstAttribute="top" secondItem="RXW-co-Ka7" secondAttribute="bottom" constant="40" id="Zd0-rr-Rry"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lEg-j0-Cbe" secondAttribute="bottom" constant="16" id="g6u-CF-alp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lEg-j0-Cbe" secondAttribute="trailing" constant="16" id="opN-LD-CKq"/>
+                <constraint firstItem="lEg-j0-Cbe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="pCv-fv-1Xd"/>
+                <constraint firstItem="RXW-co-Ka7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="uDs-es-UV6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="139" y="140"/>
+        </view>
+    </objects>
+</document>

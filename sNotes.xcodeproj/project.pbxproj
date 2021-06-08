@@ -24,6 +24,9 @@
 		180137CE265D7F35007FF09F /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137CC265D7F35007FF09F /* SectionHeader.swift */; };
 		180137CF265D7F35007FF09F /* SectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180137CD265D7F35007FF09F /* SectionHeader.xib */; };
 		180137D1265D8205007FF09F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180137D0265D8205007FF09F /* UIView.swift */; };
+		1825048F266FA6C400C02E70 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825048D266FA6C400C02E70 /* ProfileVC.swift */; };
+		18250490266FA6C400C02E70 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1825048E266FA6C400C02E70 /* ProfileVC.xib */; };
+		18250492266FC55800C02E70 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18250491266FC55800C02E70 /* Camera.swift */; };
 		18393FD3265ED60C00AA7D7C /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18393FD1265ED60C00AA7D7C /* ColorCell.swift */; };
 		18393FD4265ED60C00AA7D7C /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18393FD2265ED60C00AA7D7C /* ColorCell.xib */; };
 		184565BA265D937B00F56B70 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184565B8265D937B00F56B70 /* FolderCell.swift */; };
@@ -95,6 +98,9 @@
 		180137CC265D7F35007FF09F /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		180137CD265D7F35007FF09F /* SectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeader.xib; sourceTree = "<group>"; };
 		180137D0265D8205007FF09F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1825048D266FA6C400C02E70 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		1825048E266FA6C400C02E70 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		18250491266FC55800C02E70 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		18393FD1265ED60C00AA7D7C /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		18393FD2265ED60C00AA7D7C /* ColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
 		184565B8265D937B00F56B70 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				18CC4C9E26640C36006EE631 /* CheckBlockSingnin.swift */,
 				18FC77A4266E675D00B0566C /* Day.swift */,
 				18FC77A6266E6FF100B0566C /* PaymentSystem.swift */,
+				18250491266FC55800C02E70 /* Camera.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 				18BA452826600AE400C3143F /* LockerVC.xib */,
 				18A0D08C26655DE50086AACB /* ReminderVC.swift */,
 				18A0D08D26655DE50086AACB /* ReminderVC.xib */,
+				1825048D266FA6C400C02E70 /* ProfileVC.swift */,
+				1825048E266FA6C400C02E70 /* ProfileVC.xib */,
 				18CC4CA626641D6F006EE631 /* Locker */,
 				18639A322662720800CFCF83 /* Passcode */,
 			);
@@ -383,6 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18250490266FA6C400C02E70 /* ProfileVC.xib in Resources */,
 				18BA453A2660171600C3143F /* AddCard.xib in Resources */,
 				18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */,
 				180137CB265D77DC007FF09F /* NoteCell.xib in Resources */,
@@ -431,6 +441,7 @@
 				18A0F464265EBBA200F3BCEF /* UITableView.swift in Sources */,
 				18BA452926600AE400C3143F /* LockerVC.swift in Sources */,
 				18BA45392660171600C3143F /* AddCard.swift in Sources */,
+				1825048F266FA6C400C02E70 /* ProfileVC.swift in Sources */,
 				1857565F265955C1000B54C7 /* AppDelegate.swift in Sources */,
 				18A0F461265EB9B700F3BCEF /* IconCell.swift in Sources */,
 				18013799265D24DC007FF09F /* WorkWithKeychain.swift in Sources */,
@@ -446,6 +457,7 @@
 				180137AC265D3258007FF09F /* ProfileDM+CoreDataClass.swift in Sources */,
 				18BA4526265FC2D700C3143F /* CustomImage.swift in Sources */,
 				180137B6265D4071007FF09F /* NibLoadableView.swift in Sources */,
+				18250492266FC55800C02E70 /* Camera.swift in Sources */,
 				18A0D08E26655DE50086AACB /* ReminderVC.swift in Sources */,
 				18CC4CA126640C6B006EE631 /* Date.swift in Sources */,
 				18A0D08A26653CA60086AACB /* PasswordDM+CoreDataClass.swift in Sources */,

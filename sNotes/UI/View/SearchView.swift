@@ -10,6 +10,7 @@ import UIKit
 
 protocol SearchViewDelegate: class {
     func changeSearchtextField(text: String)
+    func pressProfileButton()
 }
 
 class SearchView: UIView, NibLoadableView {
@@ -21,7 +22,7 @@ class SearchView: UIView, NibLoadableView {
     weak var delegate: SearchViewDelegate?
     var isNotesView = true
     @IBAction func pressProfileButton(_ sender: UIButton) {
-        
+        delegate?.pressProfileButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,8 +46,8 @@ class SearchView: UIView, NibLoadableView {
     internal func initAppearance() {
         contentView.shadow(cornerRadius: 15)
         
-        profileButton.cornerRadius = 34/2
-        profileButton.imageView?.image = ProfileDM.getPhotoProfile()
+        profileButton.cornerRadius = profileButton.frame.width / 2
+        profileButton.setImage(ProfileDM.getPhotoProfile(), for: .normal)
         
         textField.delegate = self
         textField.placeholder = isNotesView ? "Найди свою заметку" : "Найди среди данных"

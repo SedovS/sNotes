@@ -37,8 +37,8 @@ extension ProfileDM {
         
         let persistenceManager = PersistenceManager.shared
         let profileDM = ProfileDM(context: persistenceManager.context)
-        profileDM.userName = "Sergey"
-        profileDM.userSurname = "S"
+        profileDM.userName = nil
+        profileDM.userSurname = nil
         profileDM.dateCreate = Date()
         profileDM.photoProfile = UIImage(named: "defaultPhotoProfile")!.pngData()
         persistenceManager.saveContext()
@@ -109,6 +109,17 @@ extension ProfileDM {
     
     func changeTimeBlockSingin(date: Date?) {
         self.timeBlockSingin = date
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changeNameProfile(name: String?, surname: String?) {
+        self.userName = name
+        self.userSurname = surname
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changePhotoProfile(image: UIImage) {
+        self.photoProfile = image.pngData()
         PersistenceManager.shared.saveContext()
     }
 }

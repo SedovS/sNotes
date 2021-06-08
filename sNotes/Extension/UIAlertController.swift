@@ -30,7 +30,27 @@ extension UIAlertController {
         return alertController
     }
     
-    func tintColor() {
-        self.view.tintColor =  .customBlueForPassCode()
+    func tintColor(color: UIColor = .customBlueForPassCode()) {
+        self.view.tintColor = color
+    }
+    
+    static func createPhotoForProfileAlert(WithTitle title: String?, message: String?, cameraTitle: String = "Открыть камеру", libraryTitle: String = "Открыть библиотеку", cancelTitle: String = "Отмена", completion: @escaping(_ isLibrary: Bool) -> ()) -> UIAlertController {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: cancelTitle, style: .default, handler: nil)
+        
+        let library = UIAlertAction(title: libraryTitle, style: .default) { (result : UIAlertAction) -> Void in
+            completion(true)
+        }
+        let camera = UIAlertAction(title: cameraTitle, style: .default) { (result : UIAlertAction) -> Void in
+            completion(false)
+        }
+        
+        alertController.addAction(library)
+        alertController.addAction(camera)
+        alertController.addAction(cancel)
+        alertController.tintColor(color: .customBlueForProfile())
+        
+        return alertController
     }
 }

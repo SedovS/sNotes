@@ -108,6 +108,10 @@ class NotesVC: UIViewController {
 
 //MARK:- SearchViewDelegate
 extension NotesVC: SearchViewDelegate {
+    func pressProfileButton() {
+        show(ProfileVC(), sender: nil)
+    }
+    
     func changeSearchtextField(text: String) {
         //Add search
     }

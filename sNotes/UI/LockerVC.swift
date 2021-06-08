@@ -118,9 +118,14 @@ class LockerVC: UIViewController {
 
 //MARK:- SearchViewDelegate
 extension LockerVC: SearchViewDelegate {
+    func pressProfileButton() {
+        show(ProfileVC(), sender: nil)
+    }
+    
     func changeSearchtextField(text: String) {
         //Add search
     }
+    
 }
 
 //MARK:- TapBarViewDelegate
