@@ -39,7 +39,7 @@ extension NoteDM {
         noteDM.dateLastOpen = Date()
         
         noteDM.isAnchor = false
-        noteDM.tittle = ""
+        noteDM.title = ""
         noteDM.text = "Текст заметки"
         noteDM.profile = ProfileDM.getProfile()
         noteDM.folder = FolderDM.getDefaultFolder()
@@ -126,8 +126,8 @@ extension NoteDM {
         PersistenceManager.shared.saveContext()
     }
 
-    func changeTittle(newTittle: String) {
-        self.tittle = newTittle
+    func changeTitle(newTitle: String) {
+        self.title = newTitle
         PersistenceManager.shared.saveContext()
     }
     

@@ -185,14 +185,14 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-                cell.initCell(title: arrayAnchoreNotes[index].tittle ?? "", text: arrayAnchoreNotes[index].text ?? "")
+                cell.initCell(title: arrayAnchoreNotes[index].title ?? "", text: arrayAnchoreNotes[index].text ?? "")
                 cell.shadow()
                 return cell
             }
         case 3:
             let index = indexPath.row
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-            cell.initCell(title: arrayRecentlyNotes[index].tittle ?? "", text: arrayRecentlyNotes[index].text ?? "")
+            cell.initCell(title: arrayRecentlyNotes[index].title ?? "", text: arrayRecentlyNotes[index].text ?? "")
             cell.shadow()
             return cell
         case 4:

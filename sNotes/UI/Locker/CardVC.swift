@@ -24,7 +24,7 @@ class CardVC: UIViewController {
     @IBOutlet weak var dateCard: UITextField!
     @IBOutlet weak var cvcCard: UITextField!
     @IBOutlet weak var cardOwner: UITextField!
-    @IBOutlet weak var paymentSystem: UIImageView!
+    @IBOutlet weak var pinCard: UITextField!
     
     var isAddCard = false
     var isShowCard = true
@@ -48,8 +48,11 @@ class CardVC: UIViewController {
             dateCard.placeholder = "Срок действия"
             cvcCard.placeholder = "CVC"
             cardOwner.placeholder = "Имя держателя"
+            pinCard.placeholder = "pin"
             numberCard.delegate = self
             cardOwner.delegate = self
+            cvcCard.delegate = self
+            dateCard.delegate = self
         } else {
             numberCard.isUserInteractionEnabled = false
             dateCard.isUserInteractionEnabled = false
@@ -58,6 +61,8 @@ class CardVC: UIViewController {
             hideCardInfo()
             card?.changeDateLastOpen()
         }
+        
+        pinCard.delegate = self
         
 //        gray(field: numberCard)
 //        gray(field: dateCard)
@@ -79,13 +84,13 @@ class CardVC: UIViewController {
     
     private func checkForCorrect() {
         
-        guard let number = numberCard.text,
-            numberCard.text?.count == 16 else {
+        guard let number = numberCard.text?.replacingOccurrences(of: " ", with: ""),
+            number.count == 16 else {
                 redBorderTextField(field: numberCard)
                 return
         }
         guard let date = dateCard.text,
-            date != "" else {
+            date != "", Int(date[0...1]) ?? 13 <= 12, let _ = Day.convertStringDateFromCardToDate(date: date) else {
                 redBorderTextField(field: dateCard)
                 return
         }
@@ -109,6 +114,7 @@ class CardVC: UIViewController {
         dateCard.text = "\u{00B7}\u{00B7}/\u{00B7}\u{00B7}"
         cvcCard.text = "\u{00B7}\u{00B7}\u{00B7}"
         cardOwner.text = card?.cardOwner
+        pinCard.text = "\u{00B7}\u{00B7}\u{00B7}\u{00B7}"
     }
     
     private func showCardInfo() {
@@ -116,6 +122,7 @@ class CardVC: UIViewController {
         dateCard.text = card?.date
         cvcCard.text = "***"
         cardOwner.text = card?.cardOwner
+        pinCard.text = "\u{00B7}\u{00B7}\u{00B7}\u{00B7}"
     }
     
     private func gray(field: UITextField) {
@@ -130,6 +137,7 @@ class CardVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             field.borderColor = .clear
         }
+        field.becomeFirstResponder()
     }
     
 }
@@ -141,6 +149,61 @@ extension CardVC: UITextFieldDelegate {
             self.checkForCorrect()
         default:
             return true
+        }
+        return true
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if textField == numberCard {
+            switch textField.text?.count  {
+            case 4, 9, 14:
+                textField.text! += " "
+            default:
+                break
+            }
+        }
+        
+        if textField == dateCard {
+            if textField.text?.count == 2 {
+                 textField.text! += "/"
+            }
+        }
+        
+        if textField == pinCard {
+            //save pincode
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string == "" {
+            if textField == numberCard {
+                
+            } else if textField.text?.count == 4 {
+                textField.text?.removeLast(2)
+                return true
+            }
+
+            return true
+        }
+        switch textField {
+        case numberCard:
+            if textField.text?.replacingOccurrences(of: " ", with: "").count ?? 0 >= 16 {
+                return false
+            }
+        case dateCard:
+            if textField.text?.replacingOccurrences(of: "/", with: "").count ?? 0 >= 4 {
+                return false
+            }
+        case cvcCard:
+            if textField.text?.count ?? 0 >= 3 {
+                return false
+            }
+        case pinCard:
+            if textField.text?.count ?? 0 >= 4 {
+                return false
+            }
+        default:
+            return false
         }
         return true
     }

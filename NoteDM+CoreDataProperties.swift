@@ -23,7 +23,7 @@ extension NoteDM {
     @NSManaged public var dateReminder: Date?
 
     @NSManaged public var isAnchor: Bool
-    @NSManaged public var tittle: String?
+    @NSManaged public var title: String?
     @NSManaged public var text: String?
     @NSManaged public var profile: ProfileDM?
     @NSManaged public var folder: FolderDM?

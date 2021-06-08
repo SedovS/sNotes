@@ -16,7 +16,7 @@
                 <outlet property="dateCard" destination="MBk-ip-WSu" id="CDl-8Z-h2b"/>
                 <outlet property="nameCardInfoLabel" destination="hRA-hP-htx" id="iqy-8m-Rgp"/>
                 <outlet property="numberCard" destination="qMv-Oo-O6z" id="irI-sk-hSn"/>
-                <outlet property="paymentSystem" destination="vPf-8Z-nTP" id="zuF-6q-bP9"/>
+                <outlet property="pinCard" destination="I0T-NF-fdr" id="jrW-11-LL3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -76,16 +76,18 @@
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                             <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
                         </textField>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vPf-8Z-nTP">
-                            <rect key="frame" x="222" y="181.5" width="50" height="50"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I0T-NF-fdr">
+                            <rect key="frame" x="212" y="181.5" width="60" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="4A7-ju-zd2"/>
-                                <constraint firstAttribute="width" constant="50" id="4qe-g6-BME"/>
+                                <constraint firstAttribute="height" constant="50" id="LgW-sg-dTH"/>
                             </constraints>
-                        </imageView>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
+                        <constraint firstItem="I0T-NF-fdr" firstAttribute="leading" secondItem="0KB-iV-k6u" secondAttribute="trailing" constant="16" id="7cf-Z4-wqU"/>
                         <constraint firstItem="MBk-ip-WSu" firstAttribute="leading" secondItem="EvQ-ru-6F6" secondAttribute="leading" constant="16" id="8Zz-JG-2U6"/>
                         <constraint firstItem="iHS-3a-73e" firstAttribute="centerY" secondItem="hRA-hP-htx" secondAttribute="centerY" id="8a0-Mm-OfH"/>
                         <constraint firstItem="vI3-7b-bNY" firstAttribute="width" secondItem="MBk-ip-WSu" secondAttribute="width" id="C4e-mG-Nqg"/>
@@ -94,18 +96,18 @@
                         <constraint firstAttribute="trailing" secondItem="vI3-7b-bNY" secondAttribute="trailing" constant="16" id="Ozc-T6-SMH"/>
                         <constraint firstItem="hRA-hP-htx" firstAttribute="top" secondItem="EvQ-ru-6F6" secondAttribute="top" constant="20" id="Vrj-YD-R66"/>
                         <constraint firstItem="iHS-3a-73e" firstAttribute="leading" secondItem="hRA-hP-htx" secondAttribute="trailing" id="Wnl-DJ-Hj0"/>
+                        <constraint firstItem="I0T-NF-fdr" firstAttribute="centerY" secondItem="0KB-iV-k6u" secondAttribute="centerY" id="a3r-1T-sBD"/>
                         <constraint firstItem="vI3-7b-bNY" firstAttribute="centerY" secondItem="MBk-ip-WSu" secondAttribute="centerY" id="a5O-t5-XKc"/>
                         <constraint firstItem="MBk-ip-WSu" firstAttribute="top" secondItem="qMv-Oo-O6z" secondAttribute="bottom" constant="10" id="dmv-OH-Evn"/>
                         <constraint firstAttribute="bottom" secondItem="0KB-iV-k6u" secondAttribute="bottom" constant="10" id="hJd-tq-M5g"/>
                         <constraint firstAttribute="trailing" secondItem="iHS-3a-73e" secondAttribute="trailing" constant="16" id="hMf-zb-0Zu"/>
-                        <constraint firstItem="vPf-8Z-nTP" firstAttribute="centerY" secondItem="0KB-iV-k6u" secondAttribute="centerY" id="pHR-IU-5S6"/>
-                        <constraint firstAttribute="trailing" secondItem="vPf-8Z-nTP" secondAttribute="trailing" constant="16" id="pws-Cf-4qO"/>
                         <constraint firstItem="0KB-iV-k6u" firstAttribute="top" secondItem="vI3-7b-bNY" secondAttribute="bottom" constant="15" id="rSq-LM-h5i"/>
                         <constraint firstItem="0KB-iV-k6u" firstAttribute="width" secondItem="vI3-7b-bNY" secondAttribute="width" multiplier="1.5" id="shZ-Yc-cc0"/>
                         <constraint firstItem="vI3-7b-bNY" firstAttribute="leading" secondItem="MBk-ip-WSu" secondAttribute="trailing" constant="16" id="t3H-BO-QiG"/>
                         <constraint firstItem="qMv-Oo-O6z" firstAttribute="leading" secondItem="EvQ-ru-6F6" secondAttribute="leading" constant="16" id="ug3-Ir-rV5"/>
                         <constraint firstItem="qMv-Oo-O6z" firstAttribute="top" secondItem="hRA-hP-htx" secondAttribute="bottom" constant="15" id="whY-4Q-fce"/>
                         <constraint firstItem="hRA-hP-htx" firstAttribute="leading" secondItem="EvQ-ru-6F6" secondAttribute="leading" constant="16" id="x4s-h1-fbg"/>
+                        <constraint firstAttribute="trailing" secondItem="I0T-NF-fdr" secondAttribute="trailing" constant="16" id="xU6-8L-H2U"/>
                     </constraints>
                 </view>
             </subviews>

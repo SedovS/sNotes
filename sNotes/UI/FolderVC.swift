@@ -141,7 +141,7 @@ extension FolderVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-        cell.initCell(title: arrayNotes[indexPath.row].tittle ?? "", text: arrayNotes[indexPath.row].text ?? "")
+        cell.initCell(title: arrayNotes[indexPath.row].title ?? "", text: arrayNotes[indexPath.row].text ?? "")
         cell.shadow()
         return cell
     }

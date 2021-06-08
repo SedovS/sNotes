@@ -13,7 +13,7 @@ class NoteVC: UIViewController {
     @IBOutlet weak var nameFolderButton: UIButton!
     
     @IBOutlet weak var tabBarView: TabBarView!
-    @IBOutlet weak var tittleNote: UITextField!
+    @IBOutlet weak var titleNote: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
@@ -42,19 +42,19 @@ class NoteVC: UIViewController {
         nameFolderButton.setTitle(note?.folder?.name ?? "no name folder", for: .normal)
         let color = note?.folder?.color as? UIColor ?? .customGrayForArray()
         nameFolderButton.imageView?.image = CustomImage.image(color: color)
-        tittleNote.text = note?.tittle
+        titleNote.text = note?.title
         textView.text = note?.text
-        if tittleNote.text == nil ||  tittleNote.text == "" {
-            tittleNote.placeholder = "Введите название"
+        if titleNote.text == nil ||  titleNote.text == "" {
+            titleNote.placeholder = "Введите название"
         }
         
         if isCrateNote {
-            tittleNote.becomeFirstResponder()
+            titleNote.becomeFirstResponder()
         }
         
         tabBarView.delegate = self
 
-        tittleNote.delegate = self
+        titleNote.delegate = self
         textView.delegate = self
                 
         //pickerView
@@ -104,7 +104,7 @@ extension NoteVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
-        note?.changeTittle(newTittle: textField.text ?? "")
+        note?.changeTitle(newTitle: textField.text ?? "")
         note?.changeDeteLastChange()
         return false
     }

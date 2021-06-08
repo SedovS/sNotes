@@ -19,6 +19,8 @@ class PasswordVC: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var descriptionPassword: UITextField!
     
+    
+    @IBOutlet weak var generatePasswordButton: UIButton!
     var isAddPassword = false
     var isShowPassword = true
     var passwordDM: PasswordDM?
@@ -37,6 +39,11 @@ class PasswordVC: UIViewController {
         let titleButton = isAddPassword ? "Добавить" : "Показать"
         actionsPasswordButton.setTitle(titleButton, for: .normal)
         
+        generatePasswordButton.isHidden = true
+        generatePasswordButton.sz_heightConstraint()?.constant = 0
+        generatePasswordButton.sz_bottomConstraint()?.constant = 0
+        generatePasswordButton.sz_topConstraint()?.constant = 20
+        
         if isAddPassword {
             website.placeholder = "Сайт"
             email.placeholder = "Почта"
@@ -47,6 +54,11 @@ class PasswordVC: UIViewController {
             email.delegate = self
             password.delegate = self
             descriptionPassword.delegate = self
+            
+            generatePasswordButton.setTitle("Сгенерировать надежный пароль", for: .normal)
+            generatePasswordButton.titleLabel?.textColor = .customBlueForProfile()
+            generatePasswordButton.backgroundColor = .customGrayForProfile()
+            generatePasswordButton.shadow()
         } else {
             website.isUserInteractionEnabled = false
             email.isUserInteractionEnabled = false
@@ -70,9 +82,15 @@ class PasswordVC: UIViewController {
             actionsPasswordButton.setTitle(titleButton, for: .normal)
             isShowPassword ? showPasswordInfo() : hidePasswordInfo()
             isShowPassword = !isShowPassword
-
         }
-        
+    }
+    
+    
+    @IBAction func pressGeneratePasswordButton(_ sender: Any) {
+        //
+        password.text = "REDAS-Edcsdg-EsddE-Reew"
+        descriptionPassword.becomeFirstResponder()
+        UIPasteboard.general.string = password.text
     }
     
     private func checkForCorrect() {
@@ -120,6 +138,25 @@ class PasswordVC: UIViewController {
 }
 
 extension PasswordVC: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == password {
+            generatePasswordButton.isHidden = false
+            generatePasswordButton.sz_heightConstraint()?.constant = 44
+            generatePasswordButton.sz_bottomConstraint()?.constant = 16
+            generatePasswordButton.sz_topConstraint()?.constant = 44
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == password {
+            generatePasswordButton.isHidden = true
+            generatePasswordButton.sz_heightConstraint()?.constant = 0
+            generatePasswordButton.sz_bottomConstraint()?.constant = 0
+            generatePasswordButton.sz_topConstraint()?.constant = 20
+        }
+    }
+    
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case website:

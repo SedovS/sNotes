@@ -29,7 +29,7 @@
         <attribute name="dateReminder" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isAnchor" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>
-        <attribute name="tittle" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FolderDM" inverseName="notes" inverseEntity="FolderDM"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="notes" inverseEntity="ProfileDM"/>
     </entity>
@@ -53,10 +53,10 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="CardDM" positionX="-464.96875" positionY="287.66015625" width="128" height="193"/>
-        <element name="FolderDM" positionX="-98.15234375" positionY="260.62890625" width="128" height="163"/>
-        <element name="NoteDM" positionX="-187.29296875" positionY="-146.4609375" width="128" height="178"/>
-        <element name="PasswordDM" positionX="-286.33984375" positionY="289.33203125" width="128" height="133"/>
-        <element name="ProfileDM" positionX="-395.43359375" positionY="83.171875" width="128" height="178"/>
+        <element name="CardDM" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FolderDM" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="NoteDM" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PasswordDM" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ProfileDM" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

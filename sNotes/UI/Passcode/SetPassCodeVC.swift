@@ -11,10 +11,6 @@ import LocalAuthentication
 
 class SetPassCodeVC: UIViewController {
 
-    deinit {
-        print("deinit SetPassCode VC")
-    }
-    
     enum PassCodeColor {
         case blue
         case red
@@ -168,7 +164,7 @@ class SetPassCodeVC: UIViewController {
         let alert = UIAlertController.createLogOutAlert(WithTitle: "Вы уверены, что хотите выйти?", message: "Все ваши данные придется удалить.") {
             PersistenceManager.shared.deleteAll()
             WorkWithKeychain.clearKeychain()
-            AppDelegate().start(window: UIApplication.shared.keyWindow)
+            AppDelegate().start(window: UIApplication.shared.windows.filter {$0.isKeyWindow}.first)
         }
         show(alert, sender: nil)
     }
