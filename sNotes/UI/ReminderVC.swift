@@ -17,11 +17,12 @@ class ReminderVC: UIViewController {
     fileprivate lazy var frc: NSFetchedResultsController<NoteDM> = {
         let context = PersistenceManager.shared.context
         
-        let fetchRequest : NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateReminder", ascending: false)]
-        let tmpFrc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "dateReminder", cacheName: nil)
+        let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "dateReminder != nil")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateReminder", ascending: true)]
+        let tmpFrc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
 //        tmpFrc.delegate = self
-//        try? tmpFrc.performFetch()
+        try? tmpFrc.performFetch()
         return tmpFrc
     }()
 
@@ -61,7 +62,8 @@ extension ReminderVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath as IndexPath) as ReminderCell
-        cell.initCell(date: Date(), name: "Test")
+        let object = frc.object(at: indexPath)
+        cell.initCell(date: object.dateReminder!, name: object.title ?? "")
         return cell
     }
     

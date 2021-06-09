@@ -14,6 +14,7 @@ class ReminderCell: UITableViewCell {
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var reminderView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +26,8 @@ class ReminderCell: UITableViewCell {
         name.text = ""
         time.text = ""
         self.selectionStyle = .none
-        contentView.shadow()
+        reminderView.shadow()
+        reminderView.backgroundColor = .white
         // Initialization code
     }
     
@@ -38,8 +40,17 @@ class ReminderCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMM")
         month.text = dateFormatter.string(from: date)
-        
-        time.text = "\(components.hour!):\(components.minute!)"
+        if let hour = components.hour, let minute = components.minute {
+            var minutes = "\(minute)"
+            if minute < 10 {
+                minutes = "0\(minutes)"
+            }
+            var hours = "\(hour)"
+            if hour < 10 {
+                hours = "0\(hour)"
+            }
+            time.text = "\(hours):\(minutes)"
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

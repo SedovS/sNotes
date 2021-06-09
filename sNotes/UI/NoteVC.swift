@@ -17,6 +17,7 @@ class NoteVC: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var datePickerView: UIDatePicker!
     
     @IBAction func swipedLeft(_ sender: UIScreenEdgePanGestureRecognizer) {
         let vc = NotesVC()
@@ -32,7 +33,7 @@ class NoteVC: UIViewController {
     }()
     
 
-    let arrayNameImage = [/*"icAddCheckList", "icAddImage", "icAddAudio", */"icPin"]
+    let arrayNameImage = [/*"icAddCheckList", "icAddImage", "icAddAudio", */"icAddReminder", "icPin"]
 
     
     override func viewDidLoad() {
@@ -46,6 +47,7 @@ class NoteVC: UIViewController {
         textView.text = note?.text
         if titleNote.text == nil ||  titleNote.text == "" {
             titleNote.placeholder = "Введите название"
+            titleNote.becomeFirstResponder()
         }
         
         if isCrateNote {
@@ -62,6 +64,13 @@ class NoteVC: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         
+        //datePickerView
+        datePickerView.isHidden = true
+        if true {
+            datePickerView.locale = Locale(identifier: "en-GB")
+        }
+        datePickerView.datePickerMode = .dateAndTime
+
         //table view
         tableView.delegate = self
         tableView.dataSource = self
@@ -84,10 +93,15 @@ class NoteVC: UIViewController {
             pickerView.isHidden = false
         }
     }
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        note?.changedateReminder(date: sender.date)
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
         tableView.isHidden = true
+        datePickerView.isHidden = true
     }
     
 }
@@ -149,6 +163,12 @@ extension NoteVC: UITableViewDelegate {
         case "icAddImage": break
         case "icAddAudio": break
 
+        case "icAddReminder":
+            NotificationManager.shared.addLocalPushForNotes()
+            if note?.dateReminder != nil {
+                datePickerView.setDate(note?.dateReminder ?? Date(), animated: false)
+            }
+            datePickerView.isHidden = false
         case "icPin":
             note?.changeAnchor()
             note?.changeDeteLastChange()

@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-OT-5PZ">
-                    <rect key="frame" x="16" y="88" width="382" height="704"/>
+                    <rect key="frame" x="0.0" y="78" width="414" height="714"/>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeK-T1-NRJ" customClass="TabBarView" customModule="sNotes" customModuleProvider="target">
@@ -31,10 +31,10 @@
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AeK-T1-NRJ" firstAttribute="top" secondItem="xe9-OT-5PZ" secondAttribute="bottom" id="2xm-qL-Ffa"/>
-                <constraint firstItem="xe9-OT-5PZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="7pi-7T-OBo"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xe9-OT-5PZ" secondAttribute="trailing" constant="16" id="UM4-JH-592"/>
+                <constraint firstItem="xe9-OT-5PZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7pi-7T-OBo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xe9-OT-5PZ" secondAttribute="trailing" id="UM4-JH-592"/>
                 <constraint firstItem="AeK-T1-NRJ" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="aPV-QZ-Bu8"/>
-                <constraint firstItem="xe9-OT-5PZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="oOk-vz-tGm"/>
+                <constraint firstItem="xe9-OT-5PZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="34" id="oOk-vz-tGm"/>
                 <constraint firstItem="AeK-T1-NRJ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="u5s-YK-j4h"/>
                 <constraint firstItem="AeK-T1-NRJ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-70" id="uy2-8d-Acu"/>
                 <constraint firstItem="AeK-T1-NRJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xJh-ef-Yh0"/>

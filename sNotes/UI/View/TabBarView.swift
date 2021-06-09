@@ -63,6 +63,7 @@ class TabBarView: UIView, NibLoadableView {
     
     internal func initAppearance() {
         contentView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        contentView.backgroundColor = .white
         contentView.shadow(cornerRadius: 25)
         
     }

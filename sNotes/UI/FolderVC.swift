@@ -208,6 +208,7 @@ extension FolderVC: UITableViewDelegate {
                 case "icAddNote":
                     let vc = NoteVC()
                     vc.note = NoteDM.addDefaultNote()
+                    vc.isCrateNote = true
                     vc.note?.changeFolder(newFolder: folder!)
                     UIApplication.shared.keyWindow?.rootViewController = vc
                 case "icAddCheckList": break

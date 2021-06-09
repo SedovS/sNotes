@@ -29,6 +29,7 @@ extension CardDM {
 //        cardDM.nameBank: String?
         cardDM.dateAddCard = Date()
         cardDM.dateLastOpen = Date()
+        cardDM.dateExpiration = Day.convertStringDateFromCardToDate(date: date)
 //        cardDM.comment: String?
 
         cardDM.profile = ProfileDM.getProfile()
