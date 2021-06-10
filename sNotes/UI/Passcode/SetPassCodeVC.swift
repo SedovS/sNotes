@@ -65,13 +65,12 @@ class SetPassCodeVC: UIViewController {
         forgotPassCodeButton.setTitle(NSLocalizedString("LogOut", comment: ""), for: .normal)
         aboutButton.setTitle(NSLocalizedString("WhatFor", comment: ""), for: .normal)
         aboutButton.isHidden = !isEnterPassCode
-        faceTouchIDButton.isHidden = !isEnterPassCode
         
         nameLabel.text = isEnterPassCode ? TextForNameLabel.enterPasssCode.localizedString() : TextForNameLabel.setPassCode.localizedString()
         hintLabel.isHidden = isEnterPassCode
         let isAuthenticationWithBiometrics = ProfileDM.getIsAuthenticationWithBiometrics()
         
-        faceTouchIDButton.isHidden = !isAuthenticationWithBiometrics
+        faceTouchIDButton.isHidden = !isEnterPassCode || !isAuthenticationWithBiometrics
         if isEnterPassCode && isAuthenticationWithBiometrics && !timeBlock.isBlock() {
             showID()
         }

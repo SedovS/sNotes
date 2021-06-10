@@ -101,7 +101,7 @@ class PasswordVC: UIViewController {
             redBorderTextField(field: self.website)
             return
         }
-        guard let email = login.text, email != "" else {
+        guard let login = login.text, login != "" else {
             redBorderTextField(field: self.login)
             return
         }
@@ -109,18 +109,19 @@ class PasswordVC: UIViewController {
             redBorderTextField(field: self.password)
             return
         }
-        PasswordDM.addPassword(website: website, email: email, descriptionPassword: descriptionPassword.text)
+        passwordDM = PasswordDM.addPassword(website: website, login: login, descriptionPassword: descriptionPassword.text)
+        WorkWithKeychain.setService(key: .password, addService: passwordDM?.objectID.uriRepresentation().path ?? "", data: password)
         dismiss(animated: true, completion: nil)
     }
     
     
     private func hidePasswordInfo() {
-        password.text = "***"
-        descriptionPassword.text = ""
+        password.text = "\u{00B7} \u{00B7} \u{00B7} \u{00B7}"
+        descriptionPassword.text = "\u{00B7} \u{00B7} \u{00B7} \u{00B7}"
     }
     
     private func showPasswordInfo() {
-        password.text = "***"
+        password.text = WorkWithKeychain.getService(key: .password, addService: passwordDM?.objectID.uriRepresentation().path ?? "")
         descriptionPassword.text = passwordDM?.descriptionPassword
     }
     

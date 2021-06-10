@@ -17,7 +17,7 @@ public class CardDM: NSManagedObject {
 
 extension CardDM {
     
-    static func addCard(last4Number: String, date: String, cardOwner: String, firstNumber: String) {
+    static func addCard(last4Number: String, date: String, cardOwner: String, firstNumber: String) -> CardDM {
         let persistenceManager = PersistenceManager.shared
         let cardDM = CardDM(context: persistenceManager.context)
 
@@ -34,6 +34,7 @@ extension CardDM {
 
         cardDM.profile = ProfileDM.getProfile()
         persistenceManager.saveContext()
+        return cardDM
     }
     
     static func getCards() -> [CardDM] {

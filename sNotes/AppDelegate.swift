@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let splash = UIStoryboard.init(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         window?.rootViewController = splash
         
+        if ProfileDM.getProfile() == nil {
+            WorkWithKeychain.clearKeychain()
+        }
+        
         ProfileDM.setDefaultProfile()
         FolderDM.setDefaultFolder()
         

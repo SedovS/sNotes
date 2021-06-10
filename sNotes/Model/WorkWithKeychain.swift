@@ -19,13 +19,20 @@ class WorkWithKeychain {
     enum keyKeychain: String {
         case account = "sNotes"
         case passcode = "passCode"
+        
+        case number = "number"
+        case cvc = "cvc"
+        case pin = "pin"
+        
+        case password = "password"
+
     }
     
     
     //MARK: - Passcode
     //Return true if the code is in the keychain
     static public func isPasscode() -> Bool {
-        return keychainCheck(service: .passcode)
+        return keychainCheck(service: keyKeychain.passcode.rawValue)
     }
     
     static public func checkPassCode(passCode: String) -> Bool {
@@ -34,7 +41,7 @@ class WorkWithKeychain {
     
     //return personal code
     static private func getPassCode() -> String {
-        let data = read(service: .passcode)
+        let data = read(service: keyKeychain.passcode.rawValue)
         let pc = String(data: data!, encoding: .utf8)
         return pc!
     }
@@ -42,7 +49,32 @@ class WorkWithKeychain {
     //save personal code
     static public func setPassCode(passCode: String) {
         let data = passCode.data(using: .utf8)!
-        write(service: .passcode, data: data)
+        write(service: keyKeychain.passcode.rawValue, data: data)
+    }
+    
+    
+    //MARK: - Card info
+    //Return true if the code is in the keychain
+    static public func isKeychain(service: String) -> Bool {
+        return keychainCheck(service: service)
+    }
+    
+    //return Number info
+    static public func getService(key: keyKeychain, addService: String) -> String? {
+        let service = key.rawValue + addService
+        
+        guard let data = read(service: service) else {
+            return nil
+        }
+        let info = String(data: data, encoding: .utf8)
+        return info
+    }
+    
+    //save Number info
+    static public func setService(key: keyKeychain, addService: String, data: String) {
+        let service = key.rawValue + addService
+        let data = data.data(using: .utf8)!
+        write(service: service, data: data)
     }
         
     
@@ -50,7 +82,7 @@ class WorkWithKeychain {
     // MARK: - check
     //checks for data in the keychain
     //returns true - if there is data
-    static private func keychainCheck(service: keyKeychain) -> Bool {
+    static private func keychainCheck(service: String) -> Bool {
         if read(service: service) == nil {
             return false
         } else {
@@ -58,7 +90,7 @@ class WorkWithKeychain {
         }
     }
     // MARK: - reed
-    static private func read(service: keyKeychain) -> Data? {
+    static private func read(service: String) -> Data? {
         do {
             let t = try readKeychain(service: service)
             return (t as! Data)
@@ -68,11 +100,11 @@ class WorkWithKeychain {
         }
     }
     
-    static private func readKeychain(service: keyKeychain) throws -> Any? {
+    static private func readKeychain(service: String) throws -> Any? {
         
         let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
                                     kSecAttrAccount as String: keyKeychain.account.rawValue,
-                                    kSecAttrService as String: service.rawValue,
+                                    kSecAttrService as String: service,
                                     kSecMatchLimit as String: kSecMatchLimitOne,
                                     kSecReturnData as String: true,
                                     kSecReturnAttributes as String: true]
@@ -87,12 +119,11 @@ class WorkWithKeychain {
             else {
                 throw KeychainError.unexpectedPasswordData
         }
-        print("readKeychain ok, service=",service)
         return data
     }
     
     // MARK: - write
-    static private func write(service: keyKeychain, data: Data) {
+    static private func write(service: String, data: Data) {
         do {
             let _ = try setKeychain(service: service, data: data)
         } catch  {
@@ -100,31 +131,30 @@ class WorkWithKeychain {
         }
     }
     
-    static private func setKeychain(service: keyKeychain, data: Data) throws -> Any? {
+    static private func setKeychain(service: String, data: Data) throws -> Any? {
         
         let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
                                     kSecAttrAccount as String: keyKeychain.account.rawValue,
-                                    kSecAttrService as String: service.rawValue,
+                                    kSecAttrService as String: service,
                                     kSecValueData as String: data]
         let status = SecItemAdd(query as CFDictionary, nil)
         guard status == errSecSuccess else {
             throw
                 KeychainError.unhandledError(status: status)
         }
-        print("Set Keyshein OK, service=",service)
         return status
     }
     
     // MARK: - update
-    static private func updateKeychain(service: keyKeychain, data: Data) {
+    static private func updateKeychain(service: String, data: Data) {
         
         let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
                                     kSecAttrAccount as String: keyKeychain.account.rawValue,
-                                    kSecAttrService as String: service.rawValue,
+                                    kSecAttrService as String: service,
                                     kSecValueData as String: data]
         
         let attributesToUpdate: [String: Any] = [kSecAttrAccount as String: keyKeychain.account.rawValue,
-                                                 kSecAttrService as String: service.rawValue,
+                                                 kSecAttrService as String: service,
                                                  kSecValueData as String: data]
         
         let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)

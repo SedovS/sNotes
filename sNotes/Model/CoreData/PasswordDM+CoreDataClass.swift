@@ -17,19 +17,20 @@ public class PasswordDM: NSManagedObject {
 
 extension PasswordDM {
     
-    static func addPassword(website: String, email: String, descriptionPassword: String?) {
+    static func addPassword(website: String, login: String, descriptionPassword: String?) -> PasswordDM {
         let persistenceManager = PersistenceManager.shared
         let passwordDM = PasswordDM(context: persistenceManager.context)
         
         
         passwordDM.website = website.capitalizingFirstLetter()
-        passwordDM.login = email.capitalizingFirstLetter()
+        passwordDM.login = login.capitalizingFirstLetter()
         passwordDM.descriptionPassword = descriptionPassword
         passwordDM.dateCreate = Date()
         passwordDM.dateLastOpen = Date()
 
         passwordDM.profile = ProfileDM.getProfile()
         persistenceManager.saveContext()
+        return passwordDM
     }
     
     

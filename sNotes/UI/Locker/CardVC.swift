@@ -106,7 +106,14 @@ class CardVC: UIViewController {
                 redBorderTextField(field: cardOwner)
                 return
         }
-        CardDM.addCard(last4Number: String(number.suffix(4)), date: date, cardOwner: name, firstNumber: number[0...0])
+        card = CardDM.addCard(last4Number: String(number.suffix(4)), date: date, cardOwner: name, firstNumber: number[0...0])
+        let addService = card?.objectID.uriRepresentation().path ?? ""
+        WorkWithKeychain.setService(key: .number, addService: addService, data: number)
+        WorkWithKeychain.setService(key: .cvc, addService: addService, data: String(cvc))
+        if pinCard.text != nil {
+            WorkWithKeychain.setService(key: .pin, addService: addService, data:  pinCard.text!)
+
+        }
         dismiss(animated: true, completion: nil)
         
     }
@@ -120,11 +127,11 @@ class CardVC: UIViewController {
     }
     
     private func showCardInfo() {
-        numberCard.text = "**** **** **** " + (card?.last4Number ?? "")
+        numberCard.text = WorkWithKeychain.getService(key: .number, addService: card?.objectID.uriRepresentation().path ?? "")
         dateCard.text = card?.date
-        cvcCard.text = "***"
+        cvcCard.text = WorkWithKeychain.getService(key: .cvc, addService: card?.objectID.uriRepresentation().path ?? "")
         cardOwner.text = card?.cardOwner
-        pinCard.text = "\u{00B7}\u{00B7}\u{00B7}\u{00B7}"
+        pinCard.text = WorkWithKeychain.getService(key: .pin, addService: card?.objectID.uriRepresentation().path ?? "")
     }
     
     private func gray(field: UITextField) {
@@ -190,14 +197,17 @@ extension CardVC: UITextFieldDelegate {
         switch textField {
         case numberCard:
             if textField.text?.replacingOccurrences(of: " ", with: "").count ?? 0 >= 16 {
+                dateCard.becomeFirstResponder()
                 return false
             }
         case dateCard:
             if textField.text?.replacingOccurrences(of: "/", with: "").count ?? 0 >= 4 {
+                cvcCard.becomeFirstResponder()
                 return false
             }
         case cvcCard:
             if textField.text?.count ?? 0 >= 3 {
+                cardOwner.becomeFirstResponder()
                 return false
             }
         case pinCard:
