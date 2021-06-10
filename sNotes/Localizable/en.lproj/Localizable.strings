@@ -22,6 +22,7 @@
 //ProfileVC
 "LogOut" = "Log out";
 "UseBiometricsToSignIn" = "Use biometrics to sign in";
+"NameSurname" = "Name Surname";
 
 
 //SearchView

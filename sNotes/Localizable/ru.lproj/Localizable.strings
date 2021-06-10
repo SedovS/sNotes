@@ -24,6 +24,7 @@
 //ProfileVC
 "LogOut" = "Выйти";
 "UseBiometricsToSignIn" = "Использовать биометрию для входа";
+"NameSurname" = "Имя Фамилия";
 
 
 //SearchView

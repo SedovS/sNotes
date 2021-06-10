@@ -23,7 +23,7 @@ class PaymentSystem {
         case 4:
             return  "Visa"
         case 5:
-            return "Mastercard" //? Maestro ?
+            return "MasterCard" //? Maestro ?
         case 6:
             return "Maestro"//Maestro - 3, 5 или 6
         default:

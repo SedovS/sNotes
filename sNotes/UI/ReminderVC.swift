@@ -14,19 +14,7 @@ class ReminderVC: UIViewController {
     @IBOutlet weak var tabBarView: TabBarView!
     @IBOutlet weak var reminderTableView: UITableView!
     
-    fileprivate lazy var frc: NSFetchedResultsController<NoteDM> = {
-        let context = PersistenceManager.shared.context
-        
-        let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "dateReminder != nil")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateReminder", ascending: true)]
-        let tmpFrc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-//        tmpFrc.delegate = self
-        try? tmpFrc.performFetch()
-        return tmpFrc
-    }()
-
-
+    var arrayNotes = NoteDM.getNotesForReminder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,24 +34,16 @@ class ReminderVC: UIViewController {
 extension ReminderVC: UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        guard let sections = frc.sections else { return 0 }
-        return sections.count
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sections = frc.sections else { return nil }
-        return sections[section].indexTitle ?? ""
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sections = frc.sections else { return 0 }
-        return sections[section].numberOfObjects
+        return arrayNotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(forIndexPath: indexPath as IndexPath) as ReminderCell
-        let object = frc.object(at: indexPath)
-        cell.initCell(date: object.dateReminder!, name: object.title ?? "")
+        cell.initCell(date: arrayNotes[indexPath.row].dateReminder!, name: arrayNotes[indexPath.row].title ?? "")
         return cell
     }
     
@@ -71,6 +51,19 @@ extension ReminderVC: UITableViewDataSource {
 }
 
 extension ReminderVC: UITableViewDelegate {
+
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
+            self.arrayNotes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+//        deleteAction.backgroundColor = .customRedForArray()
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+
     
 }
 
