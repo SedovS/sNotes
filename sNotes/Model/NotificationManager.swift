@@ -33,8 +33,12 @@ class NotificationManager {
             if i >= 64 { return}
             let date = $0.dateReminder
             if date != nil {
-                let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date!)
-                createLocalPush(dateMatching: dateComponents, alertTitle: "sReminder", alertBody: "Note \($0.title)", notificationId: "\(date)")
+                var dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date!)
+                dateComponents.second = 0
+                createLocalPush(dateMatching: dateComponents, alertTitle: "sReminder", alertBody: "\(NSLocalizedString("Note", comment: "")) \($0.title ?? "")", notificationId: "\(date!)")
+                i += 1
+                dateComponents.hour! -= 1
+                createLocalPush(dateMatching: dateComponents, alertTitle: "sReminder", alertBody: "\(NSLocalizedString("1HoursBefore", comment: "")) \($0.title ?? "")", notificationId: "\(date!)")
                 i += 1
             }
         }
@@ -80,5 +84,4 @@ class NotificationManager {
         notificationCenter.removeAllPendingNotificationRequests()
         notificationCenter.removeAllDeliveredNotifications()
     }
-    
 }

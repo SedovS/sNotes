@@ -23,7 +23,7 @@ extension PasswordDM {
         
         
         passwordDM.website = website.capitalizingFirstLetter()
-        passwordDM.email = email.capitalizingFirstLetter()
+        passwordDM.login = email.capitalizingFirstLetter()
         passwordDM.descriptionPassword = descriptionPassword
         passwordDM.dateCreate = Date()
         passwordDM.dateLastOpen = Date()

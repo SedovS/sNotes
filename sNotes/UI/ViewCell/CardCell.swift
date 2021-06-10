@@ -32,6 +32,7 @@ class CardCell: UICollectionViewCell {
         numberLabel.text = "**** **** **** " + card.last4Number
         commentLabel.text = card.comment
         cardView.backgroundColor = .black
+        icon.image = UIImage(named: card.paymentSystem ?? "")
     }
     
 }

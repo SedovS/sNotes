@@ -68,7 +68,7 @@ class CheckBlockSingnin {
     }
     
     private func showAlertBlockCount(view: UIViewController) {
-        let alert = UIAlertController.createOkAlert(WithTitle: "Попытки входа заблокированы!", message: "Количество попыток входа больше \(countBlock)! Вход заблкирован на \(minutesBlock) минут")
+        let alert = UIAlertController.createOkAlert(WithTitle: NSLocalizedString("LoginAttemptsBlocked", comment: ""), message: localizatedBlocked(count: UInt(countBlock), minutes: UInt(minutesBlock)))
         view.present(alert, animated: true, completion: nil)
     }
     
@@ -77,7 +77,7 @@ class CheckBlockSingnin {
         
         let minutesPassed = timeBlock!.minutesDifference(to: timeNow)
         let minutesLeft = minutesBlock - minutesPassed
-        let alert = UIAlertController.createOkAlert(WithTitle: "Попытки входа заблокированы!", message: "Попробуйте снова через \(minutesLeft) минут")
+        let alert = UIAlertController.createOkAlert(WithTitle: NSLocalizedString("LoginAttemptsBlocked", comment: ""), message: localizatedTryThrought(minutes: UInt(minutesLeft)))
         view.present(alert, animated: true, completion: nil)
     }
     
@@ -96,4 +96,24 @@ class CheckBlockSingnin {
     private func clearBlockDate() {
         profile?.changeTimeBlockSingin(date: nil)
     }
+    
+    private func localizatedBlocked(count: UInt, minutes: UInt) -> String {
+        let loginAttempts : String = NSLocalizedString("More login attempts",
+                                                      comment: "")
+        let resultLoginAttempts : String = String.localizedStringWithFormat(loginAttempts, count)
+        
+        let block: String = NSLocalizedString("Entrance blocked on",
+                                                      comment: "")
+        let resultBlock: String = String.localizedStringWithFormat(block, minutes)
+        return resultLoginAttempts + " " + resultBlock;
+    }
+    
+    private func localizatedTryThrought(minutes: UInt) -> String {
+        let formatString: String = NSLocalizedString("Try through",
+                                                      comment: "")
+        let resultString: String = String.localizedStringWithFormat(formatString, minutes)
+        return resultString;
+    }
+    
+    
 }

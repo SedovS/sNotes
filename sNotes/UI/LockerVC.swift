@@ -40,7 +40,7 @@ class LockerVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchView.textField.placeholder = "Найди среди данных"
+        searchView.textField.placeholder = NSLocalizedString("FindAmongData", comment: "")
         searchView.delegate = self
         
         tabBarView.delegate = self
@@ -164,11 +164,11 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
         var titleText = ""
         switch indexPath.section {
         case 0,1:
-            titleText = "Tet"
+            titleText = ""
         case 2:
-            titleText = "Карты"
+            titleText = NSLocalizedString("Cards", comment: "")
         case 3:
-            titleText = "Пароли"
+            titleText = NSLocalizedString("Passwords", comment: "")
         default:
             titleText = ""
         }
@@ -200,7 +200,7 @@ extension LockerVC: UICollectionViewDataSource, UICollectionViewDelegate {
             let object = frc.object(at: IndexPath(item: indexPath.row, section: 0))
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "passwordCell", for: indexPath) as! PasswordCell
             let password = object
-            cell.initCell(name: password.website, description: password.email)
+            cell.initCell(name: password.website, description: password.login)
             return cell
         default:
             break
@@ -266,7 +266,6 @@ extension LockerVC: UITableViewDelegate {
             let vc = CardVC()
             vc.isAddCard = true
             show(vc, sender: nil)
-//            UIApplication.shared.keyWindow?.rootViewController = vc
 
         case "icAddPassword":
             let vc = PasswordVC()
@@ -279,14 +278,6 @@ extension LockerVC: UITableViewDelegate {
     }
 }
 
-////MARK:- UIAdaptivePresentationControllerDelegate
-//extension LockerVC: UIAdaptivePresentationControllerDelegate {
-//    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
-////        returnPreviewScreen(status: false)
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//}
-//
 extension LockerVC: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         collectionView.reloadData()

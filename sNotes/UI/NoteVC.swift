@@ -46,7 +46,7 @@ class NoteVC: UIViewController {
         titleNote.text = note?.title
         textView.text = note?.text
         if titleNote.text == nil ||  titleNote.text == "" {
-            titleNote.placeholder = "Введите название"
+            titleNote.placeholder = NSLocalizedString("EnterName", comment: "")
             titleNote.becomeFirstResponder()
         }
         
@@ -66,8 +66,11 @@ class NoteVC: UIViewController {
         
         //datePickerView
         datePickerView.isHidden = true
-        if true {
+        if false {
             datePickerView.locale = Locale(identifier: "en-GB")
+        }
+        if #available(iOS 14, *) {
+            datePickerView.preferredDatePickerStyle = .wheels
         }
         datePickerView.datePickerMode = .dateAndTime
 
@@ -95,6 +98,7 @@ class NoteVC: UIViewController {
     }
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         note?.changedateReminder(date: sender.date)
+        NotificationManager.shared.addLocalPushForNotes()
     }
     
     
@@ -164,7 +168,6 @@ extension NoteVC: UITableViewDelegate {
         case "icAddAudio": break
 
         case "icAddReminder":
-            NotificationManager.shared.addLocalPushForNotes()
             if note?.dateReminder != nil {
                 datePickerView.setDate(note?.dateReminder ?? Date(), animated: false)
             }
@@ -201,7 +204,7 @@ extension NoteVC: UIPickerViewDataSource, UIPickerViewDelegate {
         pickerView.isHidden = true
         note?.changeFolder(newFolder: arrayFolders[row])
         note?.folder?.changeDateLastChange()
-        nameFolderButton.setTitle(note?.folder?.name ?? "no name folder", for: .normal)
+        nameFolderButton.setTitle(note?.folder?.name ?? "", for: .normal)
         nameFolderButton.imageView?.image = CustomImage.image(color: note?.folder?.color as? UIColor ?? .customGrayForArray())
         
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardDM" representedClassName=".CardDM" syncable="YES">
         <attribute name="cardOwner" attributeType="String"/>
         <attribute name="comment" optional="YES" attributeType="String"/>
@@ -37,7 +37,7 @@
         <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionPassword" optional="YES" attributeType="String"/>
-        <attribute name="email" attributeType="String"/>
+        <attribute name="login" attributeType="String"/>
         <attribute name="website" attributeType="String"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="passwords" inverseEntity="ProfileDM"/>
     </entity>
@@ -53,10 +53,10 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="CardDM" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FolderDM" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="NoteDM" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="PasswordDM" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="ProfileDM" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CardDM" positionX="0" positionY="0" width="128" height="179"/>
+        <element name="FolderDM" positionX="0" positionY="0" width="128" height="149"/>
+        <element name="NoteDM" positionX="0" positionY="0" width="128" height="164"/>
+        <element name="PasswordDM" positionX="0" positionY="0" width="128" height="119"/>
+        <element name="ProfileDM" positionX="0" positionY="0" width="128" height="164"/>
     </elements>
 </model>

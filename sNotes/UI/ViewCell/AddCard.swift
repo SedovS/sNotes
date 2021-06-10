@@ -21,12 +21,12 @@ class AddCard: UICollectionViewCell {
     
     func initCellCard() {
         icon.image = UIImage(named: "icAddCardBlue")!
-        name.text = "Добавить карту"
+        name.text = NSLocalizedString("AddCard", comment: "")
     }
     
     func initCellPassword() {
         icon.image = UIImage(named: "icAddPasswordBlue")
-        name.text = "Добавить пароль"
+        name.text = NSLocalizedString("AddPassword", comment: "")
     }
 
     

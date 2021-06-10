@@ -41,6 +41,9 @@
 		18639A3D2662836400CFCF83 /* SetPassCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */; };
 		18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */; };
 		186F8D02265F7A1E005C0C28 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186F8D01265F7A1E005C0C28 /* CustomColor.swift */; };
+		189A9FD326726B4A0042AA5E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 189A9FD126726B4A0042AA5E /* InfoPlist.strings */; };
+		189A9FD726726BEC0042AA5E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 189A9FD526726BEC0042AA5E /* Localizable.strings */; };
+		189A9FDD26728CDF0042AA5E /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 189A9FDF26728CDF0042AA5E /* Localizable.stringsdict */; };
 		18A0D08426652D7D0086AACB /* PasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08226652D7D0086AACB /* PasswordVC.swift */; };
 		18A0D08526652D7D0086AACB /* PasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A0D08326652D7D0086AACB /* PasswordVC.xib */; };
 		18A0D08726653BB90086AACB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0D08626653BB90086AACB /* String.swift */; };
@@ -118,6 +121,12 @@
 		18639A3B2662836400CFCF83 /* SetPassCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPassCodeVC.swift; sourceTree = "<group>"; };
 		18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetPassCodeVC.xib; sourceTree = "<group>"; };
 		186F8D01265F7A1E005C0C28 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		189A9FD226726B4A0042AA5E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		189A9FD426726B930042AA5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		189A9FD626726BEC0042AA5E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		189A9FD826726C010042AA5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		189A9FDE26728CDF0042AA5E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		189A9FE026728CE50042AA5E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		18A0D08226652D7D0086AACB /* PasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVC.swift; sourceTree = "<group>"; };
 		18A0D08326652D7D0086AACB /* PasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordVC.xib; sourceTree = "<group>"; };
 		18A0D08626653BB90086AACB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -299,6 +308,7 @@
 				1857566A265955C3000B54C7 /* Assets.xcassets */,
 				1857566C265955C3000B54C7 /* LaunchScreen.storyboard */,
 				1857566F265955C3000B54C7 /* Info.plist */,
+				189A9FE326729EAD0042AA5E /* Localizable */,
 				18575667265955C1000B54C7 /* sNotes.xcdatamodeld */,
 			);
 			path = sNotes;
@@ -311,6 +321,16 @@
 				18639A3C2662836400CFCF83 /* SetPassCodeVC.xib */,
 			);
 			path = Passcode;
+			sourceTree = "<group>";
+		};
+		189A9FE326729EAD0042AA5E /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				189A9FD126726B4A0042AA5E /* InfoPlist.strings */,
+				189A9FD526726BEC0042AA5E /* Localizable.strings */,
+				189A9FDF26728CDF0042AA5E /* Localizable.stringsdict */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		18A0F45E265EB98E00F3BCEF /* For Table View */ = {
@@ -379,6 +399,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 18575652265955C0000B54C7;
 			productRefGroup = 1857565C265955C1000B54C7 /* Products */;
@@ -395,6 +416,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189A9FD326726B4A0042AA5E /* InfoPlist.strings in Resources */,
 				18250490266FA6C400C02E70 /* ProfileVC.xib in Resources */,
 				18BA453A2660171600C3143F /* AddCard.xib in Resources */,
 				18639A3E2662836400CFCF83 /* SetPassCodeVC.xib in Resources */,
@@ -404,6 +426,7 @@
 				1857566E265955C3000B54C7 /* LaunchScreen.storyboard in Resources */,
 				18BA452A26600AE400C3143F /* LockerVC.xib in Resources */,
 				18BA4536266013D800C3143F /* PasswordCell.xib in Resources */,
+				189A9FD726726BEC0042AA5E /* Localizable.strings in Resources */,
 				18A0F462265EB9B700F3BCEF /* IconCell.xib in Resources */,
 				18A0D09326655FC70086AACB /* ReminderCell.xib in Resources */,
 				180137CF265D7F35007FF09F /* SectionHeader.xib in Resources */,
@@ -414,6 +437,7 @@
 				18A0F45B265EA2AD00F3BCEF /* SearchView.xib in Resources */,
 				18A0D08F26655DE50086AACB /* ReminderVC.xib in Resources */,
 				184565BB265D937B00F56B70 /* FolderCell.xib in Resources */,
+				189A9FDD26728CDF0042AA5E /* Localizable.stringsdict in Resources */,
 				180137C6265D72A7007FF09F /* NotesVC.xib in Resources */,
 				18393FD4265ED60C00AA7D7C /* ColorCell.xib in Resources */,
 				18A0F468265ECDE200F3BCEF /* FolderVC.xib in Resources */,
@@ -499,6 +523,33 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		189A9FD126726B4A0042AA5E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189A9FD226726B4A0042AA5E /* ru */,
+				189A9FD426726B930042AA5E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		189A9FD526726BEC0042AA5E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189A9FD626726BEC0042AA5E /* ru */,
+				189A9FD826726C010042AA5E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		189A9FDF26728CDF0042AA5E /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				189A9FDE26728CDF0042AA5E /* ru */,
+				189A9FE026728CE50042AA5E /* en */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -506,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -566,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

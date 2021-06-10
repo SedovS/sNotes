@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIAlertController {
-    static func createOkAlert(WithTitle title: String?, message: String?, okTitle: String = "Ок") -> UIAlertController {
+    static func createOkAlert(WithTitle title: String?, message: String?, okTitle: String = NSLocalizedString("Ok", comment: "")) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: okTitle, style: .default) { (result : UIAlertAction) -> Void in
         }
@@ -18,7 +18,7 @@ extension UIAlertController {
         return alertController
     }
     
-    static func createLogOutAlert(WithTitle title: String?, message: String?, okTitle: String = "Выход", cancelTitle: String = "Отмена" , okDidTap: @escaping () -> ()) -> UIAlertController {
+    static func createLogOutAlert(WithTitle title: String?, message: String?, okTitle: String = NSLocalizedString("Exit", comment: ""), cancelTitle: String = NSLocalizedString("Cancel", comment: ""), okDidTap: @escaping () -> ()) -> UIAlertController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel, handler: nil)
         let okAction = UIAlertAction(title: okTitle, style: .default) { (result : UIAlertAction) -> Void in
@@ -34,7 +34,7 @@ extension UIAlertController {
         self.view.tintColor = color
     }
     
-    static func createPhotoForProfileAlert(WithTitle title: String?, message: String?, cameraTitle: String = "Открыть камеру", libraryTitle: String = "Открыть библиотеку", cancelTitle: String = "Отмена", completion: @escaping(_ isLibrary: Bool) -> ()) -> UIAlertController {
+    static func createPhotoForProfileAlert(WithTitle title: String?, message: String?, cameraTitle: String = NSLocalizedString("Открыть камеру", comment: ""), libraryTitle: String = NSLocalizedString("Открыть библиотеку", comment: ""), cancelTitle: String = NSLocalizedString("Cancel", comment: ""), completion: @escaping(_ isLibrary: Bool) -> ()) -> UIAlertController {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let cancel = UIAlertAction(title: cancelTitle, style: .default, handler: nil)

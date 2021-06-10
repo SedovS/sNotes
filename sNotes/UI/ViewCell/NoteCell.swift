@@ -22,6 +22,14 @@ class NoteCell: UICollectionViewCell {
     func initCell(title: String, text: String) {
         self.title.text = title
         self.text.text = text
+        
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressed(_:)))
+        self.addGestureRecognizer(longPressRecognizer)
     }
-
+    
+    @objc func longPressed(_ sender: UITapGestureRecognizer? = nil) {
+        print("longpressed")
+    }
+    
 }

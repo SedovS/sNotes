@@ -33,26 +33,28 @@ class CardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameCardInfoLabel.text = "Реквезиты карты"
+        nameCardInfoLabel.text = NSLocalizedString("CardDetails", comment: "")
         numberCard.placeholder = ""
         dateCard.placeholder = ""
         cvcCard.placeholder = ""
         cardOwner.placeholder = ""
 
         cardInfoView.shadow()
-        let titleButton = isAddCard ? "Добавить" : "Показать"
+        let titleButton = isAddCard ? NSLocalizedString("Add", comment: "") : NSLocalizedString("Show", comment: "")
         actionsCardButton.setTitle(titleButton, for: .normal)
         
         if isAddCard {
-            numberCard.placeholder = "Номер карты"
-            dateCard.placeholder = "Срок действия"
-            cvcCard.placeholder = "CVC"
-            cardOwner.placeholder = "Имя держателя"
-            pinCard.placeholder = "pin"
+            numberCard.placeholder = NSLocalizedString("CardNumber", comment: "")
+            dateCard.placeholder = NSLocalizedString("Validity", comment: "")
+            cvcCard.placeholder =  NSLocalizedString("CvcCard", comment: "")
+            cardOwner.placeholder =  NSLocalizedString("HolderName", comment: "")
+            pinCard.placeholder =  NSLocalizedString("PinCard", comment: "")
             numberCard.delegate = self
             cardOwner.delegate = self
             cvcCard.delegate = self
             dateCard.delegate = self
+            
+            numberCard.becomeFirstResponder()
         } else {
             numberCard.isUserInteractionEnabled = false
             dateCard.isUserInteractionEnabled = false
@@ -75,7 +77,7 @@ class CardVC: UIViewController {
         if isAddCard {
             checkForCorrect()
         } else {
-            let titleButton = isShowCard ? "Скрыть" : "Показать"
+            let titleButton = isShowCard ? NSLocalizedString("Hide", comment: "") : NSLocalizedString("Show", comment: "")
             actionsCardButton.setTitle(titleButton, for: .normal)
             isShowCard ? showCardInfo() : hideCardInfo()
             isShowCard = !isShowCard
@@ -94,8 +96,8 @@ class CardVC: UIViewController {
                 redBorderTextField(field: dateCard)
                 return
         }
-        guard let cvc = Int(cvcCard.text ?? ""),
-            cvcCard.text?.count == 3 else {
+        guard let cvc = Int(cvcCard.text ?? "0")
+            else {//cvcCard.text?.count == 3 else {
                 redBorderTextField(field: cvcCard)
                 return
         }
@@ -203,7 +205,7 @@ extension CardVC: UITextFieldDelegate {
                 return false
             }
         default:
-            return false
+            return true
         }
         return true
     }

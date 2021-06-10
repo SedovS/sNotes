@@ -157,11 +157,11 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
         case 0,1:
             titleText = ""
         case 2:
-            titleText = "Закрепленные"
+            titleText = NSLocalizedString("Anchored", comment: "")
         case 3:
-            titleText = "Недавние"
+            titleText = NSLocalizedString("Recent", comment: "")
         case 4:
-            titleText = "Папки"
+            titleText = NSLocalizedString("Folders", comment: "")
         default:
             titleText = ""
         }

@@ -21,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    }
+
+    
     func start(window: UIWindow?) {
         let splash = UIStoryboard.init(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         window?.rootViewController = splash

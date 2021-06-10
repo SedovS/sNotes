@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Entrance blocked on</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@on@</string>
+		<key>on</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Вход заблкирован на %d минутy</string>
+			<key>few</key>
+			<string>Вход заблкирован на %d минуты</string>
+			<key>many</key>
+			<string>Вход заблкирован на %d минут</string>
+			<key>other</key>
+			<string>Вход заблкирован на %d минуты</string>
+		</dict>
+	</dict>
+	<key>More login attempts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@more@</string>
+		<key>more</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Количество попыток входа больше %d!</string>
+			<key>few</key>
+			<string>Количество попыток входа больше %d!</string>
+			<key>many</key>
+			<string>Количество попыток входа больше %d!</string>
+			<key>other</key>
+			<string>Количество попыток входа больше %d!</string>
+		</dict>
+	</dict>
+	<key>Try through</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@tryThrough@</string>
+		<key>tryThrough</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Попробуйте снова через %d минуту</string>
+			<key>few</key>
+			<string>Попробуйте снова через %d минуты</string>
+			<key>many</key>
+			<string>Попробуйте снова через %d минут</string>
+			<key>other</key>
+			<string>Попробуйте снова через %d минуты</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

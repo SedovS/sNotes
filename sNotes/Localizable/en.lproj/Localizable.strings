@@ -1,0 +1,88 @@
+
+//NotesVC
+"Anchored" = "Anchored";
+"Recent" = "Recent";
+"Folders" = "Folders";
+
+
+//LockerVC
+"Cards" = "Cards";
+"Passwords" = "Passwords";
+
+//ReminderVC
+
+
+//Folder
+"EnterFolderName" = "Enter folder name";
+
+//Note
+"EnterName" = "Enter name";
+
+
+//ProfileVC
+"LogOut" = "Log out";
+"UseBiometricsToSignIn" = "Use biometrics to sign in";
+
+
+//SearchView
+"FindYourNote" = "Find your note";
+"FindAmongData" = "Find among the data";
+
+//CardVC
+"CardDetails" = "Card details";
+"CardNumber" = "Card number";
+"Validity" = "Validity";
+"CvcCard" = "CVC";
+"HolderName" = "Holder name";
+"PinCard" = "pin";
+
+
+//For CardVC and PasswordVC
+"Add" = "Add";
+"Hide" = "Hide";
+"Show" = "Show";
+
+"AddCard" = "Add a card";
+"AddPassword" = "Add password";
+
+
+//PasswordVC
+"Passord" = "Passord";
+"Website" = "Website";
+"Login" = "Login";
+"Description" = "Description";
+"GenerateStrongPassword" = "Generate a strong password";
+
+
+
+//SetPassCodeVC
+"EnterPasssCode" = "Enter password";
+"SetPassCode" = "Set pass code";
+"RepearPassCode" = "Repeat pass code";
+
+"ItWillBeUsedToLogInApp" = "It will be used to log into the application";
+"ThePasswordsDidNotMatch/PleaseTryAain" = "The pass codes did not match.\n Try again";
+
+"WhatFor" = "What for?";
+"PlaceYourFingerToEnterTheApp" = "Place your finger to enter the app";
+
+
+
+//NotificationManager
+"Note" = "Note";
+"1HoursBefore" = "1 hour before";
+
+//Alert Controller
+"AreYouSureYouWantToLogOut" = "Are you sure you want to log out?";
+"AllYourDataWillHaveToBeDeleted" = "All your data will have to be deleted.";
+
+"OpenTheCamera" = "Open the camera";
+"OpenTheLibrary" = "Open library";
+
+"LoginAttemptsBlocked" = "Login attempts blocked!";
+"OpenTheLibrary" = "Open library";
+
+
+"Ok" = "Ok";
+"Cancel" = "Cancel";
+"Exit" = "Exit";

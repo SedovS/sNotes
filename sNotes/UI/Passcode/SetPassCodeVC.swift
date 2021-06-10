@@ -18,14 +18,22 @@ class SetPassCodeVC: UIViewController {
     }
     
     enum TextForNameLabel: String {
-        case enterPasssCode = "Введите пароль"
-        case setPassCode = "Задайте код доступа"
-        case repearPassCode = "Повторите код доступа"
+        case enterPasssCode = "EnterPasssCode"
+        case setPassCode = "SetPassCode"
+        case repearPassCode = "RepearPassCode"
+        
+        func localizedString() -> String {
+            return NSLocalizedString(self.rawValue, comment: "")
+        }
     }
     
     enum TextForHintLabel: String {
-        case standart = "Он будет использоваться для входа в приложение"
-        case wrongRepeatPassCode = "Пароли не совпали. \n Повторите попытку"
+        case standart = "ItWillBeUsedToLogInApp"
+        case wrongRepeatPassCode = "ThePasswordsDidNotMatch/PleaseTryAain"
+        
+        func localizedString() -> String {
+            return NSLocalizedString(self.rawValue, comment: "")
+        }
     }
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -54,12 +62,12 @@ class SetPassCodeVC: UIViewController {
             setColorForPassCodeSymbol(view: el, color: .clear)
         }
         forgotPassCodeButton.isHidden = !isEnterPassCode
-        forgotPassCodeButton.setTitle("Выйти", for: .normal)
-        aboutButton.setTitle("Зачем?", for: .normal)
+        forgotPassCodeButton.setTitle(NSLocalizedString("LogOut", comment: ""), for: .normal)
+        aboutButton.setTitle(NSLocalizedString("WhatFor", comment: ""), for: .normal)
         aboutButton.isHidden = !isEnterPassCode
         faceTouchIDButton.isHidden = !isEnterPassCode
         
-        nameLabel.text = isEnterPassCode ? TextForNameLabel.enterPasssCode.rawValue : TextForNameLabel.setPassCode.rawValue
+        nameLabel.text = isEnterPassCode ? TextForNameLabel.enterPasssCode.localizedString() : TextForNameLabel.setPassCode.localizedString()
         hintLabel.isHidden = isEnterPassCode
         let isAuthenticationWithBiometrics = ProfileDM.getIsAuthenticationWithBiometrics()
         
@@ -125,8 +133,8 @@ class SetPassCodeVC: UIViewController {
                     }
                     
                     nameLabel.isHidden = true
-                    nameLabel.text = TextForNameLabel.setPassCode.rawValue
-                    hintLabel.text = TextForHintLabel.wrongRepeatPassCode.rawValue
+                    nameLabel.text = TextForNameLabel.setPassCode.localizedString()
+                    hintLabel.text = TextForHintLabel.wrongRepeatPassCode.localizedString()
                     hintLabel.isHidden = false
 
                     isRepeatingEnterPasscode = false
@@ -135,7 +143,7 @@ class SetPassCodeVC: UIViewController {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                         self.resetPassCodeBackground()
-                        self.hintLabel.text = TextForHintLabel.standart.rawValue
+                        self.hintLabel.text = TextForHintLabel.standart.localizedString()
                         self.nameLabel.isHidden = false
                         self.passCodeKeyboardView.isUserInteractionEnabled = true
                     }
@@ -161,7 +169,7 @@ class SetPassCodeVC: UIViewController {
     }
     
     @IBAction func pressForgotPassword(_ sender: Any) {
-        let alert = UIAlertController.createLogOutAlert(WithTitle: "Вы уверены, что хотите выйти?", message: "Все ваши данные придется удалить.") {
+        let alert = UIAlertController.createLogOutAlert(WithTitle: NSLocalizedString("AreYouSureYouWantToLogOut", comment: ""), message: NSLocalizedString("AllYourDataWillHaveToBeDeleted", comment: "")) {
             PersistenceManager.shared.deleteAll()
             WorkWithKeychain.clearKeychain()
             AppDelegate().start(window: UIApplication.shared.windows.filter {$0.isKeyWindow}.first)
@@ -187,7 +195,7 @@ class SetPassCodeVC: UIViewController {
         enteredPasscode = passcode
         isRepeatingEnterPasscode = true
         resetPassCodeBackground()
-        nameLabel.text = TextForNameLabel.repearPassCode.rawValue
+        nameLabel.text = TextForNameLabel.repearPassCode.localizedString()
         hintLabel.isHidden = true
         passcodeStack = String()
     }
@@ -227,13 +235,13 @@ class SetPassCodeVC: UIViewController {
     private func showID() {
         usleep(200000)
         let context = LAContext()
-        context.localizedCancelTitle = "Отменить"
+        context.localizedCancelTitle = NSLocalizedString("Cancel", comment: "")
         
         // First check if we have the needed hardware support.
         var error: NSError?
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             
-            let reason = "Приложите палец для входа в приложение"
+            let reason = NSLocalizedString("PlaceYourFingerToEnterTheApp", comment: "")
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason ) { success, error in
                 
                 if success {

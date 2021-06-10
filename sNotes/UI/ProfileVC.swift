@@ -29,7 +29,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate {
         super.viewDidLoad()
 
         //nameProfileTextField
-        nameProfileTextField.placeholder = "Имя Фамилия"
+        nameProfileTextField.placeholder = NSLocalizedString("NameSurname", comment: "")
         nameProfileTextField.text = returnNameProfile()
         nameProfileTextField.delegate = self
         if nameProfileTextField.text != nil {
@@ -45,13 +45,13 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate {
         photoProfile.addGestureRecognizer(tapPhotoProfile)
         
         //logOutButton
-        logOutButton.setTitle("Выйти", for: .normal)
+        logOutButton.setTitle(NSLocalizedString("LogOut", comment: ""), for: .normal)
         logOutButton.titleLabel?.textColor = .customBlueForProfile()
         logOutButton.backgroundColor = .customGrayForProfile()
         logOutButton.shadow()
 
         //biometrics
-        biometricsLabel.text = "Использовать биометрию для входа"
+        biometricsLabel.text = NSLocalizedString("UseBiometricsToSignIn", comment: "")
         setColorSwitch(switch: biometricsSwitch, isOn: profile.isAuthenticationWithBiometrics)
         
         camera = Camera(delegate_: self)
@@ -79,7 +79,7 @@ class ProfileVC: UIViewController, UIImagePickerControllerDelegate {
     }
     
     @IBAction func pressLogOutButton(_ sender: UIButton) {
-        let alert = UIAlertController.createLogOutAlert(WithTitle: "Вы уверены, что хотите выйти?", message: "Все ваши данные придется удалить.") {
+        let alert = UIAlertController.createLogOutAlert(WithTitle: NSLocalizedString("AreYouSureYouWantToLogOut", comment: ""), message: NSLocalizedString("AllYourDataWillHaveToBeDeleted", comment: "")) {
             PersistenceManager.shared.deleteAll()
             WorkWithKeychain.clearKeychain()
             AppDelegate().start(window: UIApplication.shared.windows.filter {$0.isKeyWindow}.first)

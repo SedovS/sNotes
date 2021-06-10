@@ -15,7 +15,7 @@ class PasswordVC: UIViewController {
     @IBOutlet weak var actionsPasswordButton: UIButton!
     
     @IBOutlet weak var website: UITextField!
-    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var descriptionPassword: UITextField!
     
@@ -29,14 +29,14 @@ class PasswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        passwordInfoLabel.text = "Пароль"
+        passwordInfoLabel.text = NSLocalizedString("Passord", comment: "")
         website.placeholder = ""
-        email.placeholder = ""
+        login.placeholder = ""
         password.placeholder = ""
         descriptionPassword.placeholder = ""
 
         passwordInfoView.shadow()
-        let titleButton = isAddPassword ? "Добавить" : "Показать"
+        let titleButton = isAddPassword ? NSLocalizedString("Add", comment: "") : NSLocalizedString("Show", comment: "")
         actionsPasswordButton.setTitle(titleButton, for: .normal)
         
         generatePasswordButton.isHidden = true
@@ -45,28 +45,31 @@ class PasswordVC: UIViewController {
         generatePasswordButton.sz_topConstraint()?.constant = 20
         
         if isAddPassword {
-            website.placeholder = "Сайт"
-            email.placeholder = "Почта"
-            password.placeholder = "Пароль"
-            descriptionPassword.placeholder = "Описание"
+            website.placeholder = NSLocalizedString("Website", comment: "")
+            login.placeholder = NSLocalizedString("Login", comment: "")
+            password.placeholder = NSLocalizedString("Passord", comment: "")
+            descriptionPassword.placeholder = NSLocalizedString("Description", comment: "")
             
             website.delegate = self
-            email.delegate = self
+            login.delegate = self
             password.delegate = self
             descriptionPassword.delegate = self
             
-            generatePasswordButton.setTitle("Сгенерировать надежный пароль", for: .normal)
+            website.becomeFirstResponder()
+
+            
+            generatePasswordButton.setTitle(NSLocalizedString("GenerateStrongPassword", comment: ""), for: .normal)
             generatePasswordButton.titleLabel?.textColor = .customBlueForProfile()
             generatePasswordButton.backgroundColor = .customGrayForProfile()
             generatePasswordButton.shadow()
         } else {
             website.isUserInteractionEnabled = false
-            email.isUserInteractionEnabled = false
+            login.isUserInteractionEnabled = false
             password.isUserInteractionEnabled = false
             descriptionPassword.isUserInteractionEnabled = false
             
             website.text = passwordDM?.website
-            email.text = passwordDM?.email
+            login.text = passwordDM?.login
 
             hidePasswordInfo()
         }
@@ -78,7 +81,7 @@ class PasswordVC: UIViewController {
         if isAddPassword {
             checkForCorrect()
         } else {
-            let titleButton = isShowPassword ? "Скрыть" : "Показать"
+            let titleButton = isShowPassword ? NSLocalizedString("Hide", comment: "") : NSLocalizedString("Show", comment: "")
             actionsPasswordButton.setTitle(titleButton, for: .normal)
             isShowPassword ? showPasswordInfo() : hidePasswordInfo()
             isShowPassword = !isShowPassword
@@ -98,8 +101,8 @@ class PasswordVC: UIViewController {
             redBorderTextField(field: self.website)
             return
         }
-        guard let email = email.text, email != "" else {
-            redBorderTextField(field: self.email)
+        guard let email = login.text, email != "" else {
+            redBorderTextField(field: self.login)
             return
         }
         guard let password = password.text, password != "" else {
@@ -160,8 +163,8 @@ extension PasswordVC: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case website:
-            email.becomeFirstResponder()
-        case email:
+            login.becomeFirstResponder()
+        case login:
             password.becomeFirstResponder()
         case password:
             descriptionPassword.becomeFirstResponder()

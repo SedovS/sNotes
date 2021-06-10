@@ -50,7 +50,7 @@ class SearchView: UIView, NibLoadableView {
         profileButton.setImage(ProfileDM.getPhotoProfile(), for: .normal)
         
         textField.delegate = self
-        textField.placeholder = isNotesView ? "Найди свою заметку" : "Найди среди данных"
+        textField.placeholder = isNotesView ? NSLocalizedString("FindYourNote", comment: "") : NSLocalizedString("FindAmongData", comment: "")
         
         //for ios 13+ textFieldDidChangeSelection
         if #available(iOS 13.0, *) {

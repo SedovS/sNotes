@@ -29,7 +29,7 @@ extension FolderDM {
             let persistenceManager = PersistenceManager.shared
             
             let folderDM = FolderDM(context: persistenceManager.context)
-            folderDM.name = "Все заметки"
+            folderDM.name = NSLocalizedString("Default name", comment: "")
             folderDM.color = UIColor.customGrayForArray() as NSObject
             folderDM.isDefaultFolder = true
             folderDM.dateCreate = Date()

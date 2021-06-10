@@ -1,0 +1,93 @@
+
+//NotesVC
+"Anchored" = "Закрепленные";
+"Recent" = "Недавние";
+"Folders" = "Папки";
+
+
+//LockerVC
+"Cards" = "Карты";
+"Passwords" = "Пароли";
+
+//ReminderVC
+
+
+//Folder
+"EnterFolderName" = "Введите название папки";
+"Default name" = "Все заметки";
+
+
+//Note
+"EnterName" = "Введите название";
+
+
+//ProfileVC
+"LogOut" = "Выйти";
+"UseBiometricsToSignIn" = "Использовать биометрию для входа";
+
+
+//SearchView
+"FindYourNote" = "Найди свою заметку";
+"FindAmongData" = "Найди среди данных";
+
+//CardVC
+"CardDetails" = "Реквизиты карты";
+"CardNumber" = "Номер карты";
+"Validity" = "Срок действия";
+"CvcCard" = "CVC";
+"HolderName" = "Имя держателя";
+"PinCard" = "pin";
+
+
+//For CardVC and PasswordVC
+"Add" = "Добавить";
+"Hide" = "Скрыть";
+"Show" = "Показать";
+
+"AddCard" = "Добавить карту";
+"AddPassword" = "Добавить пароль";
+
+
+//PasswordVC
+"Passord" = "Пароль";
+"Website" = "Сайт";
+"Login" = "Логин";
+"Description" = "Описание";
+"GenerateStrongPassword" = "Сгенерировать надежный пароль";
+
+
+
+//SetPassCodeVC
+"EnterPasssCode" = "Введите пароль";
+"SetPassCode" = "Задайте код доступа";
+"RepearPassCode" = "Повторите код доступа";
+
+"ItWillBeUsedToLogInApp" = "Он будет использоваться для входа в приложение";
+"ThePasswordsDidNotMatch/PleaseTryAain" = "Коды доступа не совпали. \n Повторите попытку";
+
+"WhatFor" = "Зачем?";
+"PlaceYourFingerToEnterTheApp" = "Приложите палец для входа в приложение";
+
+
+
+//NotificationManager
+"Note" = "Заметка";
+"1HoursBefore" = "1 час до";
+
+//Alert Controller
+"AreYouSureYouWantToLogOut" = "Вы уверены, что хотите выйти?";
+"AllYourDataWillHaveToBeDeleted" = "Все ваши данные придется удалить.";
+
+"OpenTheCamera" = "Открыть камеру";
+"OpenTheLibrary" = "Открыть библиотеку";
+
+"LoginAttemptsBlocked" = "Попытки входа заблокированы!";
+"OpenTheLibrary" = "Открыть библиотеку";
+
+
+"Ok" = "Ок";
+"Cancel" = "Отменить";
+"Exit" = "Выход";
+
+
+//NSLocalizedString("FindAmongData", comment: "")

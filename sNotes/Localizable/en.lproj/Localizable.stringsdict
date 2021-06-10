@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Try through</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@tryThrough@</string>
+		<key>tryThrough</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Try again in %d minute</string>
+			<key>other</key>
+			<string>Try again in %d minutes</string>
+		</dict>
+	</dict>
+	<key>More login attempts</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@more@</string>
+		<key>more</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>The number of login attempts is more than %d!</string>
+			<key>other</key>
+			<string>The number of login attempts is more than %d!</string>
+		</dict>
+	</dict>
+	<key>Entrance blocked on</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@on@</string>
+		<key>on</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>one</key>
+			<string>Entrance blocked for %d minute</string>
+			<key>other</key>
+			<string>Entrance blocked for %d minutes</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

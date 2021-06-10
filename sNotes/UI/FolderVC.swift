@@ -54,7 +54,7 @@ class FolderVC: UIViewController {
         imageFolder.image = CustomImage.image(color: colorFolder)
         
         if nameFolder.text == nil ||  nameFolder.text == "" {
-            nameFolder.placeholder = "Введите название папки"
+            nameFolder.placeholder = NSLocalizedString("EnterFolderName", comment: "")
         }
         
         folder?.changeDateLastOpen()

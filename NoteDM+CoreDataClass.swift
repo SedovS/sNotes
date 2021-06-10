@@ -107,6 +107,8 @@ extension NoteDM {
         let persistenceManager = PersistenceManager.shared
         let fetchRequest: NSFetchRequest<NoteDM> = NoteDM.fetchRequest()
         fetchRequest.predicate = nil
+        fetchRequest.predicate = NSPredicate(format: "dateReminder != nil")
+
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateReminder", ascending: true)]
 //        fetchRequest.gro
         guard let result = try? persistenceManager.context.fetch(fetchRequest) else {
@@ -143,6 +145,11 @@ extension NoteDM {
     
     func changeDeteLastChange(date: Date = Date()) {
         self.dateLastChange = date
+        PersistenceManager.shared.saveContext()
+    }
+    
+    func changedateReminder(date: Date?) {
+        self.dateReminder = date
         PersistenceManager.shared.saveContext()
     }
     

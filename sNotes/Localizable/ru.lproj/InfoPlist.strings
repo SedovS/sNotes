@@ -1,0 +1,6 @@
+
+"NSFaceIDUsageDescription" = "Для входа в приложение";
+"NSPhotoLibraryUsageDescription" = "Мы хотим дать Вам возможность выбрать фотографию для аватара";
+"NSCameraUsageDescription" = "Мы хотим дать Вам возможность сделать фотографию для аватара";
+
+"CFBundleDisplayName" = "sNotes";

@@ -1,0 +1,6 @@
+
+"NSFaceIDUsageDescription" = "To enter the application";
+"NSPhotoLibraryUsageDescription" = "We want to give you the opportunity to choose a photo for your avatar";
+"NSCameraUsageDescription" = "We want to give you the opportunity to take a photo for your avatar";
+
+"CFBundleDisplayName" = "sNotes";
