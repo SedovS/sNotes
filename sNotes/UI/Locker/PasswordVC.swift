@@ -91,7 +91,7 @@ class PasswordVC: UIViewController {
     
     @IBAction func pressGeneratePasswordButton(_ sender: Any) {
         //
-        password.text = "REDAS-Edcsdg-EsddE-Reew"
+        password.text = SecCreateSharedWebCredentialPassword() as? String //"REDAS-Edcsdg-EsddE-Reew"
         descriptionPassword.becomeFirstResponder()
         UIPasteboard.general.string = password.text
     }

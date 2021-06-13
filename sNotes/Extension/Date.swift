@@ -12,5 +12,8 @@ extension Date {
     func minutesDifference(to secondDate: Date, calendar: Calendar = Calendar.current) -> Int {
         return calendar.dateComponents([.minute], from: self, to: secondDate).minute!
     }
-
+    
+    func seconds(to secondDate: Date, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.dateComponents([.second], from: self, to: secondDate).second!
+    }
 }

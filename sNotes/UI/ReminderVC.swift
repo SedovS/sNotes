@@ -58,8 +58,8 @@ extension ReminderVC: UITableViewDelegate {
             self.arrayNotes.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
-        deleteAction.image = UIImage(systemName: "trash")
-//        deleteAction.backgroundColor = .customRedForArray()
+        deleteAction.image = UIImage(systemName: "trash.fill")?.tinted(with: .black)
+        deleteAction.backgroundColor = UIColor(hexString: "FAFAFA")
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
@@ -69,4 +69,15 @@ extension ReminderVC: UITableViewDelegate {
 
 extension ReminderVC: NSFetchedResultsControllerDelegate {
     
+}
+
+extension UIImage {
+    func tinted(with color: UIColor, isOpaque: Bool = false) -> UIImage? {
+        let format = imageRendererFormat
+        format.opaque = isOpaque
+        return UIGraphicsImageRenderer(size: size, format: format).image { _ in
+            color.set()
+            withRenderingMode(.alwaysTemplate).draw(at: .zero)
+        }
+    }
 }

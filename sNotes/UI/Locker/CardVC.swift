@@ -127,7 +127,7 @@ class CardVC: UIViewController {
     }
     
     private func showCardInfo() {
-        numberCard.text = WorkWithKeychain.getService(key: .number, addService: card?.objectID.uriRepresentation().path ?? "")
+        numberCard.text = WorkWithKeychain.getService(key: .number, addService: card?.objectID.uriRepresentation().path ?? "")?.separate(every: 4, with: " ")
         dateCard.text = card?.date
         cvcCard.text = WorkWithKeychain.getService(key: .cvc, addService: card?.objectID.uriRepresentation().path ?? "")
         cardOwner.text = card?.cardOwner
