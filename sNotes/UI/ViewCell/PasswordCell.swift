@@ -23,9 +23,9 @@ class PasswordCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func initCell(name: String, description: String) {
+    func initCell(name: String, description: Data?) {
         self.name.text = name
-        self.descriptions.text = description
+        self.descriptions.text = ChaChaPolyHelpers.decrypt(encryptedContent: description)
     }
     
 }

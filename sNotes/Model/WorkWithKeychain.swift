@@ -19,6 +19,7 @@ class WorkWithKeychain {
     enum keyKeychain: String {
         case account = "sNotes"
         case passcode = "passCode"
+        case key = "symKey"
         
         case number = "number"
         case cvc = "cvc"
@@ -75,6 +76,22 @@ class WorkWithKeychain {
         let service = key.rawValue + addService
         let data = data.data(using: .utf8)!
         write(service: service, data: data)
+    }
+    
+    //MARK: - Key
+    //Return true if the key is in the keychain
+    static public func isKey() -> Bool {
+        return keychainCheck(service: keyKeychain.key.rawValue)
+    }
+        
+    //return key
+    static public func getKey() -> Data? {
+        return read(service: keyKeychain.key.rawValue)
+    }
+    
+    //save key
+    static public func setKey(key: Data) {
+        write(service: keyKeychain.key.rawValue, data: key)
     }
         
     

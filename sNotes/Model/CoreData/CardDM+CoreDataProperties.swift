@@ -18,14 +18,14 @@ extension CardDM {
     }
 
     @NSManaged public var last4Number: String
-    @NSManaged public var date: String
-    @NSManaged public var cardOwner: String
+    @NSManaged public var date: Data?
+    @NSManaged public var cardOwner: Data?
     @NSManaged public var paymentSystem: String?
     @NSManaged public var nameBank: String?
     @NSManaged public var dateAddCard: Date
     @NSManaged public var dateLastOpen: Date
     @NSManaged public var dateExpiration: Date?
-    @NSManaged public var comment: String?
+    @NSManaged public var comment: Data?
     @NSManaged public var profile: ProfileDM?
 
 }

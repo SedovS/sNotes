@@ -24,7 +24,7 @@ extension NoteDM {
 
     @NSManaged public var isAnchor: Bool
     @NSManaged public var title: String?
-    @NSManaged public var text: String?
+    @NSManaged public var text: Data?
     @NSManaged public var profile: ProfileDM?
     @NSManaged public var folder: FolderDM?
 

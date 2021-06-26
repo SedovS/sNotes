@@ -18,8 +18,8 @@ extension PasswordDM {
     }
 
     @NSManaged public var website: String
-    @NSManaged public var login: String
-    @NSManaged public var descriptionPassword: String?
+    @NSManaged public var login: Data?
+    @NSManaged public var descriptionPassword: Data?
     @NSManaged public var dateCreate: Date
     @NSManaged public var dateLastOpen: Date
     @NSManaged public var profile: ProfileDM?

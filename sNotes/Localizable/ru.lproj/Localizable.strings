@@ -19,6 +19,7 @@
 
 //Note
 "EnterName" = "Введите название";
+"NoteText" = "Текст заметки";
 
 
 //ProfileVC

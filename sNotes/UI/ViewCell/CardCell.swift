@@ -30,7 +30,7 @@ class CardCell: UICollectionViewCell {
     func initCell(card: CardDM) {
         nameLabel.text = card.nameBank ?? " "
         numberLabel.text = "**** **** **** " + card.last4Number
-        commentLabel.text = card.comment
+        commentLabel.text = ChaChaPolyHelpers.decrypt(encryptedContent: card.comment)
         cardView.backgroundColor = .black
         icon.image = UIImage(named: card.paymentSystem ?? "")
     }

@@ -31,7 +31,7 @@ class NotesVC: UIViewController {
         return FolderDM.getFolders(sortDescriptor: .dateLastChange)
     }()
     
-    let arrayNameImage = ["icAddNote", "icAddCheckList", "icAddImage", "icAddAudio", "icAddFolder"]
+    let arrayNameImage = ["icAddNote", /*"icAddCheckList", "icAddImage", "icAddAudio",*/ "icAddFolder"]
 
 
     override func viewDidLoad() {
@@ -56,7 +56,6 @@ class NotesVC: UIViewController {
         tableView.isHidden = true
         tableView.registerCell(IconCell.self)
         tableView.backgroundColor = .customBlueForTableView()
-        tableView.cornerRadius = 21
         
         tableView.isScrollEnabled = false
     }
@@ -64,6 +63,7 @@ class NotesVC: UIViewController {
     override func viewDidLayoutSubviews() {
         tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
         tableView.sz_trailingConstraint()?.constant = self.view.frame.width/8 - 52/2
+        tableView.cornerRadius = tableView.frame.width / 2
     }
     
     
@@ -185,14 +185,14 @@ extension NotesVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-                cell.initCell(title: arrayAnchoreNotes[index].title ?? "", text: arrayAnchoreNotes[index].text ?? "")
+                cell.initCell(title: arrayAnchoreNotes[index].title ?? "", text: arrayAnchoreNotes[index].text)
                 cell.shadow()
                 return cell
             }
         case 3:
             let index = indexPath.row
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-            cell.initCell(title: arrayRecentlyNotes[index].title ?? "", text: arrayRecentlyNotes[index].text ?? "")
+            cell.initCell(title: arrayRecentlyNotes[index].title ?? "", text: arrayRecentlyNotes[index].text)
             cell.shadow()
             return cell
         case 4:

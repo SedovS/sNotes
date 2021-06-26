@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CardDM" representedClassName=".CardDM" syncable="YES">
-        <attribute name="cardOwner" attributeType="String"/>
-        <attribute name="comment" optional="YES" attributeType="String"/>
-        <attribute name="date" attributeType="String"/>
+        <attribute name="cardOwner" optional="YES" attributeType="Binary"/>
+        <attribute name="comment" optional="YES" attributeType="Binary"/>
+        <attribute name="date" optional="YES" attributeType="Binary"/>
         <attribute name="dateAddCard" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateExpiration" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
@@ -28,7 +28,7 @@
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateReminder" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isAnchor" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="Binary"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FolderDM" inverseName="notes" inverseEntity="FolderDM"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="notes" inverseEntity="ProfileDM"/>
@@ -36,8 +36,8 @@
     <entity name="PasswordDM" representedClassName=".PasswordDM" syncable="YES">
         <attribute name="dateCreate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateLastOpen" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="descriptionPassword" optional="YES" attributeType="String"/>
-        <attribute name="login" attributeType="String"/>
+        <attribute name="descriptionPassword" optional="YES" attributeType="Binary"/>
+        <attribute name="login" optional="YES" attributeType="Binary"/>
         <attribute name="website" attributeType="String"/>
         <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProfileDM" inverseName="passwords" inverseEntity="ProfileDM"/>
     </entity>
@@ -53,7 +53,7 @@
         <relationship name="passwords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PasswordDM" inverseName="profile" inverseEntity="PasswordDM"/>
     </entity>
     <elements>
-        <element name="CardDM" positionX="0" positionY="0" width="128" height="179"/>
+        <element name="CardDM" positionX="0" positionY="0" width="128" height="14"/>
         <element name="FolderDM" positionX="0" positionY="0" width="128" height="149"/>
         <element name="NoteDM" positionX="0" positionY="0" width="128" height="164"/>
         <element name="PasswordDM" positionX="0" positionY="0" width="128" height="119"/>

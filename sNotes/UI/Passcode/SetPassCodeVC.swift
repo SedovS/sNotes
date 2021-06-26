@@ -67,6 +67,7 @@ class SetPassCodeVC: UIViewController {
         aboutButton.isHidden = !isEnterPassCode
         
         nameLabel.text = isEnterPassCode ? TextForNameLabel.enterPasssCode.localizedString() : TextForNameLabel.setPassCode.localizedString()
+        hintLabel.text = isEnterPassCode ? "" : TextForHintLabel.standart.localizedString()
         hintLabel.isHidden = isEnterPassCode
         let isAuthenticationWithBiometrics = ProfileDM.getIsAuthenticationWithBiometrics()
         
@@ -92,65 +93,67 @@ class SetPassCodeVC: UIViewController {
         case 5:
             setColorForPassCodeSymbol(view: passCodeSymbols[passcodeStack.count], color: .blue)
             passcodeStack.append(String(sender.tag))
-            
-            if isEnterPassCode {
-                self.timeBlock.changeCount()
-                if self.timeBlock.isBlockCount(view: self) {
-                    clearPassCodeWithError()
-                    return
-                }
-                 passCodeKeyboardView.isUserInteractionEnabled = false
-                
-                //сравнение на корректность
-                if WorkWithKeychain.checkPassCode(passCode: passcodeStack) {
-                    self.timeBlock.resetCountOfAttemptsSignin()
-                    let vc = NotesVC()
-                    UIApplication.shared.keyWindow?.rootViewController = vc
-
-                } else {
-
-                    for el in self.passCodeSymbols {
-                        self.setColorForPassCodeSymbol(view: el, color: .red)
-                    }
-                    passcodeStack = String()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                        self.resetPassCodeBackground()
-                        self.passCodeKeyboardView.isUserInteractionEnabled = true
-                    }
-
-                }
-            } else if !isRepeatingEnterPasscode {
-                repeatPassCode(passcode: passcodeStack)
-            } else {
-                if enteredPasscode == passcodeStack {
-                    WorkWithKeychain.setPassCode(passCode: passcodeStack)
-                    let vc = SetPassCodeVC()
-                    UIApplication.shared.keyWindow?.rootViewController = vc
-                } else {
-                    for el in self.passCodeSymbols {
-                        self.setColorForPassCodeSymbol(view: el, color: .red)
-                    }
-                    
-                    nameLabel.isHidden = true
-                    nameLabel.text = TextForNameLabel.setPassCode.localizedString()
-                    hintLabel.text = TextForHintLabel.wrongRepeatPassCode.localizedString()
-                    hintLabel.isHidden = false
-
-                    isRepeatingEnterPasscode = false
-                    passcodeStack = String()
-                    passCodeKeyboardView.isUserInteractionEnabled = false
-                    
-                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                        self.resetPassCodeBackground()
-                        self.hintLabel.text = TextForHintLabel.standart.localizedString()
-                        self.nameLabel.isHidden = false
-                        self.passCodeKeyboardView.isUserInteractionEnabled = true
-                    }
-                }
-            }
-            
+            checkPassCode()
         default:
             break
+        }
+    }
+    
+    private func checkPassCode() {
+        if isEnterPassCode {
+            self.timeBlock.changeCount()
+            if self.timeBlock.isBlockCount(view: self) {
+                clearPassCodeWithError()
+                return
+            }
+             passCodeKeyboardView.isUserInteractionEnabled = false
+            
+            //сравнение на корректность
+            if WorkWithKeychain.checkPassCode(passCode: passcodeStack) {
+                self.timeBlock.resetCountOfAttemptsSignin()
+                let vc = NotesVC()
+                UIApplication.shared.keyWindow?.rootViewController = vc
+
+            } else {
+
+                for el in self.passCodeSymbols {
+                    self.setColorForPassCodeSymbol(view: el, color: .red)
+                }
+                passcodeStack = String()
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                    self.resetPassCodeBackground()
+                    self.passCodeKeyboardView.isUserInteractionEnabled = true
+                }
+
+            }
+        } else if !isRepeatingEnterPasscode {
+            repeatPassCode(passcode: passcodeStack)
+        } else {
+            if enteredPasscode == passcodeStack {
+                WorkWithKeychain.setPassCode(passCode: passcodeStack)
+                let vc = SetPassCodeVC()
+                UIApplication.shared.keyWindow?.rootViewController = vc
+            } else {
+                for el in self.passCodeSymbols {
+                    self.setColorForPassCodeSymbol(view: el, color: .red)
+                }
+                
+                nameLabel.isHidden = true
+                nameLabel.text = TextForNameLabel.setPassCode.localizedString()
+                hintLabel.text = TextForHintLabel.wrongRepeatPassCode.localizedString()
+                hintLabel.isHidden = false
+
+                isRepeatingEnterPasscode = false
+                passcodeStack = String()
+                passCodeKeyboardView.isUserInteractionEnabled = false
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                    self.resetPassCodeBackground()
+                    self.hintLabel.text = TextForHintLabel.standart.localizedString()
+                    self.nameLabel.isHidden = false
+                    self.passCodeKeyboardView.isUserInteractionEnabled = true
+                }
+            }
         }
     }
     

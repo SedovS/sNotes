@@ -147,4 +147,9 @@ extension FolderDM {
         PersistenceManager.shared.saveContext()
     }
     
+    func delete() {
+        let persistenceManager = PersistenceManager.shared
+        persistenceManager.deleteObject(object: self)
+    }
+    
 }

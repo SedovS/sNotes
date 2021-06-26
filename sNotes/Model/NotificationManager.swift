@@ -38,7 +38,7 @@ class NotificationManager {
                 createLocalPush(dateMatching: dateComponents, alertTitle: "sReminder", alertBody: "\(NSLocalizedString("Note", comment: "")) \($0.title ?? "")", notificationId: "\(date!)")
                 i += 1
                 dateComponents.hour! -= 1
-                createLocalPush(dateMatching: dateComponents, alertTitle: "sReminder", alertBody: "\(NSLocalizedString("1HoursBefore", comment: "")) \($0.title ?? "")", notificationId: "\(date!)")
+                createLocalPush(dateMatching: dateComponents, alertTitle: "sReminder", alertBody: "\(NSLocalizedString("1HoursBefore", comment: "")) \($0.title ?? "")", notificationId: "\(date!)-1")
                 i += 1
             }
         }

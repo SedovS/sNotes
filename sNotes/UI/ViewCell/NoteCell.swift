@@ -19,9 +19,10 @@ class NoteCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func initCell(title: String, text: String) {
+    func initCell(title: String, text: Data?) {
         self.title.text = title
-        self.text.text = text
+        self.text.text = ChaChaPolyHelpers.decrypt(encryptedContent: text)
+            
         
         
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressed(_:)))

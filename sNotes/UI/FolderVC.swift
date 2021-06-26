@@ -10,7 +10,6 @@ import UIKit
 
 class FolderVC: UIViewController {
 
-    
     @IBOutlet weak var tabBarView: TabBarView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -20,7 +19,7 @@ class FolderVC: UIViewController {
     
     var folder: FolderDM?
     var isCrateFolder = false
-    let arrayNameImage = ["icAddNote", "icAddCheckList", "icAddImage", "icAddAudio", "icPin"]
+    let arrayNameImage = ["icAddNote",/* "icAddCheckList", "icAddImage", "icAddAudio",*/ "icPin"]
     let arrayNameColor: [UIColor] = [.customGrayForArray(), .customRedForArray(), .customOrangeForArray(), .customPurpleForArray(), .customGreenForArray(), .customBlueForArray()]
     var isChangeColor = false
     
@@ -33,6 +32,10 @@ class FolderVC: UIViewController {
 
     
     @IBAction func swipedLeft(_ sender: UIScreenEdgePanGestureRecognizer) {
+        if folder?.name == "" {
+            folder?.delete()
+        }
+                
         let vc = NotesVC()
         UIApplication.shared.keyWindow?.rootViewController = vc
     }
@@ -84,6 +87,7 @@ class FolderVC: UIViewController {
     override func viewDidLayoutSubviews() {
         tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
         tableView.sz_trailingConstraint()?.constant = self.view.frame.width/8 - 52/2
+        tableView.cornerRadius = tableView.frame.width / 2
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -130,6 +134,12 @@ extension FolderVC: UITextFieldDelegate {
         folder?.changeDateLastChange()
         return false
     }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        folder?.changeName(newName: textField.text)
+        folder?.changeDateLastChange()
+    }
+
 
 }
 
@@ -141,7 +151,7 @@ extension FolderVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noteCell", for: indexPath) as! NoteCell
-        cell.initCell(title: arrayNotes[indexPath.row].title ?? "", text: arrayNotes[indexPath.row].text ?? "")
+        cell.initCell(title: arrayNotes[indexPath.row].title ?? "", text: arrayNotes[indexPath.row].text)
         cell.shadow()
         return cell
     }
@@ -201,6 +211,8 @@ extension FolderVC: UITableViewDelegate {
             folder?.changeFolderColor(color:arrayNameColor[indexPath.row])
             tableView.reloadData()
             tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
+
+            tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
         } else {
             if arrayNameImage.count > indexPath.row {
                 
@@ -223,9 +235,13 @@ extension FolderVC: UITableViewDelegate {
                 }
                 tableView.isHidden = true
                 tableView.reloadData()
+                tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
+
             } else {
                 isChangeColor = true
                 tableView.reloadData()
+                tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
+
             }
         }
         

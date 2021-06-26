@@ -1,0 +1,6 @@
+
+"NSFaceIDUsageDescription" = "進入應用程序";
+"NSPhotoLibraryUsageDescription" = "我們想讓你有機會為你的頭像選擇一張照片";
+"NSCameraUsageDescription" = "我們想讓你有機會為你的頭像拍照";
+
+"CFBundleDisplayName" = "sNotes";

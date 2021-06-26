@@ -23,8 +23,8 @@ extension CardDM {
 
         
         cardDM.last4Number = last4Number
-        cardDM.date = date
-        cardDM.cardOwner = cardOwner.uppercased()
+        cardDM.date = ChaChaPolyHelpers.encrypt(string: date)
+        cardDM.cardOwner = ChaChaPolyHelpers.encrypt(string: cardOwner.uppercased())
         cardDM.paymentSystem = PaymentSystem().namePS(firstNumberCard: firstNumber)
 //        cardDM.nameBank: String?
         cardDM.dateAddCard = Date()

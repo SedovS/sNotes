@@ -74,6 +74,7 @@ class LockerVC: UIViewController {
     override func viewDidLayoutSubviews() {
         tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
         tableView.sz_trailingConstraint()?.constant = self.view.frame.width/8 - 52/2
+        tableView.cornerRadius = tableView.frame.width / 2
     }
     
     

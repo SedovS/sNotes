@@ -69,7 +69,8 @@ class PasswordVC: UIViewController {
             descriptionPassword.isUserInteractionEnabled = false
             
             website.text = passwordDM?.website
-            login.text = passwordDM?.login
+            login.text = ChaChaPolyHelpers.decrypt(encryptedContent: passwordDM?.login)
+                
 
             hidePasswordInfo()
         }
@@ -122,7 +123,8 @@ class PasswordVC: UIViewController {
     
     private func showPasswordInfo() {
         password.text = WorkWithKeychain.getService(key: .password, addService: passwordDM?.objectID.uriRepresentation().path ?? "")
-        descriptionPassword.text = passwordDM?.descriptionPassword
+        descriptionPassword.text = ChaChaPolyHelpers.decrypt(encryptedContent: passwordDM?.descriptionPassword)
+            
     }
     
     private func gray(field: UITextField) {

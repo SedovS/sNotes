@@ -13,13 +13,13 @@
 			<key>NSStringFormatValueTypeKey</key>
 			<string>d</string>
 			<key>one</key>
-			<string>Вход заблкирован на %d минутy</string>
+			<string>Вход заблокирован на %d минутy</string>
 			<key>few</key>
-			<string>Вход заблкирован на %d минуты</string>
+			<string>Вход заблокирован на %d минуты</string>
 			<key>many</key>
-			<string>Вход заблкирован на %d минут</string>
+			<string>Вход заблокирован на %d минут</string>
 			<key>other</key>
-			<string>Вход заблкирован на %d минуты</string>
+			<string>Вход заблокирован на %d минуты</string>
 		</dict>
 	</dict>
 	<key>More login attempts</key>

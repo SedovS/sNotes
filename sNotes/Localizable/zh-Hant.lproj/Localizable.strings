@@ -1,0 +1,90 @@
+//NotesVC
+"Anchored" = "錨定";
+"Recent" = "最近";
+"Folders" = "文件夾";
+
+
+//LockerVC
+"Cards" = "卡片";
+"Passwords" = "密碼";
+
+//ReminderVC
+
+
+//文件夾
+"EnterFolderName" = "輸入文件夾名稱";
+"Default name" = "默認名稱";
+
+
+//Note
+"EnterName" = "輸入姓名";
+
+
+//ProfileVC
+"LogOut" = "退出";
+"UseBiometricsToSignIn" = "使用生物識別登錄";
+"NameSurname" = "姓名姓";
+
+
+//SearchView
+"FindYourNote" = "找到你的筆記";
+"FindAmongData" = "在數據中查找";
+
+//CardVC
+"CardDetails" = "卡片詳細信息";
+"CardNumber" = "卡號";
+"Validity" = "有效性";
+"CvcCard" = "CVC";
+"HolderName" = "持有人姓名";
+"PinCard" = "別針";
+
+
+//For CardVC and PasswordVC
+"Add" = "添加";
+"Hide" = "隱藏";
+"Show" = "顯示";
+
+"AddCard" = "添加卡片";
+"AddPassword" = "添加密碼";
+
+
+//PasswordVC
+"Passord" = "密碼";
+"Website" = "網站";
+"Login" = "登錄";
+"Description" = "說明";
+"GenerateStrongPassword" = "生成強密碼";
+
+
+
+//SetPassCodeVC
+"EnterPasssCode" = "輸入密碼";
+"SetPassCode" = "設置密碼";
+"RepearPassCode" = "重複密碼";
+
+"ItWillBeUsedToLogInApp" = "它將用於登錄應用程序";
+"ThePasswordsDidNotMatch/PleaseTryAain" = "密碼不匹配。\n再試一次";
+
+"WhatFor" = "為了什麼？";
+"PlaceYourFingerToEnterTheApp" = "放置手指進入應用程序";
+
+
+
+//NotificationManager
+"Note" = "注意";
+"1HoursBefore" = "1 小時前";
+
+//Alert Controller
+"AreYouSureYouWantToLogOut" = "您確定要退出嗎？";
+"AllYourDataWillHaveToBeDeleted" = "必須刪除您的所有數據。";
+
+"OpenTheCamera" = "打開相機";
+"OpenTheLibrary" = "開放圖書館";
+
+"LoginAttemptsBlocked" = "登錄嘗試被阻止！";
+"OpenTheLibrary" = "開放圖書館";
+
+
+"Ok" = "確定";
+"Cancel" = "取消";
+"Exit" = "退出";

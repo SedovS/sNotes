@@ -44,7 +44,7 @@ class NoteVC: UIViewController {
         let color = note?.folder?.color as? UIColor ?? .customGrayForArray()
         nameFolderButton.imageView?.image = CustomImage.image(color: color)
         titleNote.text = note?.title
-        textView.text = note?.text
+        textView.text = ChaChaPolyHelpers.decrypt(encryptedContent: note?.text)
         if titleNote.text == nil ||  titleNote.text == "" {
             titleNote.placeholder = NSLocalizedString("EnterName", comment: "")
             titleNote.becomeFirstResponder()
@@ -88,6 +88,7 @@ class NoteVC: UIViewController {
     override func viewDidLayoutSubviews() {
         tableView.sz_heightConstraint()?.constant = tableView.contentSize.height
         tableView.sz_trailingConstraint()?.constant = self.view.frame.width/8 - 52/2
+        tableView.cornerRadius = tableView.frame.width / 2
     }
 
 
@@ -125,6 +126,11 @@ extension NoteVC: UITextFieldDelegate {
         note?.changeTitle(newTitle: textField.text ?? "")
         note?.changeDeteLastChange()
         return false
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        note?.changeTitle(newTitle: textField.text ?? "")
+        note?.changeDeteLastChange()
     }
 
 }

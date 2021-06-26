@@ -40,7 +40,7 @@ extension NoteDM {
         
         noteDM.isAnchor = false
         noteDM.title = ""
-        noteDM.text = "Текст заметки"
+        noteDM.text = ChaChaPolyHelpers.encrypt(string: NSLocalizedString("NoteText", comment: ""))
         noteDM.profile = ProfileDM.getProfile()
         noteDM.folder = FolderDM.getDefaultFolder()
         
@@ -134,7 +134,7 @@ extension NoteDM {
     }
     
     func changeText(newText: String) {
-        self.text = newText
+        self.text = ChaChaPolyHelpers.encrypt(string: newText)
         PersistenceManager.shared.saveContext()
     }
     

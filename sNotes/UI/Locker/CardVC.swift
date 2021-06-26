@@ -122,15 +122,15 @@ class CardVC: UIViewController {
         numberCard.text = "\u{00B7}\u{00B7}\u{00B7}\u{00B7} \u{00B7}\u{00B7}\u{00B7}\u{00B7} \u{00B7}\u{00B7}\u{00B7}\u{00B7} " + (card?.last4Number ?? "")
         dateCard.text = "\u{00B7}\u{00B7}/\u{00B7}\u{00B7}"
         cvcCard.text = "\u{00B7}\u{00B7}\u{00B7}"
-        cardOwner.text = card?.cardOwner
+        cardOwner.text = ChaChaPolyHelpers.decrypt(encryptedContent: card?.cardOwner)
         pinCard.text = "\u{00B7}\u{00B7}\u{00B7}\u{00B7}"
     }
     
     private func showCardInfo() {
         numberCard.text = WorkWithKeychain.getService(key: .number, addService: card?.objectID.uriRepresentation().path ?? "")?.separate(every: 4, with: " ")
-        dateCard.text = card?.date
+        dateCard.text = ChaChaPolyHelpers.decrypt(encryptedContent: card?.date)
         cvcCard.text = WorkWithKeychain.getService(key: .cvc, addService: card?.objectID.uriRepresentation().path ?? "")
-        cardOwner.text = card?.cardOwner
+        cardOwner.text = ChaChaPolyHelpers.decrypt(encryptedContent: card?.cardOwner)
         pinCard.text = WorkWithKeychain.getService(key: .pin, addService: card?.objectID.uriRepresentation().path ?? "")
     }
     

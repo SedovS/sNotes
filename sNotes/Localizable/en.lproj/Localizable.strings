@@ -14,9 +14,13 @@
 
 //Folder
 "EnterFolderName" = "Enter folder name";
+"Default name" = "All notes";
+
 
 //Note
 "EnterName" = "Enter name";
+"NoteText" = "Note text";
+
 
 
 //ProfileVC

@@ -23,8 +23,8 @@ extension PasswordDM {
         
         
         passwordDM.website = website.capitalizingFirstLetter()
-        passwordDM.login = login//.capitalizingFirstLetter()
-        passwordDM.descriptionPassword = descriptionPassword
+        passwordDM.login = ChaChaPolyHelpers.encrypt(string: login)
+        passwordDM.descriptionPassword = ChaChaPolyHelpers.encrypt(string: descriptionPassword)
         passwordDM.dateCreate = Date()
         passwordDM.dateLastOpen = Date()
 
